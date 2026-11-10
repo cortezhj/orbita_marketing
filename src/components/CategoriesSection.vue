@@ -3,7 +3,7 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 </script>
 
 <template>
-  <section id="categorias" class="scroll-mt-24 border-b border-slate-800/80 bg-slate-950 py-16 sm:py-24">
+  <section id="categorias" class="cv-auto scroll-mt-24 border-b border-slate-800/80 bg-slate-950 py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="mx-auto max-w-3xl text-center">
@@ -26,13 +26,16 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
           :key="cat.id"
           class="group flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/75 shadow-xl transition duration-300 hover:border-amber-400/50 hover:bg-slate-900"
         >
-          <!-- Visual Header with Image & Category Icon -->
-          <div class="relative h-56 overflow-hidden">
+          <!-- Visual Header with Compressed WebP Image (< 75 KB) + Lazy Loading -->
+          <div class="relative h-56 overflow-hidden bg-slate-900">
             <img
               :src="cat.image"
               :alt="cat.title"
-              class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              width="640"
+              height="360"
               loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent"></div>
 
@@ -108,13 +111,13 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
               </div>
             </div>
 
-            <!-- Pre-filled WhatsApp Inquiry Button -->
-            <div class="mt-6 pt-4 border-t border-slate-800">
+            <!-- Pre-filled Universal wa.me Inquiry Button -->
+            <div class="mt-6 border-t border-slate-800 pt-4">
               <a
                 :href="buildWhatsAppUrl(cat.whatsappMessage)"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex w-full items-center justify-center gap-2.5 rounded-xl bg-emerald-500 px-5 py-3.5 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/15 transition hover:bg-emerald-400"
+                class="flex w-full items-center justify-center gap-2.5 rounded-xl bg-emerald-500 px-5 py-3.5 text-sm font-extrabold text-slate-950 shadow-lg shadow-emerald-500/15 transition hover:bg-emerald-400 active:scale-[0.99]"
               >
                 <svg class="h-5 w-5 shrink-0 fill-current" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.638 5.792-1.519c1.693.902 3.621 1.419 5.675 1.419 6.627 0 12-5.373 12-12s-5.373-12-12.467-11.4z" />

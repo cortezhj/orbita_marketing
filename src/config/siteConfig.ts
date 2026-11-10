@@ -61,8 +61,9 @@ export const siteConfig = {
     foundedYear: 2018,
     skuCount: '+4,500',
     responseMinutes: '< 5 min',
+    heroImage: '/images/hero-local.webp',
     catalogUrl: '/catalogo-ferreteria.pdf',
-    catalogVersion: 'Edición Noviembre 2026 • PDF Optimizado (1.4 MB)',
+    catalogVersion: 'Edición Noviembre 2026 • PDF Optimizado (1.4 KB)',
     googleMapsDirectionsUrl:
       'https://www.google.com/maps/dir/?api=1&destination=10.2038,-67.5514',
     googleMapsEmbedUrl:
@@ -76,13 +77,13 @@ export const siteConfig = {
 
   defaultWhatsappMessages: {
     header:
-      'Hola FerreCentro Órbita, los vi en su página web. ¿Están abiertos en el local del Centro Comercial? Quisiera consultar disponibilidad de un producto.',
+      'Hola, vi su página y quiero consultar disponibilidad de un producto en el local del Centro Comercial.',
     heroPrimary:
-      'Hola FerreCentro Órbita, quiero cotizar unas herramientas y materiales para retirar en el C.C. Parque Los Aviadores.',
+      'Hola, vi su página y quiero cotizar unas herramientas y materiales para retirar en el C.C. Parque Los Aviadores.',
     catalogRequest:
-      'Hola FerreCentro Órbita, acabo de revisar su web y me gustaría recibir el catálogo actualizado con lista de precios referenciales por WhatsApp.',
+      'Hola, vi su página y me gustaría recibir el catálogo actualizado con lista de precios por WhatsApp.',
     locationHelp:
-      'Hola FerreCentro Órbita, voy en camino al Centro Comercial. ¿Me confirman la ubicación exacta del Local PB-114?'
+      'Hola, voy en camino al Centro Comercial. ¿Me confirman la ubicación exacta del Local PB-114?'
   },
 
   schedule: [
@@ -213,9 +214,8 @@ export const siteConfig = {
       ],
       popularBrands: ['Bticino', 'Osram', 'Exceline', '3M'],
       whatsappMessage:
-        'Hola FerreCentro Órbita, me interesa consultar disponibilidad y precio en la categoría de *Electricidad e Iluminación* para retirar en el Centro Comercial.',
-      image:
-        'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80',
+        'Hola, vi su página y quiero consultar disponibilidad y precio en la categoría de Electricidad e Iluminación.',
+      image: '/images/cat-electricidad.webp',
       iconName: 'bolt'
     },
     {
@@ -233,9 +233,8 @@ export const siteConfig = {
       ],
       popularBrands: ['Pavco', 'Coflex', 'Ingco', 'Griven'],
       whatsappMessage:
-        'Hola FerreCentro Órbita, necesito cotizar repuestos o materiales de *Plomería y Tuberías* disponibles en su local.',
-      image:
-        'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=80',
+        'Hola, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías.',
+      image: '/images/cat-plomeria.webp',
       iconName: 'droplet'
     },
     {
@@ -253,9 +252,8 @@ export const siteConfig = {
       ],
       popularBrands: ['DeWalt', 'Truper', 'Bosch', 'Stanley'],
       whatsappMessage:
-        'Hola FerreCentro Órbita, quiero consultar disponibilidad y precio de *Herramientas Manuales y Eléctricas* en el local.',
-      image:
-        'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=80',
+        'Hola, vi su página y quiero consultar disponibilidad y precio de Herramientas Manuales y Eléctricas.',
+      image: '/images/cat-herramientas.webp',
       iconName: 'wrench'
     },
     {
@@ -273,9 +271,8 @@ export const siteConfig = {
       ],
       popularBrands: ['Sika', 'Venezolana de Pinturas', '3M', 'Truper'],
       whatsappMessage:
-        'Hola FerreCentro Órbita, quiero cotizar productos de *Pinturas, Adhesivos y Construcción Ligera* en su tienda del C.C.',
-      image:
-        'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=80',
+        'Hola, vi su página y quiero cotizar productos de Pinturas, Adhesivos y Construcción Ligera.',
+      image: '/images/cat-pinturas.webp',
       iconName: 'paint'
     }
   ] as ProductCategory[],
@@ -287,8 +284,7 @@ export const siteConfig = {
       caption:
         'Pasillo climatizado con exhibición iluminada y atención directa en mostrador dentro del C.C. Parque Los Aviadores.',
       badge: 'Local Verificado',
-      image:
-        'https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=900&q=80'
+      image: '/images/local-fachada.webp'
     },
     {
       id: 'pasillo-herramientas',
@@ -296,8 +292,7 @@ export const siteConfig = {
       caption:
         'Stock real a la vista de marcas líderes como DeWalt, Truper, Bosch y Stanley listas para prueba y entrega inmediata.',
       badge: 'Inventario Real',
-      image:
-        'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=900&q=80'
+      image: '/images/local-pasillo.webp'
     },
     {
       id: 'mostrador-asesoria',
@@ -305,12 +300,15 @@ export const siteConfig = {
       caption:
         'Trae tu muestra o lista de materiales: nuestros asesores te ayudan a encontrar la conexión, breaker o repuesto exacto.',
       badge: 'Asesoría Técnica',
-      image:
-        'https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=900&q=80'
+      image: '/images/local-mostrador.webp'
     }
   ] as StorePhoto[]
 }
 
+/**
+ * Construye el enlace universal oficial de WhatsApp (https://wa.me/58XXXXXXXXXX?text=...)
+ * evitando esquemas whatsapp://send que fallan en el navegador integrado (in-app browser) de Instagram y Facebook.
+ */
 export function buildWhatsAppUrl(customMessage?: string): string {
   const message =
     customMessage || siteConfig.defaultWhatsappMessages.heroPrimary

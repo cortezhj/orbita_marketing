@@ -5,7 +5,7 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
 </script>
 
 <template>
-  <section id="ubicacion" class="scroll-mt-24 border-b border-slate-800/80 bg-slate-950 py-16 sm:py-24">
+  <section id="ubicacion" class="cv-auto scroll-mt-24 border-b border-slate-800/80 bg-slate-950 py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="mx-auto max-w-3xl text-center">
@@ -21,7 +21,7 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
         </p>
       </div>
 
-      <!-- Storefront Photos (Fotos del Local Comercial) -->
+      <!-- Storefront Photos (Fotos del Local Comercial en .webp < 45 KB con lazy loading nativo) -->
       <div class="mt-12">
         <div class="mb-5 flex flex-wrap items-center justify-between gap-2">
           <h3 class="text-lg font-extrabold text-white sm:text-xl">
@@ -38,12 +38,15 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
             :key="photo.id"
             class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/75"
           >
-            <div class="relative h-52 overflow-hidden">
+            <div class="relative h-52 overflow-hidden bg-slate-900">
               <img
                 :src="photo.image"
                 :alt="photo.title"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                width="600"
+                height="400"
                 loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               />
               <span class="absolute top-3 left-3 rounded-full bg-slate-950/85 px-3 py-1 text-[11px] font-bold text-amber-300 backdrop-blur-md">
                 {{ photo.badge }}

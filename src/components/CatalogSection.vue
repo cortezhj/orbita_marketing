@@ -115,3 +115,4 @@ const catalogFeatures = [
     </div>
   </section>
 </template>
+

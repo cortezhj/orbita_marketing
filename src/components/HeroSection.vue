@@ -20,7 +20,7 @@ const trustPills = [
 </script>
 
 <template>
-  <section class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 pt-10 pb-16 sm:pt-16 sm:pb-24">
+  <section class="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 pt-8 pb-14 sm:pt-16 sm:pb-24">
     <!-- Industrial Background Glow & Grid -->
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
       <div class="absolute -top-32 left-1/2 h-96 w-[48rem] -translate-x-1/2 rounded-full bg-amber-500/10 blur-3xl"></div>
@@ -32,7 +32,7 @@ const trustPills = [
     </div>
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid items-center gap-12 lg:grid-cols-12">
+      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
         <!-- Left Column: Value Proposition & CTAs -->
         <div class="lg:col-span-7">
           <!-- Mall Location Pill -->
@@ -41,26 +41,26 @@ const trustPills = [
             <span>Herramientas, plomería y electricidad en el {{ siteConfig.business.mallName }}</span>
           </div>
 
-          <h1 class="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.35rem] lg:leading-[1.12]">
+          <h1 class="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.35rem] lg:leading-[1.12]">
             Cotiza tus herramientas al instante y retira hoy en el
             <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-orange-400 bg-clip-text text-transparent">
               {{ siteConfig.business.mallShort }}
             </span>
           </h1>
 
-          <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
             Encuentra repuestos, materiales eléctricos, tuberías, pinturas y herramientas originales sin perder tiempo.
             Escríbenos por WhatsApp para validar disponibilidad inmediata o visítanos directamente en el
             <strong class="font-semibold text-white">{{ siteConfig.business.level }}, {{ siteConfig.business.localNumber }}</strong>.
           </p>
 
-          <!-- Main CTA Buttons -->
-          <div class="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+          <!-- Main CTA Buttons (Universal wa.me link safe for Meta In-App Browser) -->
+          <div class="mt-7 flex flex-col gap-3.5 sm:flex-row sm:items-center">
             <a
               :href="primaryWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 px-7 py-4 text-base font-extrabold text-slate-950 shadow-xl shadow-emerald-500/25 transition duration-200 hover:-translate-y-0.5 hover:bg-emerald-400"
+              class="group inline-flex items-center justify-center gap-3 rounded-2xl bg-emerald-500 px-7 py-4 text-base font-extrabold text-slate-950 shadow-xl shadow-emerald-500/25 transition duration-200 hover:-translate-y-0.5 hover:bg-emerald-400 active:scale-[0.99]"
             >
               <svg class="h-6 w-6 shrink-0 fill-current transition-transform group-hover:scale-110" viewBox="0 0 24 24">
                 <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.638 5.792-1.519c1.693.902 3.621 1.419 5.675 1.419 6.627 0 12-5.373 12-12s-5.373-12-12.467-11.4z" />
@@ -81,7 +81,7 @@ const trustPills = [
           </div>
 
           <!-- Trust Pills -->
-          <div class="mt-10 grid gap-3 sm:grid-cols-3">
+          <div class="mt-9 grid gap-3 sm:grid-cols-3">
             <div
               v-for="pill in trustPills"
               :key="pill.title"
@@ -98,14 +98,18 @@ const trustPills = [
           </div>
         </div>
 
-        <!-- Right Column: Storefront Verification Card -->
+        <!-- Right Column: Storefront Verification Card (Compressed 62 KB WebP, Above-the-Fold Priority) -->
         <div class="lg:col-span-5">
           <div class="relative rounded-3xl border border-slate-800 bg-slate-900/80 p-3 shadow-2xl">
             <div class="relative overflow-hidden rounded-2xl">
               <img
-                src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=1000&q=80"
+                :src="siteConfig.business.heroImage"
                 alt="Interior y mostrador de FerreCentro Órbita en el Centro Comercial"
-                class="h-72 w-full object-cover sm:h-80"
+                width="720"
+                height="480"
+                fetchpriority="high"
+                decoding="async"
+                class="h-64 w-full object-cover sm:h-80"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent"></div>
 

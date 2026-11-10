@@ -103,3 +103,4 @@ function getBrandWhatsappUrl(brandName: string) {
     </div>
   </section>
 </template>
+
