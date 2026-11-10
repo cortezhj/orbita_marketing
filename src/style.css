@@ -3,13 +3,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* Zero network-blocking system font stack for < 2s load in Meta In-App Browser */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-slate-950 text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950;
+    @apply bg-white text-[#121417] antialiased selection:bg-[#FFCC00] selection:text-[#121417];
     margin: 0;
     overflow-x: hidden;
   }

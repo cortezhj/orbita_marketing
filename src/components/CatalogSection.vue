@@ -12,24 +12,35 @@ const catalogFeatures = [
 </script>
 
 <template>
-  <section id="catalogo" class="scroll-mt-24 border-b border-slate-800/80 bg-gradient-to-b from-slate-900/60 to-slate-950 py-16 sm:py-20">
+  <section id="catalogo" class="cv-auto scroll-mt-24 bg-[#121417] py-16 text-white sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="relative overflow-hidden rounded-3xl border border-amber-400/30 bg-slate-900 p-6 shadow-2xl sm:p-10 lg:p-12">
-        <!-- Decorative Accent -->
-        <div class="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amber-400/15 blur-3xl"></div>
+      <!-- Top Label -->
+      <div class="text-center">
+        <span class="text-xs font-black uppercase tracking-[0.25em] text-[#FFCC00]">
+          CATÁLOGO DESCARGABLE • LISTA TÉCNICA
+        </span>
+      </div>
 
-        <div class="relative grid items-center gap-8 lg:grid-cols-12">
+      <!-- White Industrial Plate with Corner Bolts (Photo 3 DeWalt Story / Product Card Style) -->
+      <div class="relative mt-6 border-2 border-[#FFCC00] bg-white p-6 text-[#121417] shadow-2xl sm:p-10 lg:p-12">
+        <!-- Corner Bolts -->
+        <span class="absolute top-3.5 left-3.5 h-2.5 w-2.5 rounded-full bg-neutral-400"></span>
+        <span class="absolute top-3.5 right-3.5 h-2.5 w-2.5 rounded-full bg-neutral-400"></span>
+        <span class="absolute bottom-3.5 left-3.5 h-2.5 w-2.5 rounded-full bg-neutral-400"></span>
+        <span class="absolute right-3.5 bottom-3.5 h-2.5 w-2.5 rounded-full bg-neutral-400"></span>
+
+        <div class="grid items-center gap-8 lg:grid-cols-12">
           <!-- Left Info -->
           <div class="lg:col-span-7">
-            <span class="inline-flex items-center gap-2 rounded-full bg-amber-400/15 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-amber-300">
-              Catálogo Digital y Lista Técnica
+            <span class="inline-block bg-[#121417] px-3 py-1 text-xs font-black uppercase tracking-widest text-[#FFCC00]">
+              PDF OPTIMIZADO Y LIGERO
             </span>
-            <h2 class="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-4xl">
-              Descarga Nuestro Catálogo General Optimizado en PDF
+            <h2 class="mt-4 text-2xl font-black uppercase tracking-tight text-[#121417] sm:text-4xl">
+              Descarga Nuestro Catálogo General 2026
             </h2>
-            <p class="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+            <p class="mt-3 text-sm leading-relaxed text-neutral-600 sm:text-base">
               Revisa las líneas completas de inventario que manejamos en el
-              <strong class="text-white">{{ siteConfig.business.mallName }} ({{ siteConfig.business.localNumber }})</strong>.
+              <strong class="font-bold text-[#121417]">{{ siteConfig.business.mallName }} ({{ siteConfig.business.localNumber }})</strong>.
               Ideal para maestros de obra, técnicos electricistas, plomeros, juntas de condominio y compras del hogar.
             </p>
 
@@ -37,9 +48,9 @@ const catalogFeatures = [
               <li
                 v-for="feat in catalogFeatures"
                 :key="feat"
-                class="flex items-start gap-2.5 text-xs text-slate-200 sm:text-sm"
+                class="flex items-start gap-2.5 text-xs font-medium text-neutral-800 sm:text-sm"
               >
-                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-400/20 text-amber-300">
+                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center bg-[#FFCC00] text-xs font-black text-[#121417]">
                   ✓
                 </span>
                 <span>{{ feat }}</span>
@@ -51,9 +62,9 @@ const catalogFeatures = [
                 :href="siteConfig.business.catalogUrl"
                 download="Catalogo-FerreCentro-Orbita-2026.pdf"
                 target="_blank"
-                class="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-amber-400 px-6 py-4 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-400/20 transition hover:bg-amber-300 sm:text-base"
+                class="inline-flex items-center justify-center gap-2.5 bg-[#FFCC00] px-7 py-4 text-xs font-black uppercase tracking-wider text-[#121417] shadow-md transition hover:bg-[#FFD633] sm:text-sm"
               >
-                <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.3">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 <span>Descargar Catálogo PDF</span>
@@ -63,50 +74,47 @@ const catalogFeatures = [
                 :href="catalogWhatsappUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2.5 rounded-2xl border border-slate-700 bg-slate-950 px-6 py-4 text-sm font-bold text-white transition hover:border-emerald-400/60 hover:text-emerald-300 sm:text-base"
+                class="inline-flex items-center justify-center gap-2.5 border-2 border-[#121417] bg-[#121417] px-6 py-4 text-xs font-black uppercase tracking-wider text-white transition hover:bg-neutral-800 sm:text-sm"
               >
-                <span>Solicitar Lista de Precios por WhatsApp</span>
+                <span>Pedir Lista de Precios por WhatsApp</span>
               </a>
             </div>
-            <p class="mt-3 text-xs text-slate-400">
+            <p class="mt-3 text-xs font-semibold text-neutral-500">
               {{ siteConfig.business.catalogVersion }} • Descarga directa sin registro
             </p>
           </div>
 
-          <!-- Right Visual Mockup of the PDF Catalog -->
+          <!-- Right Visual Mockup -->
           <div class="lg:col-span-5">
-            <div class="rounded-2xl border border-slate-800 bg-slate-950 p-5 shadow-xl">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+            <div class="border-2 border-[#121417] bg-[#121417] p-6 text-white shadow-xl">
+              <div class="flex items-center justify-between border-b border-white/15 pb-4">
                 <div class="flex items-center gap-3">
-                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-500/15 text-xs font-black text-red-400 border border-red-500/30">
+                  <div class="flex h-11 w-11 items-center justify-center bg-[#FFCC00] text-xs font-black text-[#121417]">
                     PDF
                   </div>
                   <div>
-                    <p class="text-sm font-bold text-white">Catálogo_FerreCentro_2026.pdf</p>
-                    <p class="text-xs text-slate-400">Optimizado para lectura en móvil</p>
+                    <p class="text-sm font-black uppercase text-white">Catálogo_FerreCentro_2026.pdf</p>
+                    <p class="text-xs text-neutral-400">Optimizado para lectura rápida en móvil</p>
                   </div>
                 </div>
-                <span class="rounded-full bg-emerald-500/15 px-2.5 py-1 text-[11px] font-bold text-emerald-400">
-                  Verificado
-                </span>
               </div>
 
               <div class="mt-4 space-y-2.5">
                 <div
-                  v-for="(cat, index) in siteConfig.categories"
+                  v-for="cat in siteConfig.categories"
                   :key="cat.id"
-                  class="flex items-center justify-between rounded-xl border border-slate-800/80 bg-slate-900/70 px-3.5 py-2.5 text-xs"
+                  class="flex items-center justify-between border border-white/10 bg-[#181B20] px-3.5 py-2.5 text-xs"
                 >
                   <div class="flex items-center gap-2.5">
-                    <span class="font-mono font-bold text-amber-400">0{{ index + 1 }}</span>
-                    <span class="font-semibold text-slate-200">{{ cat.title }}</span>
+                    <span class="font-mono font-black text-[#FFCC00]">{{ cat.code }}</span>
+                    <span class="font-bold text-white">{{ cat.title }}</span>
                   </div>
-                  <span class="text-[11px] text-slate-400">{{ cat.popularBrands.slice(0, 2).join(' • ') }}</span>
+                  <span class="text-[11px] font-semibold text-neutral-400">{{ cat.popularBrands.slice(0, 2).join(' • ') }}</span>
                 </div>
               </div>
 
-              <div class="mt-4 rounded-xl bg-amber-400/10 p-3 text-xs text-amber-200">
-                <strong>¿Tienes una lista escrita a mano o en foto?</strong> Envíala por WhatsApp y te armamos el presupuesto completo en minutos.
+              <div class="mt-5 border-l-4 border-[#FFCC00] bg-[#181B20] p-3.5 text-xs text-neutral-200">
+                <strong class="text-[#FFCC00]">¿Tienes una lista escrita a mano?</strong> Envíala en foto por WhatsApp y te armamos el presupuesto completo en minutos.
               </div>
             </div>
           </div>
@@ -115,4 +123,3 @@ const catalogFeatures = [
     </div>
   </section>
 </template>
-

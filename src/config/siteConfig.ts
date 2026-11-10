@@ -9,6 +9,7 @@ export interface BrandItem {
 
 export interface ProductCategory {
   id: string
+  code: string
   title: string
   subtitle: string
   badge: string
@@ -17,6 +18,7 @@ export interface ProductCategory {
   popularBrands: string[]
   whatsappMessage: string
   image: string
+  theme: 'light' | 'dark'
   iconName: 'bolt' | 'droplet' | 'wrench' | 'paint'
 }
 
@@ -37,10 +39,10 @@ export interface ScheduleItem {
 export const siteConfig = {
   business: {
     brandName: 'FerreCentro Órbita',
-    shortName: 'FerreCentro',
+    shortName: 'FERRECENTRO',
     legalName: 'Inversiones y Suministros FerreCentro Órbita, C.A.',
     rif: 'J-41298456-0',
-    tagline: 'Ferretería Técnica y Suministros en Centro Comercial',
+    tagline: 'HERRAMIENTAS, ELECTRICIDAD Y PLOMERÍA',
     mallName: 'C.C. Parque Los Aviadores',
     mallShort: 'C.C. Los Aviadores',
     level: 'Nivel Planta Baja (PB)',
@@ -63,7 +65,7 @@ export const siteConfig = {
     responseMinutes: '< 5 min',
     heroImage: '/images/hero-local.webp',
     catalogUrl: '/catalogo-ferreteria.pdf',
-    catalogVersion: 'Edición Noviembre 2026 • PDF Optimizado (1.4 KB)',
+    catalogVersion: 'Edición Noviembre 2026 • PDF Optimizado',
     googleMapsDirectionsUrl:
       'https://www.google.com/maps/dir/?api=1&destination=10.2038,-67.5514',
     googleMapsEmbedUrl:
@@ -101,19 +103,11 @@ export const siteConfig = {
 
   brands: [
     {
-      id: 'truper',
-      name: 'TRUPER',
-      category: 'Herramientas y Ferretería General',
-      badge: 'Stock Permanente',
-      accentColor: '#FF6B00',
-      description: 'Línea completa de herramientas manuales, eléctricas, corte y medición.'
-    },
-    {
       id: 'dewalt',
       name: 'DeWALT',
       category: 'Herramientas Eléctricas Industriales',
       badge: 'Garantía Oficial',
-      accentColor: '#FEBD17',
+      accentColor: '#FFCC00',
       description: 'Taladros percutores, esmeriles inalámbricos, baterías 20V MAX y accesorios.'
     },
     {
@@ -121,15 +115,31 @@ export const siteConfig = {
       name: 'STANLEY',
       category: 'Herramientas Manuales y Precisión',
       badge: 'En Stock',
-      accentColor: '#F5C400',
+      accentColor: '#FFCC00',
       description: 'Cintas métricas, juegos de llaves, destornilladores y cajas organizadoras.'
+    },
+    {
+      id: 'truper',
+      name: 'TRUPER',
+      category: 'Herramientas y Ferretería General',
+      badge: 'Stock Permanente',
+      accentColor: '#FF7A00',
+      description: 'Línea completa de herramientas manuales, eléctricas, corte y medición.'
+    },
+    {
+      id: 'ingco',
+      name: 'INGCO',
+      category: 'Maquinaria y Herramientas Pro',
+      badge: 'Alto Desempeño',
+      accentColor: '#FFB800',
+      description: 'Bombas periféricas, compresores, pistolas de pintar y kits para el hogar.'
     },
     {
       id: 'bosch',
       name: 'BOSCH',
       category: 'Equipos Eléctricos y Brocas',
       badge: 'Original Certificado',
-      accentColor: '#005691',
+      accentColor: '#14171C',
       description: 'Rotomartillos, discos diamantados, mechas para concreto/metal y lijadoras.'
     },
     {
@@ -137,7 +147,7 @@ export const siteConfig = {
       name: 'BTICINO',
       category: 'Material Eléctrico Residencial',
       badge: 'Alta Rotación',
-      accentColor: '#E85C0D',
+      accentColor: '#FF7A00',
       description: 'Tomacorrientes, interruptores, breakers, tableros y protección eléctrica.'
     },
     {
@@ -145,7 +155,7 @@ export const siteConfig = {
       name: 'PAVCO WAVIN',
       category: 'Tuberías y Conexiones PVC / CPVC',
       badge: 'Línea Completa',
-      accentColor: '#0072CE',
+      accentColor: '#14171C',
       description: 'Tuberías de aguas blancas, aguas servidas, conexiones y soldadura líquida.'
     },
     {
@@ -153,7 +163,7 @@ export const siteConfig = {
       name: 'SIKA',
       category: 'Adhesivos e Impermeabilizantes',
       badge: 'Línea Construcción',
-      accentColor: '#E30613',
+      accentColor: '#FFCC00',
       description: 'Sikaflex, aditivos para concreto, selladores de poliuretano y epóxicos.'
     },
     {
@@ -161,7 +171,7 @@ export const siteConfig = {
       name: 'VENEZOLANA DE PINTURAS',
       category: 'Pinturas y Recubrimientos',
       badge: 'Mezcla y Stock',
-      accentColor: '#10B981',
+      accentColor: '#14171C',
       description: 'Caucho clase A y B, esmaltes anticorrosivos, fondos y selladores antialcalinos.'
     },
     {
@@ -169,7 +179,7 @@ export const siteConfig = {
       name: 'COFLEX',
       category: 'Plomería y Grifería',
       badge: 'Repuestos Originales',
-      accentColor: '#0284C7',
+      accentColor: '#FFCC00',
       description: 'Mangueras flexibles, herrajes para WC, sifones, desagües y llaves de arresto.'
     },
     {
@@ -177,71 +187,26 @@ export const siteConfig = {
       name: 'OSRAM / LEDVANCE',
       category: 'Iluminación LED Comercial y Hogar',
       badge: 'Ahorro Energético',
-      accentColor: '#F97316',
+      accentColor: '#FF7A00',
       description: 'Paneles LED empotrables/superficiales, reflectores IP65, tubos y bombillos.'
-    },
-    {
-      id: 'ingco',
-      name: 'INGCO',
-      category: 'Maquinaria y Herramientas Pro',
-      badge: 'Mejor Relación Precio/Calidad',
-      accentColor: '#F59E0B',
-      description: 'Bombas periféricas, compresores, pistolas de pintar y kits para el hogar.'
     },
     {
       id: '3m',
       name: '3M INDUSTRIAL',
       category: 'Cintas Eléctricas, Abrasivos y EPP',
       badge: 'Calidad Industrial',
-      accentColor: '#DC2626',
+      accentColor: '#14171C',
       description: 'Teipe eléctrico Scotch Super 33+, lijas al agua, mascarillas y adhesivos.'
     }
   ] as BrandItem[],
 
   categories: [
     {
-      id: 'electricidad-iluminacion',
-      title: 'Electricidad e Iluminación',
-      subtitle: 'Instalaciones seguras, protección y luz LED de alto rendimiento',
-      badge: 'Stock Inmediato',
-      description:
-        'Todo para remodelaciones residenciales y locales comerciales: cableado certificado, protección térmica e iluminación LED decorativa e industrial.',
-      highlights: [
-        'Cables THHN / TW #8, #10, #12 y #14 (por metro o rollo)',
-        'Breakers termomagnéticos, tableros y protectores de voltaje 110V/220V',
-        'Paneles LED, reflectores exteriores IP65, cintas LED y sensores',
-        'Tomacorrientes, interruptores modernos, cajetines y canaletas'
-      ],
-      popularBrands: ['Bticino', 'Osram', 'Exceline', '3M'],
-      whatsappMessage:
-        'Hola, vi su página y quiero consultar disponibilidad y precio en la categoría de Electricidad e Iluminación.',
-      image: '/images/cat-electricidad.webp',
-      iconName: 'bolt'
-    },
-    {
-      id: 'plomeria-tuberias',
-      title: 'Plomería y Tuberías',
-      subtitle: 'Soluciones cero fugas en agua potable, drenaje y presión',
-      badge: 'Repuestos y Conexiones',
-      description:
-        'Encuentra desde el empaque o herraje específico para una emergencia doméstica hasta sistemas completos de tuberías, llaves de paso y bombas de agua.',
-      highlights: [
-        'Tuberías y conexiones en PVC, CPVC y Termofusión (1/2", 3/4", 1", 2", 4")',
-        'Grifería para lavamanos, fregaderos, duchas y llaves de arresto',
-        'Herrajes universales para sanitarios, canillas flexibles y sifones',
-        'Bombas periféricas, presurizadores automáticos, teflón y pega PVC'
-      ],
-      popularBrands: ['Pavco', 'Coflex', 'Ingco', 'Griven'],
-      whatsappMessage:
-        'Hola, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías.',
-      image: '/images/cat-plomeria.webp',
-      iconName: 'droplet'
-    },
-    {
       id: 'herramientas-manuales-electricas',
+      code: '01',
       title: 'Herramientas Manuales y Eléctricas',
-      subtitle: 'Potencia y precisión para profesionales, técnicos y el hogar',
-      badge: 'Garantía en Tienda',
+      subtitle: 'BUILD, FIX, CREATE • POTENCIA Y PRECISIÓN',
+      badge: 'GARANTÍA EN TIENDA',
       description:
         'Equípate con herramientas originales de alto desempeño. Asesoría técnica en mostrador para elegir el equipo y consumible exacto para tu trabajo.',
       highlights: [
@@ -254,13 +219,57 @@ export const siteConfig = {
       whatsappMessage:
         'Hola, vi su página y quiero consultar disponibilidad y precio de Herramientas Manuales y Eléctricas.',
       image: '/images/cat-herramientas.webp',
+      theme: 'dark',
       iconName: 'wrench'
     },
     {
+      id: 'electricidad-iluminacion',
+      code: '02',
+      title: 'Electricidad e Iluminación',
+      subtitle: 'HIGH VOLTAGE & LED • INSTALACIONES SEGURAS',
+      badge: 'STOCK INMEDIATO',
+      description:
+        'Todo para remodelaciones residenciales y locales comerciales: cableado certificado, protección térmica e iluminación LED decorativa e industrial.',
+      highlights: [
+        'Cables THHN / TW #8, #10, #12 y #14 (por metro o rollo)',
+        'Breakers termomagnéticos, tableros y protectores de voltaje 110V/220V',
+        'Paneles LED, reflectores exteriores IP65, cintas LED y sensores',
+        'Tomacorrientes, interruptores modernos, cajetines y canaletas'
+      ],
+      popularBrands: ['Bticino', 'Osram', 'Exceline', '3M'],
+      whatsappMessage:
+        'Hola, vi su página y quiero consultar disponibilidad y precio en la categoría de Electricidad e Iluminación.',
+      image: '/images/cat-electricidad.webp',
+      theme: 'light',
+      iconName: 'bolt'
+    },
+    {
+      id: 'plomeria-tuberias',
+      code: '03',
+      title: 'Plomería y Tuberías',
+      subtitle: 'EMERGENCY PLUMBING • CERO FUGAS Y PRESIÓN',
+      badge: 'REPUESTOS Y CONEXIONES',
+      description:
+        'Encuentra desde el empaque o herraje específico para una emergencia doméstica hasta sistemas completos de tuberías, llaves de paso y bombas de agua.',
+      highlights: [
+        'Tuberías y conexiones en PVC, CPVC y Termofusión (1/2", 3/4", 1", 2", 4")',
+        'Grifería para lavamanos, fregaderos, duchas y llaves de arresto',
+        'Herrajes universales para sanitarios, canillas flexibles y sifones',
+        'Bombas periféricas, presurizadores automáticos, teflón y pega PVC'
+      ],
+      popularBrands: ['Pavco', 'Coflex', 'Ingco', 'Griven'],
+      whatsappMessage:
+        'Hola, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías.',
+      image: '/images/cat-plomeria.webp',
+      theme: 'light',
+      iconName: 'droplet'
+    },
+    {
       id: 'pinturas-adhesivos-construccion',
+      code: '04',
       title: 'Pinturas, Adhesivos y Construcción Ligera',
-      subtitle: 'Acabados duraderos, impermeabilización y fijación profesional',
-      badge: 'Alta Demanda',
+      subtitle: 'PRO FINISH • IMPERMEABILIZACIÓN Y FIJACIÓN',
+      badge: 'ALTA DEMANDA',
       description:
         'Renueva y protege cualquier espacio con pinturas lavables, selladores de alto agarre, impermeabilizantes y accesorios para tabiquería y fijación.',
       highlights: [
@@ -273,6 +282,7 @@ export const siteConfig = {
       whatsappMessage:
         'Hola, vi su página y quiero cotizar productos de Pinturas, Adhesivos y Construcción Ligera.',
       image: '/images/cat-pinturas.webp',
+      theme: 'dark',
       iconName: 'paint'
     }
   ] as ProductCategory[],
@@ -305,10 +315,6 @@ export const siteConfig = {
   ] as StorePhoto[]
 }
 
-/**
- * Construye el enlace universal oficial de WhatsApp (https://wa.me/58XXXXXXXXXX?text=...)
- * evitando esquemas whatsapp://send que fallan en el navegador integrado (in-app browser) de Instagram y Facebook.
- */
 export function buildWhatsAppUrl(customMessage?: string): string {
   const message =
     customMessage || siteConfig.defaultWhatsappMessages.heroPrimary

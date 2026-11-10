@@ -5,30 +5,30 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
 </script>
 
 <template>
-  <section id="ubicacion" class="cv-auto scroll-mt-24 border-b border-slate-800/80 bg-slate-950 py-16 sm:py-24">
+  <section id="ubicacion" class="cv-auto scroll-mt-24 border-b border-neutral-200 bg-white py-16 text-[#121417] sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="mx-auto max-w-3xl text-center">
-        <span class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1 text-xs font-bold uppercase tracking-wider text-amber-300">
-          Visítanos Hoy Mismo
+        <span class="inline-block bg-[#FFCC00] px-4 py-1 text-xs font-black uppercase tracking-widest text-[#121417]">
+          VISÍTANOS HOY MISMO
         </span>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-5xl">
           Ubicación Exacta, Horarios y Cómo Llegar
         </h2>
-        <p class="mt-3 text-base text-slate-300">
-          Compra con total seguridad dentro del <strong class="text-white">{{ siteConfig.business.mallName }}</strong>:
+        <p class="mt-3 text-base font-medium text-neutral-600">
+          Compra con total seguridad dentro del <strong class="font-black text-[#121417]">{{ siteConfig.business.mallName }}</strong>:
           estacionamiento vigilado, ambiente climatizado y atención inmediata en mostrador.
         </p>
       </div>
 
-      <!-- Storefront Photos (Fotos del Local Comercial en .webp < 45 KB con lazy loading nativo) -->
+      <!-- Storefront Photos (Photo 4 Style Cards with Bottom Yellow Bar) -->
       <div class="mt-12">
-        <div class="mb-5 flex flex-wrap items-center justify-between gap-2">
-          <h3 class="text-lg font-extrabold text-white sm:text-xl">
+        <div class="mb-5 flex flex-wrap items-center justify-between gap-2 border-b-2 border-[#121417] pb-3">
+          <h3 class="text-lg font-black uppercase tracking-wide text-[#121417] sm:text-xl">
             Conoce Nuestro Local Comercial
           </h3>
-          <span class="text-xs font-semibold text-emerald-400">
-            ✓ Existencia física validada en {{ siteConfig.business.mallShort }}
+          <span class="bg-[#121417] px-3 py-1 text-xs font-black uppercase tracking-wider text-[#FFCC00]">
+            ✓ EXISTENCIA FÍSICA VALIDADA EN {{ siteConfig.business.mallShort }}
           </span>
         </div>
 
@@ -36,85 +36,85 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
           <div
             v-for="photo in siteConfig.storePhotos"
             :key="photo.id"
-            class="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/75"
+            class="group flex flex-col justify-between overflow-hidden border-2 border-[#121417] bg-[#121417] text-white shadow-lg"
           >
-            <div class="relative h-52 overflow-hidden bg-slate-900">
-              <img
-                :src="photo.image"
-                :alt="photo.title"
-                width="600"
-                height="400"
-                loading="lazy"
-                decoding="async"
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-              <span class="absolute top-3 left-3 rounded-full bg-slate-950/85 px-3 py-1 text-[11px] font-bold text-amber-300 backdrop-blur-md">
-                {{ photo.badge }}
-              </span>
+            <div>
+              <div class="relative h-52 overflow-hidden bg-neutral-900">
+                <img
+                  :src="photo.image"
+                  :alt="photo.title"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <span class="absolute top-3 left-3 bg-[#FFCC00] px-3 py-1 text-[11px] font-black uppercase tracking-wider text-[#121417]">
+                  {{ photo.badge }}
+                </span>
+              </div>
+              <div class="p-5">
+                <h4 class="text-sm font-black uppercase tracking-wide text-white">{{ photo.title }}</h4>
+                <p class="mt-2 text-xs leading-relaxed text-neutral-300">{{ photo.caption }}</p>
+              </div>
             </div>
-            <div class="p-4">
-              <h4 class="text-sm font-bold text-white">{{ photo.title }}</h4>
-              <p class="mt-1.5 text-xs leading-relaxed text-slate-300">{{ photo.caption }}</p>
-            </div>
+            <!-- Bottom Yellow Accent Bar (Photo 4 Card Style) -->
+            <div class="h-2 w-full bg-[#FFCC00]"></div>
           </div>
         </div>
       </div>
 
       <!-- Exact Location Details + Interactive Google Maps -->
-      <div class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12">
-        <!-- Left Details Card -->
-        <div class="flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/80 p-6 sm:p-8 lg:col-span-5">
+      <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <!-- Left Details Card (Dark Industrial Block with Yellow Accents) -->
+        <div class="flex flex-col justify-between border-2 border-[#121417] bg-[#121417] p-6 text-white shadow-xl sm:p-8 lg:col-span-5">
           <div class="space-y-6">
             <!-- Mall, Level & Local Number -->
             <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-amber-400">
-                Dirección en el Centro Comercial
+              <span class="text-xs font-black uppercase tracking-widest text-[#FFCC00]">
+                DIRECCIÓN EN EL CENTRO COMERCIAL
               </span>
-              <h3 class="mt-1 text-2xl font-extrabold text-white">
+              <h3 class="mt-1 text-2xl font-black uppercase text-white">
                 {{ siteConfig.business.mallName }}
               </h3>
               <div class="mt-3 flex flex-wrap gap-2">
-                <span class="rounded-lg bg-amber-400 px-3 py-1 text-xs font-extrabold text-slate-950">
+                <span class="bg-[#FFCC00] px-3 py-1 text-xs font-black uppercase text-[#121417]">
                   {{ siteConfig.business.level }}
                 </span>
-                <span class="rounded-lg border border-amber-400/40 bg-amber-400/15 px-3 py-1 text-xs font-extrabold text-amber-300">
+                <span class="border border-[#FFCC00] bg-[#181B20] px-3 py-1 text-xs font-black uppercase text-[#FFCC00]">
                   {{ siteConfig.business.localNumber }}
                 </span>
               </div>
-              <p class="mt-3 text-xs leading-relaxed text-slate-300 sm:text-sm">
+              <p class="mt-3 text-xs leading-relaxed text-neutral-300 sm:text-sm">
                 {{ siteConfig.business.fullAddress }}
               </p>
             </div>
 
             <!-- Puntos de Referencia -->
-            <div class="border-t border-slate-800 pt-5">
-              <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400">
-                Puntos de Referencia para Llegar Rápido
+            <div class="border-t border-white/15 pt-5">
+              <h4 class="text-xs font-black uppercase tracking-widest text-[#FFCC00]">
+                PUNTOS DE REFERENCIA
               </h4>
-              <ul class="mt-3 space-y-2">
+              <ul class="mt-3 space-y-2.5">
                 <li
                   v-for="refPoint in siteConfig.business.referencePoints"
                   :key="refPoint"
-                  class="flex items-start gap-2.5 text-xs text-slate-200 sm:text-sm"
+                  class="flex items-start gap-2.5 text-xs text-neutral-200 sm:text-sm"
                 >
-                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+                  <span class="mt-1 h-2 w-2 shrink-0 bg-[#FFCC00]"></span>
                   <span>{{ refPoint }}</span>
                 </li>
               </ul>
             </div>
 
             <!-- Horarios de Apertura y Cierre (Lunes a Domingo) -->
-            <div class="border-t border-slate-800 pt-5">
+            <div class="border-t border-white/15 pt-5">
               <div class="flex items-center justify-between">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400">
-                  Horario de Atención (Lun - Dom)
+                <h4 class="text-xs font-black uppercase tracking-widest text-[#FFCC00]">
+                  HORARIO DE ATENCIÓN (LUN - DOM)
                 </h4>
-                <span class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400">
-                  <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                  Horario Corrido
+                <span class="bg-[#FFCC00]/20 px-2 py-0.5 text-[10px] font-black uppercase text-[#FFCC00]">
+                  HORARIO CORRIDO
                 </span>
               </div>
 
@@ -122,13 +122,13 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
                 <div
                   v-for="item in siteConfig.schedule"
                   :key="item.days"
-                  class="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-950/80 px-4 py-3"
+                  class="flex items-center justify-between border border-white/15 bg-[#181B20] px-4 py-3"
                 >
                   <div>
-                    <p class="text-xs font-bold text-white sm:text-sm">{{ item.days }}</p>
-                    <p v-if="item.note" class="text-[11px] text-slate-400">{{ item.note }}</p>
+                    <p class="text-xs font-black uppercase text-white sm:text-sm">{{ item.days }}</p>
+                    <p v-if="item.note" class="text-[11px] text-neutral-400">{{ item.note }}</p>
                   </div>
-                  <span class="rounded-lg bg-emerald-500/15 px-2.5 py-1 text-xs font-extrabold text-emerald-300">
+                  <span class="bg-[#FFCC00] px-2.5 py-1 text-xs font-black text-[#121417]">
                     {{ item.hours }}
                   </span>
                 </div>
@@ -137,14 +137,14 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
           </div>
 
           <!-- Action Buttons: Open Route in Google Maps & Ask Directions on WhatsApp -->
-          <div class="mt-6 space-y-3 border-t border-slate-800 pt-5">
+          <div class="mt-6 space-y-3 border-t border-white/15 pt-5">
             <a
               :href="siteConfig.business.googleMapsDirectionsUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex w-full items-center justify-center gap-2.5 rounded-xl bg-amber-400 px-5 py-3.5 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-400/20 transition hover:bg-amber-300"
+              class="flex w-full items-center justify-center gap-2.5 bg-[#FFCC00] px-5 py-3.5 text-xs font-black uppercase tracking-wider text-[#121417] shadow-md transition hover:bg-[#FFD633] sm:text-sm"
             >
-              <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <svg class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
               </svg>
               <span>Abrir Ruta en Google Maps</span>
@@ -154,16 +154,16 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
               :href="locationHelpWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-950 px-5 py-3 text-xs font-bold text-slate-200 transition hover:border-emerald-400/60 hover:text-emerald-300 sm:text-sm"
+              class="flex w-full items-center justify-center gap-2 border-2 border-white/25 bg-transparent px-5 py-3 text-xs font-black uppercase tracking-wider text-white transition hover:border-[#FFCC00] hover:text-[#FFCC00]"
             >
-              <span>¿Estás en el Centro Comercial? Pedir ubicación por WhatsApp</span>
+              <span>Pedir Ubicación Exacta por WhatsApp</span>
             </a>
           </div>
         </div>
 
-        <!-- Right Interactive Map Card -->
-        <div class="flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-3 lg:col-span-7">
-          <div class="relative min-h-[380px] flex-1 overflow-hidden rounded-2xl bg-slate-950">
+        <!-- Right Interactive Map Card with Yellow Offset Frame -->
+        <div class="flex flex-col border-2 border-[#121417] bg-[#F4F5F7] p-3 shadow-xl lg:col-span-7">
+          <div class="relative min-h-[380px] flex-1 overflow-hidden border border-[#121417] bg-neutral-200">
             <iframe
               :src="siteConfig.business.googleMapsEmbedUrl"
               title="Ubicación de FerreCentro Órbita en Google Maps"
@@ -174,9 +174,9 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
             ></iframe>
           </div>
 
-          <div class="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-950 px-4 py-3 text-xs text-slate-300">
+          <div class="mt-3 flex flex-wrap items-center justify-between gap-3 bg-[#121417] px-4 py-3 text-xs text-white">
             <div class="flex items-center gap-2">
-              <span class="inline-block h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+              <span class="inline-block h-2.5 w-2.5 bg-[#FFCC00]"></span>
               <span>
                 <strong>{{ siteConfig.business.mallName }}</strong> — {{ siteConfig.business.level }}, {{ siteConfig.business.localNumber }}
               </span>
@@ -185,9 +185,9 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
               :href="siteConfig.business.googleMapsDirectionsUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="font-bold text-amber-400 underline-offset-4 hover:underline"
+              class="font-black uppercase tracking-wider text-[#FFCC00] underline-offset-4 hover:underline"
             >
-              Iniciar navegación GPS desde el móvil →
+              Iniciar navegación GPS →
             </a>
           </div>
         </div>

@@ -3,99 +3,90 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 
 function getBrandWhatsappUrl(brandName: string) {
   return buildWhatsAppUrl(
-    `Hola ${siteConfig.business.brandName}, quisiera consultar qué productos o repuestos de la marca *${brandName}* tienen disponibles hoy en su local del ${siteConfig.business.mallName}.`
+    `Hola, vi su página y quisiera consultar qué productos o repuestos de la marca ${brandName} tienen disponibles hoy en su local del ${siteConfig.business.mallName}.`
   )
 }
 </script>
 
 <template>
-  <section id="marcas" class="scroll-mt-24 border-b border-slate-800/80 bg-slate-900/40 py-14 sm:py-20">
+  <section id="marcas" class="scroll-mt-24 border-b border-neutral-200 bg-white py-16 text-[#121417] sm:py-22">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <!-- Header -->
-      <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+      <!-- Industrial Section Title -->
+      <div class="flex flex-col items-start justify-between gap-4 border-b-2 border-[#121417] pb-6 md:flex-row md:items-end">
         <div>
-          <span class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-amber-300">
-            Respaldo y Garantía Original
+          <span class="inline-block bg-[#FFCC00] px-3 py-1 text-xs font-black uppercase tracking-widest text-[#121417]">
+            RESPALDO Y GARANTÍA ORIGINAL
           </span>
-          <h2 class="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-            Marcas Aliadas Disponibles en Stock
+          <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-4xl">
+            Marcas que Distribuimos en Tienda
           </h2>
-          <p class="mt-2 max-w-2xl text-sm text-slate-300 sm:text-base">
-            Trabajamos directamente con fabricantes y distribuidores autorizados para garantizar herramientas originales, repuestos certificados y respaldo en tienda.
+          <p class="mt-2 max-w-2xl text-sm font-medium text-neutral-600 sm:text-base">
+            Disponibilidad inmediata de marcas líderes en herramientas, electricidad, plomería y construcción en nuestro local del {{ siteConfig.business.mallName }}.
           </p>
         </div>
 
-        <div class="inline-flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900 px-4 py-2.5 text-xs font-semibold text-slate-300">
-          <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-          <span>Inventario verificado en {{ siteConfig.business.localNumber }}</span>
+        <div class="inline-flex items-center gap-2 border-2 border-[#121417] bg-[#F4F5F7] px-4 py-2 text-xs font-black uppercase tracking-wider text-[#121417]">
+          <span class="h-2.5 w-2.5 bg-[#FFCC00] border border-[#121417]"></span>
+          <span>STOCK REAL EN {{ siteConfig.business.localNumber }}</span>
         </div>
       </div>
 
-      <!-- Infinite Carousel / Marquee of Recognized Brand Wordmarks -->
-      <div class="relative mt-8 overflow-hidden rounded-2xl border border-slate-800/90 bg-slate-950/90 py-5">
-        <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-slate-950 to-transparent"></div>
-        <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-slate-950 to-transparent"></div>
-
+      <!-- High-Contrast Dark & Yellow Brand Marquee -->
+      <div class="relative mt-8 overflow-hidden bg-[#121417] py-4 text-white shadow-md">
         <div class="animate-marquee flex items-center gap-6 px-4">
           <div
             v-for="(brand, idx) in [...siteConfig.brands, ...siteConfig.brands]"
             :key="`${brand.id}-${idx}`"
-            class="flex shrink-0 items-center gap-3 rounded-xl border border-slate-800/80 bg-slate-900/80 px-5 py-3"
+            class="flex shrink-0 items-center gap-3 border border-white/15 bg-[#181B20] px-5 py-2.5"
           >
-            <span
-              class="h-3 w-3 rounded-sm"
-              :style="{ backgroundColor: brand.accentColor }"
-            ></span>
-            <span class="text-sm font-black tracking-wider text-white sm:text-base">
+            <span class="h-3 w-3 bg-[#FFCC00]"></span>
+            <span class="text-sm font-black uppercase tracking-wider text-white sm:text-base">
               {{ brand.name }}
             </span>
-            <span class="rounded bg-slate-800 px-2 py-0.5 text-[10px] font-semibold text-slate-300">
+            <span class="bg-[#FFCC00] px-2 py-0.5 text-[10px] font-black uppercase text-[#121417]">
               {{ brand.badge }}
             </span>
           </div>
         </div>
       </div>
 
-      <!-- Brand Authority Grid -->
+      <!-- Industrial Brand Grid (Clean White Cards with Yellow & Black Accents) -->
       <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div
           v-for="brand in siteConfig.brands"
           :key="brand.id"
-          class="group flex flex-col justify-between rounded-2xl border border-slate-800/90 bg-slate-900/70 p-5 transition hover:-translate-y-0.5 hover:border-amber-400/50 hover:bg-slate-900"
+          class="group flex flex-col justify-between border-2 border-neutral-200 bg-[#F9FAFB] p-5 transition duration-200 hover:-translate-y-0.5 hover:border-[#121417] hover:bg-white hover:shadow-lg"
         >
           <div>
-            <!-- Styled Industrial Brand Badge / Logo Box -->
+            <!-- Brand Header Plate -->
             <div class="flex items-center justify-between gap-2">
-              <div
-                class="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-black tracking-wider text-slate-950 shadow-sm"
-                :style="{ backgroundColor: brand.accentColor }"
-              >
-                <span class="text-white mix-blend-difference">{{ brand.name }}</span>
-              </div>
-              <span class="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-300">
+              <span class="bg-[#121417] px-3 py-1.5 text-sm font-black uppercase tracking-wider text-[#FFCC00]">
+                {{ brand.name }}
+              </span>
+              <span class="border border-[#121417]/20 bg-[#FFCC00]/25 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#121417]">
                 {{ brand.badge }}
               </span>
             </div>
 
-            <p class="mt-3 text-xs font-bold uppercase tracking-wider text-amber-400/90">
+            <p class="mt-3 text-xs font-extrabold uppercase tracking-wider text-neutral-500">
               {{ brand.category }}
             </p>
-            <p class="mt-1.5 text-xs leading-relaxed text-slate-300">
+            <p class="mt-1.5 text-xs leading-relaxed text-neutral-700">
               {{ brand.description }}
             </p>
           </div>
 
-          <div class="mt-4 border-t border-slate-800/80 pt-3">
+          <div class="mt-4 border-t border-neutral-200 pt-3">
             <a
               :href="getBrandWhatsappUrl(brand.name)"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex w-full items-center justify-between text-xs font-bold text-slate-200 transition group-hover:text-emerald-400"
+              class="inline-flex w-full items-center justify-between text-xs font-black uppercase tracking-wider text-[#121417] transition group-hover:text-amber-600"
             >
-              <span>Consultar stock {{ brand.name }}</span>
-              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+              <span>Consultar {{ brand.name }}</span>
+              <span class="flex h-6 w-6 items-center justify-center bg-[#FFCC00] text-[#121417] transition-transform group-hover:translate-x-1">
+                →
+              </span>
             </a>
           </div>
         </div>
@@ -103,4 +94,3 @@ function getBrandWhatsappUrl(brandName: string) {
     </div>
   </section>
 </template>
-
