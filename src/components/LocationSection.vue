@@ -6,8 +6,8 @@ import { siteConfig } from '../config/siteConfig'
   <section id="ubicacion" class="cv-auto scroll-mt-24 bg-white py-20 text-[#141619] sm:py-28">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-        <!-- Left Column: Minimalist Editorial Content (Matching Reference Photo) -->
-        <div class="lg:col-span-5">
+        <!-- Right Column on Desktop: Minimalist Editorial Content -->
+        <div class="lg:order-2 lg:col-span-5">
           <span class="inline-block bg-[#f6892c] px-3 py-1 text-xs font-black uppercase tracking-widest text-white">
             VISÍTANOS
           </span>
@@ -57,9 +57,9 @@ import { siteConfig } from '../config/siteConfig'
           </div>
         </div>
 
-        <!-- Right Column: Clean Rectangular Map Block -->
-        <div class="relative lg:col-span-7">
-          <div class="relative mx-auto h-[270px] w-full max-w-lg overflow-hidden rounded-sm bg-[#16181C] shadow-[0_20px_50px_rgba(0,0,0,0.16)] sm:h-[310px] lg:ml-auto lg:mr-0 lg:h-[330px]">
+        <!-- Left Column on Desktop: Clean Rectangular Map Block -->
+        <div class="relative lg:order-1 lg:col-span-7">
+          <div class="relative mx-auto h-[270px] w-full max-w-lg overflow-hidden rounded-sm bg-[#16181C] shadow-[0_20px_50px_rgba(0,0,0,0.16)] sm:h-[310px] lg:ml-0 lg:mr-auto lg:h-[330px]">
             <iframe
               :src="siteConfig.business.googleMapsEmbedUrl"
               title="Ubicación de Órbita Marketing en Google Maps"
