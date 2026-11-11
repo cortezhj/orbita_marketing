@@ -73,9 +73,9 @@ export const siteConfig = {
     googleMapsEmbedUrl:
       'https://maps.google.com/maps?q=Centro+Comercial+Ciudad+Crepuscular,+Avenida+20,+Barquisimeto,+Lara,+Venezuela&hl=es&z=17&output=embed',
     socials: {
-      instagram: 'https://instagram.com/orbitamarketing',
-      facebook: 'https://facebook.com/orbitamarketing',
-      tiktok: 'https://tiktok.com/@orbitamarketing'
+      instagram: 'https://www.instagram.com/orbita_marketyngca/',
+      facebook: 'https://www.facebook.com/profile.php?id=61554849213439',
+      tiktok: 'https://www.tiktok.com/@orbitamarketyngca'
     }
   },
 

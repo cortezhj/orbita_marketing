@@ -7,6 +7,7 @@ import HeroSection from './components/HeroSection.vue'
 import LocationSection from './components/LocationSection.vue'
 import NavbarHeader from './components/NavbarHeader.vue'
 import PrivacyPolicyModal from './components/PrivacyPolicyModal.vue'
+import SocialsSection from './components/SocialsSection.vue'
 import { buildWhatsAppUrl, siteConfig } from './config/siteConfig'
 
 const showPrivacyPolicy = ref(false)
@@ -52,8 +53,11 @@ onMounted(() => {
       <!-- 4. Nuestros Productos -->
       <CategoriesSection />
 
-      <!-- 5. Ubicación y cómo llegar (Mapa interactivo y fotos del local comercial) -->
+      <!-- 5. Ubicación y cómo llegar (Mapa interactivo y horarios) -->
       <LocationSection />
+
+      <!-- 6. Redes Sociales Oficiales -->
+      <SocialsSection />
     </main>
 
     <!-- 7. Footer (Datos legales, RIF/ID fiscal, redes sociales y Política de Privacidad) -->
