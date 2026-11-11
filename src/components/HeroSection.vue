@@ -1,142 +1,291 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 
-const primaryWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.heroPrimary)
+interface HeroSlide {
+  indexLabel: string
+  shortLabel: string
+  headlineTop: string
+  headlineBottom: string
+  description: string
+  image: string
+  whatsappMessage: string
+  tag: string
+  nodeX: number
+  nodeY: number
+}
 
-const featureStrip = [
+const slides: HeroSlide[] = [
   {
-    title: 'Local Físico en C.C.',
-    detail: `${siteConfig.business.level} • ${siteConfig.business.localNumber}`
+    indexLabel: '01',
+    shortLabel: 'ELECTRICIDAD',
+    headlineTop: 'ELECTRICIDAD Y LED',
+    headlineBottom: 'para cualquier instalación',
+    description:
+      'Cables THHN, breakers termomagnéticos, tomacorrientes Bticino, paneles y reflectores LED disponibles hoy en el C.C. Parque Los Aviadores (Local PB-114).',
+    image: '/images/cat-electricidad.webp',
+    whatsappMessage:
+      'Hola, vi su página y quiero cotizar materiales de Electricidad e Iluminación en su local del C.C. Parque Los Aviadores.',
+    tag: 'Bticino • Osram • 3M',
+    nodeX: 72,
+    nodeY: 72
   },
   {
-    title: 'Atención Lun a Dom',
-    detail: 'Horario corrido con estacionamiento'
+    indexLabel: '02',
+    shortLabel: 'HERRAMIENTAS',
+    headlineTop: 'HERRAMIENTAS PRO',
+    headlineBottom: 'para cualquier trabajo',
+    description:
+      'Taladros percutores, esmeriles, juegos de llaves y herramientas manuales y eléctricas originales en el C.C. Parque Los Aviadores. Cotiza al instante por WhatsApp.',
+    image: '/images/hero-local.webp',
+    whatsappMessage: siteConfig.defaultWhatsappMessages.heroPrimary,
+    tag: 'DeWalt • Truper • Bosch • Stanley',
+    nodeX: 54,
+    nodeY: 162
   },
   {
-    title: 'Cotización < 5 Min',
-    detail: 'Confirmamos stock real por WhatsApp'
+    indexLabel: '03',
+    shortLabel: 'PLOMERÍA',
+    headlineTop: 'PLOMERÍA Y TUBERÍAS',
+    headlineBottom: 'para cualquier reparación',
+    description:
+      'Tuberías y conexiones PVC/CPVC, grifería, llaves de paso, herrajes sanitarios y bombas de agua con entrega inmediata en nuestro mostrador del Centro Comercial.',
+    image: '/images/cat-plomeria.webp',
+    whatsappMessage:
+      'Hola, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías en el C.C. Parque Los Aviadores.',
+    tag: 'Pavco • Coflex • Ingco',
+    nodeX: 78,
+    nodeY: 252
+  },
+  {
+    indexLabel: '04',
+    shortLabel: 'PINTURAS Y ADHESIVOS',
+    headlineTop: 'PINTURAS Y SELLADORES',
+    headlineBottom: 'para cualquier acabado',
+    description:
+      'Pinturas en caucho clase A, esmaltes, impermeabilizantes Sika, siliconas, adhesivos epóxicos y fijaciones para renovar y proteger tu hogar o local.',
+    image: '/images/cat-pinturas.webp',
+    whatsappMessage:
+      'Hola, vi su página y quiero cotizar Pinturas, Adhesivos y Construcción Ligera en el C.C. Parque Los Aviadores.',
+    tag: 'Sika • Venezolana de Pinturas • 3M',
+    nodeX: 132,
+    nodeY: 326
   }
 ]
+
+// Default to slide index 1 ("02 / 04 - HERRAMIENTAS") just like the reference image!
+const activeIndex = ref(1)
+
+const currentSlide = computed(() => slides[activeIndex.value] ?? slides[1]!)
+const currentWhatsappUrl = computed(() =>
+  buildWhatsAppUrl(currentSlide.value.whatsappMessage)
+)
+
+function prevSlide() {
+  activeIndex.value = (activeIndex.value - 1 + slides.length) % slides.length
+}
+
+function nextSlide() {
+  activeIndex.value = (activeIndex.value + 1) % slides.length
+}
 </script>
 
 <template>
-  <section class="relative bg-[#121417] text-white">
-    <!-- Subtle Industrial Texture & Vertical Reference Line -->
-    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+  <section class="relative overflow-hidden bg-[#141414] text-white">
+    <!-- Dark Textured Charcoal Background + Warm Spotlight Behind Equipment -->
+    <div class="pointer-events-none absolute inset-0">
+      <!-- Subtle concrete/asphalt radial vignette -->
       <div
-        class="absolute inset-0 opacity-[0.04]"
-        style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 64px 64px;"
+        class="absolute inset-0"
+        style="background: radial-gradient(circle at 72% 46%, rgba(255, 184, 0, 0.16) 0%, rgba(20, 20, 20, 0.92) 55%, #111111 100%);"
+      ></div>
+      <!-- Fine industrial grain grid -->
+      <div
+        class="absolute inset-0 opacity-[0.035]"
+        style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 18px 18px;"
       ></div>
     </div>
 
-    <!-- Main Hero Container -->
-    <div class="relative mx-auto max-w-7xl px-4 pt-10 pb-16 sm:px-6 sm:pt-16 sm:pb-24 lg:px-8">
-      <div class="grid items-center gap-12 lg:grid-cols-12">
-        <!-- Left Column: High-Contrast White + Yellow Typography (Photos 4 & 5 Style) -->
-        <div class="lg:col-span-7">
-          <div class="inline-flex items-center gap-2 border-l-4 border-[#FFCC00] bg-white/5 px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[#FFCC00]">
+    <!-- Main Hero Content -->
+    <div class="relative mx-auto max-w-7xl px-4 pt-10 pb-20 sm:px-6 sm:pt-14 sm:pb-24 lg:px-8 lg:pt-16 lg:pb-28">
+      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
+        <!-- Left Column: Bold Golden-Yellow 2-Line Headline + Description + Glowing Yellow CTA Button -->
+        <div class="lg:col-span-6">
+          <div class="inline-flex items-center gap-2 rounded bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-neutral-300 ring-1 ring-white/10">
+            <span class="h-2 w-2 rounded-full bg-[#FFB800]"></span>
             <span>{{ siteConfig.business.mallName }} • {{ siteConfig.business.localNumber }}</span>
           </div>
 
-          <h1 class="mt-6 text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-[3.6rem] lg:leading-[1.08]">
-             Soluciones y repuestos en
-            <span class="block text-[#FFCC00]">
-              herramientas, plomería y electricidad.
+          <h1 class="mt-5 text-3xl font-black tracking-tight text-[#FFB800] sm:text-5xl lg:text-[3.35rem] lg:leading-[1.12]">
+            <span class="block uppercase">{{ currentSlide.headlineTop }}</span>
+            <span class="mt-1 block font-extrabold text-[#FFB800]">
+              {{ currentSlide.headlineBottom }}
             </span>
           </h1>
 
-          <p class="mt-5 max-w-xl text-base leading-relaxed text-neutral-300 sm:text-lg">
-            Cotiza tus materiales al instante por WhatsApp y retira hoy mismo sin perder tiempo en nuestro local del
-            <strong class="font-bold text-white">{{ siteConfig.business.mallName }} ({{ siteConfig.business.level }}, {{ siteConfig.business.localNumber }})</strong>.
+          <p class="mt-5 max-w-md text-sm leading-relaxed text-neutral-300/90 sm:text-base">
+            {{ currentSlide.description }}
           </p>
 
-          <!-- Yellow Primary CTA + Clean Outlined Secondary CTA -->
-          <div class="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+          <!-- Glowing Golden-Yellow Rectangular Button (Exact Reference Look) -->
+          <div class="mt-9 flex flex-wrap items-center gap-5">
             <a
-              :href="primaryWhatsappUrl"
+              :href="currentWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 rounded-lg bg-[#FFCC00] px-7 py-4 text-sm font-black uppercase tracking-wider text-[#121417] shadow-lg transition duration-200 hover:-translate-y-0.5 hover:bg-[#FFD633] active:scale-[0.99] sm:text-base"
+              class="inline-flex items-center justify-center gap-3 rounded bg-gradient-to-b from-[#FFD859] to-[#F5A623] px-9 py-4 text-xs font-black uppercase tracking-[0.16em] text-[#141414] shadow-[0_12px_35px_-4px_rgba(245,166,35,0.55)] transition duration-200 hover:-translate-y-0.5 hover:from-[#FFE074] hover:to-[#FFB800] active:scale-[0.99] sm:text-sm"
             >
-              <svg class="h-5 w-5 shrink-0 fill-current" viewBox="0 0 24 24">
-                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.638 5.792-1.519c1.693.902 3.621 1.419 5.675 1.419 6.627 0 12-5.373 12-12s-5.373-12-12.467-11.4z" />
-              </svg>
-              <span>Cotizar por WhatsApp</span>
+              <span>COTIZAR POR WHATSAPP</span>
             </a>
 
             <a
               href="#ubicacion"
-              class="inline-flex items-center justify-center gap-2.5 rounded-lg border-2 border-white/25 bg-transparent px-6 py-4 text-sm font-black uppercase tracking-wider text-white transition hover:border-[#FFCC00] hover:text-[#FFCC00] sm:text-base"
+              class="text-xs font-bold uppercase tracking-widest text-neutral-300 underline-offset-8 transition hover:text-[#FFB800] hover:underline"
             >
-              <span>Ubicación en el C.C.</span>
-              <span>→</span>
+              Ver ubicación en el C.C. →
             </a>
-          </div>
-
-          <!-- Editorial Quote / Trust Block (Inspired by Photo 5 "HomeMaster") -->
-          <div class="mt-10 flex items-start gap-4 border-t border-white/10 pt-6">
-            <span class="font-serif text-5xl leading-none font-black text-[#FFCC00] select-none">“</span>
-            <div>
-              <p class="text-sm font-bold text-white sm:text-base">
-                Atención inmediata en mostrador y stock real garantizado.
-              </p>
-              <p class="mt-1 text-xs text-neutral-400">
-                Estacionamiento techado seguro en el {{ siteConfig.business.mallName }} • Despacho rápido para técnicos, contratistas y el hogar.
-              </p>
-            </div>
           </div>
         </div>
 
-        <!-- Right Column: Yellow Geometric Offset Block + Industrial Showcase (Photo 1 & 3 Style) -->
-        <div class="lg:col-span-5">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            <!-- Solid Construction Yellow Backdrop Square (Photo 1 Style) -->
-            <div class="absolute -top-4 -right-4 h-4/5 w-4/5 bg-[#FFCC00] sm:-top-6 sm:-right-6"></div>
+        <!-- Right Column: Interactive Curved Orbital Arc + Product/Tool Showcase + < 02/04 > Counter -->
+        <div class="relative lg:col-span-6">
+          <div class="relative mx-auto flex min-h-[340px] max-w-xl items-center justify-end sm:min-h-[390px]">
+            <!-- Desktop Curved Orbital Arc with 4 Interactive Category Nodes -->
+            <div class="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-64 sm:block">
+              <svg
+                viewBox="0 0 220 380"
+                class="h-full w-full overflow-visible"
+                fill="none"
+              >
+                <!-- Subtle Orbital Curve Path -->
+                <path
+                  d="M 110 25 Q 10 190 155 355"
+                  stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1.5"
+                />
 
-            <!-- Main Industrial Visual Card -->
-            <div class="relative border-2 border-[#121417] bg-[#181B20] shadow-2xl">
-              <div class="relative overflow-hidden">
+                <!-- Nodes along the curve -->
+                <g
+                  v-for="(slide, idx) in slides"
+                  :key="slide.indexLabel"
+                  class="pointer-events-auto cursor-pointer"
+                  @click="activeIndex = idx"
+                >
+                  <!-- Outer Halo Ring when Active -->
+                  <circle
+                    v-if="activeIndex === idx"
+                    :cx="slide.nodeX"
+                    :cy="slide.nodeY"
+                    r="13"
+                    fill="rgba(255, 255, 255, 0.15)"
+                    stroke="rgba(255, 184, 0, 0.7)"
+                    stroke-width="1.5"
+                  />
+                  <!-- Core Dot -->
+                  <circle
+                    :cx="slide.nodeX"
+                    :cy="slide.nodeY"
+                    :r="activeIndex === idx ? 5.5 : 4"
+                    :fill="activeIndex === idx ? '#FFFFFF' : 'rgba(255,255,255,0.35)'"
+                  />
+                </g>
+              </svg>
+
+              <!-- Text Labels Positioned Next to the 4 Arc Nodes -->
+              <button
+                v-for="(slide, idx) in slides"
+                :key="slide.shortLabel"
+                type="button"
+                class="pointer-events-auto absolute -translate-y-1/2 text-right text-[11px] font-extrabold uppercase tracking-wider transition focus:outline-none"
+                :class="
+                  activeIndex === idx
+                    ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]'
+                    : 'text-neutral-500 hover:text-neutral-300'
+                "
+                :style="{
+                  top: `${(slide.nodeY / 380) * 100}%`,
+                  right: `${100 - (slide.nodeX / 220) * 100 + 8}%`
+                }"
+                @click="activeIndex = idx"
+              >
+                {{ slide.shortLabel }}
+              </button>
+            </div>
+
+            <!-- Mobile Category Pills (Visible on small screens where arc is compact) -->
+            <div class="mb-4 flex flex-wrap gap-1.5 sm:hidden">
+              <button
+                v-for="(slide, idx) in slides"
+                :key="slide.shortLabel"
+                type="button"
+                class="rounded px-2.5 py-1 text-[10px] font-black uppercase tracking-wider transition"
+                :class="
+                  activeIndex === idx
+                    ? 'bg-[#FFB800] text-[#141414]'
+                    : 'bg-white/10 text-neutral-300'
+                "
+                @click="activeIndex = idx"
+              >
+                {{ slide.shortLabel }}
+              </button>
+            </div>
+
+            <!-- Spotlighted Yellow Equipment / Tool Visual -->
+            <div class="relative z-10 w-full sm:w-[76%]">
+              <!-- Ambient Yellow Backlight Glow -->
+              <div class="pointer-events-none absolute inset-6 rounded-full bg-[#FFB800]/20 blur-3xl"></div>
+
+              <div class="relative overflow-hidden rounded-xl border border-white/15 bg-[#1B1B1B] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]">
                 <img
-                  :src="siteConfig.business.heroImage"
-                  alt="Herramientas profesionales y suministros en FerreCentro Órbita"
+                  :src="currentSlide.image"
+                  :alt="currentSlide.headlineTop"
                   width="720"
                   height="480"
                   fetchpriority="high"
                   decoding="async"
-                  class="h-72 w-full object-cover sm:h-88"
+                  class="h-64 w-full object-cover transition duration-300 sm:h-80"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#121417] via-[#121417]/20 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
 
-                <!-- Top Left Industrial Tag -->
-                <div class="absolute top-4 left-4 bg-[#FFCC00] px-3 py-1 text-[11px] font-black uppercase tracking-widest text-[#121417]">
-                  TIENDA FÍSICA VERIFICADA
-                </div>
-
-                <!-- Bottom Info Overlay -->
-                <div class="absolute right-5 bottom-4 left-5">
-                  <p class="text-xs font-extrabold uppercase tracking-widest text-[#FFCC00]">
-                    {{ siteConfig.business.mallName }}
-                  </p>
-                  <p class="mt-0.5 text-xl font-black text-white">
-                    {{ siteConfig.business.level }} • {{ siteConfig.business.localNumber }}
-                  </p>
+                <!-- Brand Tag Overlay -->
+                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                  <span class="rounded bg-[#FFB800] px-2.5 py-1 text-[10px] font-black uppercase tracking-wider text-[#141414]">
+                    {{ currentSlide.tag }}
+                  </span>
+                  <span class="text-[11px] font-bold text-neutral-200">
+                    Stock en {{ siteConfig.business.localNumber }}
+                  </span>
                 </div>
               </div>
 
-              <!-- Dark Metrics Bar with Yellow Highlights -->
-              <div class="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-[#121417] py-4 text-center">
-                <div class="px-2">
-                  <p class="text-lg font-black text-[#FFCC00] sm:text-xl">{{ siteConfig.business.skuCount }}</p>
-                  <p class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">Referencias</p>
+              <!-- Bottom-Right Numeric Slide Counter (< 02/04 > Exact Reference Match) -->
+              <div class="mt-5 flex items-center justify-end gap-3 select-none">
+                <button
+                  type="button"
+                  aria-label="Anterior categoría"
+                  class="flex h-8 w-8 items-center justify-center text-neutral-400 transition hover:text-[#FFB800]"
+                  @click="prevSlide"
+                >
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                <div class="flex items-baseline font-black tracking-tight">
+                  <span class="text-3xl text-[#FFB800] sm:text-4xl">{{ currentSlide.indexLabel }}</span>
+                  <span class="ml-0.5 text-xs text-neutral-400">/04</span>
                 </div>
-                <div class="px-2">
-                  <p class="text-lg font-black text-white sm:text-xl">12+ Marcas</p>
-                  <p class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">Originales</p>
-                </div>
-                <div class="px-2">
-                  <p class="text-lg font-black text-[#FFCC00] sm:text-xl">Lun - Dom</p>
-                  <p class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">Horario C.C.</p>
-                </div>
+
+                <button
+                  type="button"
+                  aria-label="Siguiente categoría"
+                  class="flex h-8 w-8 items-center justify-center text-neutral-400 transition hover:text-[#FFB800]"
+                  @click="nextSlide"
+                >
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -144,44 +293,20 @@ const featureStrip = [
       </div>
     </div>
 
-    <!-- Industrial Ticker Strip (Like Photo 4 "HIGH VOLTAGE • INSPECTION & TEST") -->
-    <div class="border-y border-white/10 bg-[#181B20] py-2.5 text-[11px] font-black uppercase tracking-[0.22em] text-neutral-400">
-      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-4 px-4">
-        <span>HERRAMIENTAS ELÉCTRICAS</span>
-        <span class="text-[#FFCC00]">•</span>
-        <span>PLOMERÍA Y TUBERÍAS</span>
-        <span class="text-[#FFCC00]">•</span>
-        <span class="hidden sm:inline">MATERIAL ELÉCTRICO E ILUMINACIÓN</span>
-        <span class="hidden text-[#FFCC00] sm:inline">•</span>
-        <span class="hidden md:inline">PINTURAS E IMPERMEABILIZANTES</span>
-      </div>
-    </div>
-
-    <!-- White Overlapping 3-Pillar Strip with Yellow Icon Squares (Photo 4 Style) -->
-    <div class="bg-[#F4F5F7] py-8 text-[#121417] border-b border-neutral-200">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div
-            v-for="item in featureStrip"
-            :key="item.title"
-            class="flex items-center gap-4 border border-neutral-200 bg-white p-4 shadow-sm"
-          >
-            <div class="flex h-12 w-12 shrink-0 items-center justify-center bg-[#FFCC00] text-[#121417]">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <div>
-              <h2 class="text-sm font-black uppercase tracking-wide text-[#121417]">
-                {{ item.title }}
-              </h2>
-              <p class="mt-0.5 text-xs font-medium text-neutral-600">
-                {{ item.detail }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Rugged / Torn Paper-Asphalt White Bottom Divider (Exact Reference Bottom Transition) -->
+    <div class="relative z-20 -mb-px w-full overflow-hidden leading-none">
+      <svg
+        viewBox="0 0 1440 44"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-7 w-full preserve-3d sm:h-10"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 24L28 16L58 27L92 14L126 26L162 18L198 29L235 15L271 25L310 17L348 28L385 14L422 25L458 19L495 30L532 16L570 26L608 15L644 27L682 18L720 29L758 14L796 26L834 17L872 28L910 16L948 25L986 15L1024 28L1062 18L1100 27L1138 14L1176 26L1214 17L1252 29L1290 15L1328 25L1366 18L1404 27L1440 16V44H0V24Z"
+          fill="#FFFFFF"
+        />
+      </svg>
     </div>
   </section>
 </template>
