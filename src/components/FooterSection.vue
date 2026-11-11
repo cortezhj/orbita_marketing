@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 import iconFacebook from '../assets/2023_Facebook_icon.svg.webp'
-import iconInstagram from '../assets/Instagram_icon.png.webp'
-import iconTiktok from '../assets/Tiktok_icon.svg.webp'
+import iconInstagram from '../assets/instagram.png'
+import iconTiktok from '../assets/3116491.png'
 
 defineEmits<{
   (e: 'openPrivacy'): void
