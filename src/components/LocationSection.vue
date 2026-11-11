@@ -13,7 +13,7 @@ const locationHelpWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessa
           VISÍTANOS HOY MISMO
         </span>
         <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-5xl">
-          Ubicación Exacta, Horarios y Cómo Llegar
+          Ubicación y Horarios
         </h2>
         <p class="mt-3 text-base font-medium text-neutral-600">
           Compra con total seguridad en el <strong class="font-black text-[#121417]">{{ siteConfig.business.mallShort }}</strong>:
