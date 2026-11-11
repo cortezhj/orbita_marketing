@@ -8,15 +8,14 @@ const bandBgColors = ['#e5e5e3', '#2b2e33', '#e7e7e7', '#1b1e23']
   <section id="categorias" class="cv-auto scroll-mt-24 bg-white pt-14 sm:pt-20">
     <!-- Section Title Header -->
     <div class="mx-auto max-w-7xl px-4 pb-10 text-center sm:px-6 sm:pb-14 lg:px-8">
-      <span class="inline-block rounded-sm bg-[#f6892c] px-4 py-1 text-xs font-black uppercase tracking-widest text-white">
+      <span class="inline-block bg-[#f6892c] px-3 py-1 text-xs font-black uppercase tracking-widest text-white">
         LÍNEAS DISPONIBLES EN TIENDA
       </span>
       <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-5xl">
         Nuestros Productos
       </h2>
       <p class="mx-auto mt-3 max-w-2xl text-sm font-medium text-neutral-600 sm:text-base">
-        Explora nuestras líneas de productos y cotiza al instante por WhatsApp con retiro inmediato en el
-        <strong class="font-black text-[#121417]">{{ siteConfig.business.mallShort }} ({{ siteConfig.business.localNumber }})</strong>.
+        Explora nuestras líneas de productos y cotiza al instante por WhatsApp con retiro inmediato en tienda.
       </p>
     </div>
 
@@ -38,7 +37,7 @@ const bandBgColors = ['#e5e5e3', '#2b2e33', '#e7e7e7', '#1b1e23']
           <!-- Centered, Larger Product Image Column (Left on Even 0/2, Right on Odd 1/3) -->
           <div
             :class="[
-              'flex w-full items-center justify-center lg:col-span-6',
+              'flex h-72 w-full items-center justify-center sm:h-88 lg:col-span-6 lg:h-[390px] xl:h-[420px]',
               idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'
             ]"
           >
@@ -49,7 +48,7 @@ const bandBgColors = ['#e5e5e3', '#2b2e33', '#e7e7e7', '#1b1e23']
               height="650"
               loading="lazy"
               decoding="async"
-              class="h-72 w-full max-w-[540px] object-contain object-center transition-transform duration-500 group-hover:scale-[1.03] sm:h-88 lg:h-[390px] xl:h-[420px]"
+              class="h-full w-full max-w-[600px] scale-110 object-contain object-center transition-transform duration-500 group-hover:scale-[1.18] lg:scale-[1.15]"
               style="
                 -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 76%, transparent 100%);
                 mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 76%, transparent 100%);
