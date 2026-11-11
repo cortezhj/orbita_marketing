@@ -162,9 +162,9 @@ onUnmounted(() => {
 
         <!-- Right Column: Proportioned Orbital Arc + Specialist Portrait Showcase -->
         <div class="relative lg:col-span-7 lg:pl-6">
-          <div class="relative ml-auto flex min-h-[350px] w-full max-w-xl items-center justify-end sm:min-h-[400px] lg:min-h-[430px]">
+          <div class="relative ml-auto flex min-h-[320px] w-full max-w-xl items-center justify-end sm:min-h-[360px] lg:min-h-[380px]">
             <!-- Desktop Curved Orbital Arc Positioned Closely Along the Specialist Image -->
-            <div class="pointer-events-none absolute inset-y-0 right-[48%] z-20 hidden w-52 sm:block md:right-[47%] lg:right-[46%] lg:w-56">
+            <div class="pointer-events-none absolute inset-y-0 right-[45%] z-20 hidden w-52 sm:block md:right-[44%] lg:right-[43%] lg:w-56">
               <svg
                 viewBox="0 0 195 340"
                 class="h-full w-full overflow-visible"
@@ -242,9 +242,9 @@ onUnmounted(() => {
             </div>
 
             <!-- Specialist With Product Cutout PNG (Transparent Background) -->
-            <div class="relative z-10 flex w-full items-center justify-center sm:w-[72%] lg:w-[70%]">
+            <div class="relative z-10 flex w-full items-center justify-center sm:w-[64%] lg:w-[62%]">
               <!-- Subtle Warm Ambient Glow -->
-              <div class="pointer-events-none absolute inset-8 rounded-full bg-[#f6892c]/14 blur-3xl"></div>
+              <div class="pointer-events-none absolute inset-10 rounded-full bg-[#f6892c]/12 blur-3xl"></div>
 
               <img
                 :key="currentSlide.image"
@@ -254,7 +254,7 @@ onUnmounted(() => {
                 height="470"
                 fetchpriority="high"
                 decoding="async"
-                class="h-84 w-full object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.8)] transition-all duration-500 sm:h-96 lg:h-[425px] xl:h-[445px]"
+                class="h-68 w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.75)] transition-all duration-500 sm:h-76 lg:h-[330px] xl:h-[345px]"
                 style="
                   -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
                   mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
