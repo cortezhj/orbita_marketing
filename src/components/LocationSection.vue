@@ -8,8 +8,12 @@ import { siteConfig } from '../config/siteConfig'
       <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <!-- Left Column: Minimalist Editorial Content (Matching Reference Photo) -->
         <div class="lg:col-span-5">
-          <h2 class="text-3xl font-black uppercase leading-[1.12] tracking-tight text-[#141619] sm:text-4xl lg:text-[2.35rem]">
-            <span class="block">UBÍCANOS Y</span>
+          <span class="inline-block bg-[#f6892c] px-3 py-1 text-xs font-black uppercase tracking-widest text-white">
+            VISÍTANOS
+          </span>
+
+          <h2 class="mt-3 text-3xl font-black uppercase leading-[1.12] tracking-tight text-[#141619] sm:text-4xl lg:text-[2.35rem]">
+            <span class="block">UBICACIÓN Y</span>
             <span class="block">HORARIOS</span>
           </h2>
 
@@ -34,7 +38,7 @@ import { siteConfig } from '../config/siteConfig'
               <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#f6892c]"></span>
               <span>
                 <strong class="font-bold text-[#141619]">Contacto Directo:</strong>
-                {{ siteConfig.business.phoneDisplay }} • RIF: {{ siteConfig.business.rif }}
+                {{ siteConfig.business.phoneDisplay }}
               </span>
             </li>
           </ul>
