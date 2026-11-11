@@ -1,15 +1,26 @@
 <script setup lang="ts">
-import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
+import { siteConfig } from '../config/siteConfig'
+import logoManpica from '../assets/3.png'
+import logo3M from '../assets/3M_wordmark.svg.webp'
+import logoBellota from '../assets/bellota-logo-png_seeklogo-474288.png'
+import logoUyustools from '../assets/images (1).png'
+import logoEmtop from '../assets/images (2).png'
+import logoTolsen from '../assets/images.png'
+import logoStanley from '../assets/logo_stanley.png'
 
-function getBrandWhatsappUrl(brandName: string) {
-  return buildWhatsAppUrl(
-    `Hola Órbita Marketing, vi su página y quisiera consultar qué productos o repuestos de la marca ${brandName} tienen disponibles hoy en su local del ${siteConfig.business.mallShort}.`
-  )
-}
+const brandLogos = [
+  { name: 'Stanley', src: logoStanley },
+  { name: 'Tolsen', src: logoTolsen },
+  { name: 'Bellota', src: logoBellota },
+  { name: 'Emtop', src: logoEmtop },
+  { name: 'Uyustools', src: logoUyustools },
+  { name: 'Manpica', src: logoManpica },
+  { name: '3M', src: logo3M }
+]
 </script>
 
 <template>
-  <section id="marcas" class="scroll-mt-24 border-b border-neutral-200 bg-white py-16 text-[#121417] sm:py-22">
+  <section id="marcas" class="scroll-mt-24 border-b border-neutral-200 bg-white py-14 text-[#121417] sm:py-18">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Industrial Section Title -->
       <div class="flex flex-col items-start justify-between gap-4 border-b-2 border-[#121417] pb-6 md:flex-row md:items-end">
@@ -21,7 +32,7 @@ function getBrandWhatsappUrl(brandName: string) {
             Marcas que Distribuimos en Tienda
           </h2>
           <p class="mt-2 max-w-2xl text-sm font-medium text-neutral-600 sm:text-base">
-            Disponibilidad inmediata de marcas líderes en herramientas, electricidad, plomería y construcción en nuestro local del {{ siteConfig.business.mallShort }}.
+            Disponibilidad inmediata de marcas líderes en revestimientos, herramientas, electricidad y pinturas en nuestro local del {{ siteConfig.business.mallShort }}.
           </p>
         </div>
 
@@ -30,64 +41,28 @@ function getBrandWhatsappUrl(brandName: string) {
           <span>STOCK REAL EN {{ siteConfig.business.localNumber }}</span>
         </div>
       </div>
+    </div>
 
-      <!-- High-Contrast Dark & Orange Brand Marquee -->
-      <div class="relative mt-8 overflow-hidden bg-[#121417] py-4 text-white shadow-md">
-        <div class="animate-marquee flex items-center gap-6 px-4">
-          <div
-            v-for="(brand, idx) in [...siteConfig.brands, ...siteConfig.brands]"
-            :key="`${brand.id}-${idx}`"
-            class="flex shrink-0 items-center gap-3 border border-white/15 bg-[#181B20] px-5 py-2.5"
-          >
-            <span class="h-3 w-3 bg-[#f6892c]"></span>
-            <span class="text-sm font-black uppercase tracking-wider text-white sm:text-base">
-              {{ brand.name }}
-            </span>
-            <span class="bg-[#f6892c] px-2 py-0.5 text-[10px] font-black uppercase text-white">
-              {{ brand.badge }}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Industrial Brand Grid -->
-      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Tall, Background-Free Infinite Brand Logo Marquee -->
+    <div class="relative mt-10 w-full overflow-hidden py-6 sm:mt-12 sm:py-8">
+      <div class="animate-marquee flex items-center">
         <div
-          v-for="brand in siteConfig.brands"
-          :key="brand.id"
-          class="group flex flex-col justify-between border-2 border-neutral-200 bg-[#F9FAFB] p-5 transition duration-200 hover:-translate-y-0.5 hover:border-[#121417] hover:bg-white hover:shadow-lg"
+          v-for="copy in 2"
+          :key="copy"
+          class="flex shrink-0 items-center gap-14 pr-14 sm:gap-20 sm:pr-20 lg:gap-24 lg:pr-24"
         >
-          <div>
-            <!-- Brand Header Plate -->
-            <div class="flex items-center justify-between gap-2">
-              <span class="bg-[#121417] px-3 py-1.5 text-sm font-black uppercase tracking-wider text-[#f6892c]">
-                {{ brand.name }}
-              </span>
-              <span class="border border-[#f6892c]/30 bg-[#f6892c]/15 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#121417]">
-                {{ brand.badge }}
-              </span>
-            </div>
-
-            <p class="mt-3 text-xs font-extrabold uppercase tracking-wider text-neutral-500">
-              {{ brand.category }}
-            </p>
-            <p class="mt-1.5 text-xs leading-relaxed text-neutral-700">
-              {{ brand.description }}
-            </p>
-          </div>
-
-          <div class="mt-4 border-t border-neutral-200 pt-3">
-            <a
-              :href="getBrandWhatsappUrl(brand.name)"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex w-full items-center justify-between text-xs font-black uppercase tracking-wider text-[#121417] transition group-hover:text-[#f6892c]"
-            >
-              <span>Consultar {{ brand.name }}</span>
-              <span class="flex h-6 w-6 items-center justify-center bg-[#f6892c] text-white transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+          <div
+            v-for="brand in brandLogos"
+            :key="`${copy}-${brand.name}`"
+            class="flex shrink-0 items-center justify-center transition duration-300 hover:scale-105"
+          >
+            <img
+              :src="brand.src"
+              :alt="`Logo ${brand.name}`"
+              loading="lazy"
+              decoding="async"
+              class="h-12 w-auto max-w-[170px] object-contain sm:h-16 sm:max-w-[210px] lg:h-20 lg:max-w-[240px]"
+            />
           </div>
         </div>
       </div>
