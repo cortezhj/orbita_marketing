@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 
 const mobileMenuOpen = ref(false)
+const isScrolled = ref(false)
 const headerWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.header)
 
 const navLinks = [
@@ -12,17 +13,40 @@ const navLinks = [
   { label: 'MARCAS EN STOCK', href: '#marcas', hasArrow: false },
   { label: 'UBICACIÓN Y HORARIOS', href: '#ubicacion', hasArrow: false }
 ]
+
+function handleScroll() {
+  isScrolled.value = window.scrollY > 24
+}
+
+onMounted(() => {
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 bg-[#141414]/95 text-white backdrop-blur-md">
+  <header
+    class="fixed top-0 right-0 left-0 z-50 text-white transition-all duration-300"
+    :class="
+      isScrolled || mobileMenuOpen
+        ? 'bg-[#121212]/95 shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md'
+        : 'bg-transparent'
+    "
+  >
     <!-- Row 1: Brand Emblem (Left) + Location & Phone/WhatsApp Callout (Right) -->
     <div class="border-b border-white/10">
-      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-all duration-300 sm:px-6 lg:px-8"
+        :class="isScrolled ? 'py-2.5' : 'py-4 sm:py-5'"
+      >
         <!-- Left: Yellow Industrial Icon + Brand Name & Yellow Subtitle -->
         <a href="#" class="group flex items-center gap-3.5 focus:outline-none">
-          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded bg-[#FFB800]/15 text-[#FFB800] ring-1 ring-[#FFB800]/40 transition group-hover:bg-[#FFB800] group-hover:text-[#141414]">
-            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center text-[#FFB800] transition group-hover:scale-105">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -35,7 +59,7 @@ const navLinks = [
               {{ siteConfig.business.brandName }}
             </span>
             <span class="block text-[11px] font-semibold tracking-wide text-[#FFB800]">
-              Ferretería y Suministros • Lun-Dom
+              Ferretería y Suministros
             </span>
           </div>
         </a>
@@ -55,7 +79,7 @@ const navLinks = [
                 {{ siteConfig.business.mallShort }}
               </span>
               <span class="mt-0.5 block text-[11px] font-medium text-[#FFB800]">
-                {{ siteConfig.business.localNumber }} • 9:00 AM - 8:00 PM
+                {{ siteConfig.business.localNumber }} • Lun-Dom 9am-8pm
               </span>
             </div>
           </a>
@@ -78,9 +102,9 @@ const navLinks = [
                 :href="headerWhatsappUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-block border-b border-[#FFB800]/70 pb-0.5 text-[11px] font-bold text-[#FFB800] transition hover:border-[#FFB800] hover:text-amber-300"
+                class="inline-block border-b border-dashed border-[#FFB800]/80 pb-0.5 text-[11px] font-bold text-[#FFB800] transition hover:border-solid hover:text-amber-300"
               >
-                 escribir al WhatsApp directo
+                solicitar cotización
               </a>
             </div>
           </div>
@@ -103,9 +127,12 @@ const navLinks = [
       </div>
     </div>
 
-    <!-- Row 2: Left-Aligned Navigation Bar (Exact Reference Layout) -->
-    <div class="hidden border-b border-white/5 bg-[#111111]/90 md:block">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">
+    <!-- Row 2: Left-Aligned Navigation Bar (Transparent on Hero, Subtle Dark on Scroll) -->
+    <div
+      class="hidden transition-colors duration-300 md:block"
+      :class="isScrolled ? 'border-b border-white/10 bg-[#0D0D0D]/90' : 'bg-transparent'"
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <nav class="flex items-center gap-8" aria-label="Navegación principal">
           <a
             v-for="item in navLinks"
@@ -116,7 +143,7 @@ const navLinks = [
             <span>{{ item.label }}</span>
             <svg
               v-if="item.hasArrow"
-              class="h-3 w-3 text-[#FFB800]"
+              class="h-3 w-3 text-neutral-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -126,17 +153,13 @@ const navLinks = [
             </svg>
           </a>
         </nav>
-
-        <span class="text-[11px] font-semibold text-neutral-400">
-          Horario Centro Comercial: <strong class="text-white">Lun a Dom • {{ siteConfig.business.localNumber }}</strong>
-        </span>
       </div>
     </div>
 
     <!-- Mobile Menu Drawer -->
     <div
       v-if="mobileMenuOpen"
-      class="border-b border-white/10 bg-[#181818] px-4 py-4 md:hidden"
+      class="border-b border-white/10 bg-[#141414]/98 px-4 py-4 md:hidden"
     >
       <div class="flex flex-col gap-2.5">
         <a
@@ -149,7 +172,7 @@ const navLinks = [
           <span>{{ item.label }}</span>
           <span class="text-[#FFB800]">→</span>
         </a>
-        <div class="mt-2 rounded border border-[#FFB800]/30 bg-[#121212] p-3 text-xs text-neutral-300">
+        <div class="mt-2 rounded border border-[#FFB800]/30 bg-black/60 p-3 text-xs text-neutral-300">
           <p class="font-bold text-[#FFB800]">
             📍 {{ siteConfig.business.mallName }} — {{ siteConfig.business.localNumber }}
           </p>
