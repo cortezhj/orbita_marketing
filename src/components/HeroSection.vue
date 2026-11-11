@@ -21,7 +21,7 @@ const slides: HeroSlide[] = [
     headlineBottom: 'decoración, lavaplatos y duchas',
     description:
       'Transforma tus espacios con Wall Panel WPC, láminas decorativas tipo mármol, lavaplatos multifuncionales y duchas modernas en el C.C. Ciudad Crepuscular (Local PB-06).',
-    image: '/images/slide-revestimientos.jpg',
+    image: '/images/slide-revestimientos.png',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
     nodeX: 70,
@@ -33,7 +33,7 @@ const slides: HeroSlide[] = [
     headlineBottom: 'para cualquier proyecto',
     description:
       'Equípate con taladros, esmeriles, herramientas manuales y eléctricas, cemento, bloques y fijaciones para construcción y remodelación en Barquisimeto.',
-    image: '/images/slide-herramientas.jpg',
+    image: '/images/slide-herramientas.png',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Herramientas y artículos de Ferretería en el C.C. Ciudad Crepuscular.',
     nodeX: 48,
@@ -45,7 +45,7 @@ const slides: HeroSlide[] = [
     headlineBottom: 'para cualquier instalación',
     description:
       'Cables eléctricos, breakers termomagnéticos, tomacorrientes, interruptores modernos, paneles y reflectores LED con entrega inmediata en nuestro local PB-06.',
-    image: '/images/slide-electricidad.jpg',
+    image: '/images/slide-electricidad.png',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y necesito cotizar materiales de Electricidad e Iluminación en el C.C. Ciudad Crepuscular.',
     nodeX: 72,
@@ -57,7 +57,7 @@ const slides: HeroSlide[] = [
     headlineBottom: 'para renovar tus espacios',
     description:
       'Pinturas en caucho, esmaltes, impermeabilizantes Sika, siliconas, adhesivos para Wall Panel, cemento, pego, rodillos y brochas en el C.C. Ciudad Crepuscular.',
-    image: '/images/slide-pinturas.jpg',
+    image: '/images/slide-pinturas.png',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Acabados en el C.C. Ciudad Crepuscular.',
     nodeX: 124,
@@ -241,7 +241,7 @@ onUnmounted(() => {
               </button>
             </div>
 
-            <!-- Specialist With Product Showcase (Seamlessly Blended on Dark Background) -->
+            <!-- Specialist With Product Cutout PNG (Transparent Background) -->
             <div class="relative z-10 flex w-full items-center justify-center sm:w-[70%]">
               <!-- Subtle Warm Ambient Glow -->
               <div class="pointer-events-none absolute inset-10 rounded-full bg-[#f6892c]/12 blur-3xl"></div>
@@ -254,10 +254,10 @@ onUnmounted(() => {
                 height="540"
                 fetchpriority="high"
                 decoding="async"
-                class="h-72 w-full object-contain mix-blend-lighten transition-all duration-500 sm:h-84 lg:h-[360px]"
+                class="h-72 w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.75)] transition-all duration-500 sm:h-84 lg:h-[360px]"
                 style="
-                  -webkit-mask-image: radial-gradient(ellipse 82% 80% at 52% 48%, #000 62%, transparent 100%);
-                  mask-image: radial-gradient(ellipse 82% 80% at 52% 48%, #000 62%, transparent 100%);
+                  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+                  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
                 "
               />
             </div>
