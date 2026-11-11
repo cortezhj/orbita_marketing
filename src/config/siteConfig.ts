@@ -40,18 +40,19 @@ export const siteConfig = {
     brandName: 'Órbita Marketing',
     shortName: 'ÓRBITA',
     legalName: 'Órbita Marketing, C.A.',
-    rif: 'J-41298456-0',
+    rif: 'J500390335',
     logoUrl: '/Logo.png',
-    tagline: 'FERRETERÍA, HERRAMIENTAS Y SUMINISTROS',
+    tagline: 'REVESTIMIENTOS, WALL PANEL, FERRETERÍA Y CONSTRUCCIÓN',
     mallName: 'Centro Comercial Ciudad Crepuscular',
     mallShort: 'C.C. Ciudad Crepuscular',
     level: 'Planta Baja',
     localNumber: 'Local PB-06',
+    headerLocationSub: 'Local PB-06 • Lun-Sáb 8:30am - 6:30pm',
     shortAddress: 'Av. 20 entre calles 40 y 41 • Local PB-06',
     referencePoints: [
       'Avenida 20 entre calles 40 y 41, Barquisimeto 3001',
       'Centro Comercial Ciudad Crepuscular, Planta Baja, Local PB-06',
-      'Fácil acceso peatonal y vehicular en pleno centro comercial de Barquisimeto'
+      'Fácil acceso peatonal y vehicular en pleno centro de Barquisimeto'
     ],
     city: 'Barquisimeto 3001, Edo. Lara',
     fullAddress:
@@ -82,9 +83,9 @@ export const siteConfig = {
     header:
       'Hola Órbita Marketing, vi su página web y quiero consultar disponibilidad de un producto en el C.C. Ciudad Crepuscular (Local PB-06).',
     heroPrimary:
-      'Hola Órbita Marketing, vi su página y quiero cotizar unas herramientas y materiales para retirar en el C.C. Ciudad Crepuscular (Local PB-06).',
+      'Hola Órbita Marketing, vi su página y quiero cotizar revestimientos, wall panel, artefactos o materiales de ferretería en el C.C. Ciudad Crepuscular (Local PB-06).',
     catalogRequest:
-      'Hola Órbita Marketing, vi su página y me gustaría recibir el catálogo actualizado con lista de precios por WhatsApp.',
+      'Hola Órbita Marketing, vi su página y me gustaría recibir el catálogo actualizado de revestimientos, artefactos y ferretería por WhatsApp.',
     locationHelp:
       'Hola Órbita Marketing, voy en camino al C.C. Ciudad Crepuscular en la Av. 20. ¿Me confirman la ubicación del Local PB-06?'
   },
@@ -98,11 +99,27 @@ export const siteConfig = {
     {
       days: 'Domingos y Feriados',
       hours: '9:00 AM – 3:00 PM',
-      note: 'Atención presencial y despacho rápido'
+      note: 'Atención previa cita y despacho rápido'
     }
   ] as ScheduleItem[],
 
   brands: [
+    {
+      id: 'wallpanel',
+      name: 'WALL PANEL & WPC',
+      category: 'Revestimientos y Decoración Interior/Exterior',
+      badge: 'Tendencia 2026',
+      accentColor: '#f6892c',
+      description: 'Paneles acanalados WPC, láminas tipo mármol UV, jardines verticales y perfiles.'
+    },
+    {
+      id: 'artefactos',
+      name: 'LAVAPLATOS Y DUCHAS',
+      category: 'Artefactos de Cocina y Baño',
+      badge: 'Exhibición en Local',
+      accentColor: '#f6892c',
+      description: 'Lavaplatos multifuncionales e inoxidables, duchas tipo lluvia, columnas y grifería.'
+    },
     {
       id: 'dewalt',
       name: 'DeWALT',
@@ -110,14 +127,6 @@ export const siteConfig = {
       badge: 'Garantía Oficial',
       accentColor: '#f6892c',
       description: 'Taladros percutores, esmeriles inalámbricos, baterías 20V MAX y accesorios.'
-    },
-    {
-      id: 'stanley',
-      name: 'STANLEY',
-      category: 'Herramientas Manuales y Precisión',
-      badge: 'En Stock',
-      accentColor: '#f6892c',
-      description: 'Cintas métricas, juegos de llaves, destornilladores y cajas organizadoras.'
     },
     {
       id: 'truper',
@@ -133,39 +142,15 @@ export const siteConfig = {
       category: 'Maquinaria y Herramientas Pro',
       badge: 'Alto Desempeño',
       accentColor: '#f6892c',
-      description: 'Bombas periféricas, compresores, pistolas de pintar y kits para el hogar.'
-    },
-    {
-      id: 'bosch',
-      name: 'BOSCH',
-      category: 'Equipos Eléctricos y Brocas',
-      badge: 'Original Certificado',
-      accentColor: '#14171C',
-      description: 'Rotomartillos, discos diamantados, mechas para concreto/metal y lijadoras.'
-    },
-    {
-      id: 'bticino',
-      name: 'BTICINO',
-      category: 'Material Eléctrico Residencial',
-      badge: 'Alta Rotación',
-      accentColor: '#f6892c',
-      description: 'Tomacorrientes, interruptores, breakers, tableros y protección eléctrica.'
-    },
-    {
-      id: 'pavco',
-      name: 'PAVCO WAVIN',
-      category: 'Tuberías y Conexiones PVC / CPVC',
-      badge: 'Línea Completa',
-      accentColor: '#14171C',
-      description: 'Tuberías de aguas blancas, aguas servidas, conexiones y soldadura líquida.'
+      description: 'Taladros, compresores, pistolas de pintar y kits de herramientas profesionales.'
     },
     {
       id: 'sika',
       name: 'SIKA',
-      category: 'Adhesivos e Impermeabilizantes',
+      category: 'Adhesivos, Pego e Impermeabilizantes',
       badge: 'Línea Construcción',
       accentColor: '#f6892c',
-      description: 'Sikaflex, aditivos para concreto, selladores de poliuretano y epóxicos.'
+      description: 'Sikaflex, aditivos para concreto, selladores de poliuretano para wall panel y obra.'
     },
     {
       id: 'vp',
@@ -176,110 +161,94 @@ export const siteConfig = {
       description: 'Caucho clase A y B, esmaltes anticorrosivos, fondos y selladores antialcalinos.'
     },
     {
-      id: 'coflex',
-      name: 'COFLEX',
-      category: 'Plomería y Grifería',
-      badge: 'Repuestos Originales',
-      accentColor: '#f6892c',
-      description: 'Mangueras flexibles, herrajes para WC, sifones, desagües y llaves de arresto.'
-    },
-    {
-      id: 'osram',
-      name: 'OSRAM / LEDVANCE',
-      category: 'Iluminación LED Comercial y Hogar',
-      badge: 'Ahorro Energético',
-      accentColor: '#f6892c',
-      description: 'Paneles LED empotrables/superficiales, reflectores IP65, tubos y bombillos.'
-    },
-    {
-      id: '3m',
-      name: '3M INDUSTRIAL',
-      category: 'Cintas Eléctricas, Abrasivos y EPP',
-      badge: 'Calidad Industrial',
+      id: 'cemento',
+      name: 'CEMENTO Y BLOQUES',
+      category: 'Obra Gris y Construcción',
+      badge: 'Despacho Rápido',
       accentColor: '#14171C',
-      description: 'Teipe eléctrico Scotch Super 33+, lijas al agua, mascarillas y adhesivos.'
+      description: 'Cemento gris, pego blanco/gris, bloques de arcilla y concreto, cal y agregados.'
     }
   ] as BrandItem[],
 
   categories: [
     {
-      id: 'herramientas-manuales-electricas',
-      title: 'Herramientas Manuales y Eléctricas',
-      subtitle: 'POTENCIA Y PRECISIÓN • USO PROFESIONAL Y HOGAR',
-      badge: 'GARANTÍA EN TIENDA',
+      id: 'revestimientos-wall-panel-decoracion',
+      title: 'Revestimientos, Wall Panel y Decoración',
+      subtitle: 'DISEÑO MODERNO • ACABADOS DE LUJO PARA HOGAR Y COMERCIO',
+      badge: 'ESPECIALIDAD DE LA CASA',
       description:
-        'Equípate con herramientas originales de alto desempeño. Asesoría técnica en mostrador para elegir el equipo y consumible exacto para tu trabajo.',
+        'Transforma tus espacios en horas con nuestra línea exclusiva de revestimientos arquitectónicos, Wall Panels WPC acanalados y láminas decorativas.',
       highlights: [
-        'Taladros percutores, rotomartillos, esmeriles de 4-1/2" y atornilladores',
-        'Juegos de llaves combinadas, dados, alicates, destornilladores y niveles',
-        'Discos de corte para metal/concreto, mechas SDS/HSS y puntas imantadas',
-        'Cajas de herramientas, multímetros digitales y equipos de protección'
+        'Wall Panel WPC interior y exterior en variedad de tonos madera y modernos',
+        'Láminas UV tipo mármol de alto brillo, pisos vinílicos SPC y grama artificial',
+        'Follaje artificial, perfiles de terminación, esquineros y luces LED integrables',
+        'Adhesivos de montaje de alto agarre y asesoría para calcular tu metraje exacto'
       ],
-      popularBrands: ['DeWalt', 'Truper', 'Bosch', 'Stanley'],
+      popularBrands: ['WPC Wall Panel', 'Láminas UV', 'Pisos SPC', 'Sika'],
       whatsappMessage:
-        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Herramientas Manuales y Eléctricas.',
-      image: '/images/cat-herramientas.webp',
-      theme: 'dark',
-      iconName: 'wrench'
-    },
-    {
-      id: 'electricidad-iluminacion',
-      title: 'Electricidad e Iluminación',
-      subtitle: 'INSTALACIONES SEGURAS • PROTECCIÓN Y LED',
-      badge: 'STOCK INMEDIATO',
-      description:
-        'Todo para remodelaciones residenciales y locales comerciales: cableado certificado, protección térmica e iluminación LED decorativa e industrial.',
-      highlights: [
-        'Cables THHN / TW #8, #10, #12 y #14 (por metro o rollo)',
-        'Breakers termomagnéticos, tableros y protectores de voltaje 110V/220V',
-        'Paneles LED, reflectores exteriores IP65, cintas LED y sensores',
-        'Tomacorrientes, interruptores modernos, cajetines y canaletas'
-      ],
-      popularBrands: ['Bticino', 'Osram', 'Exceline', '3M'],
-      whatsappMessage:
-        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio en la categoría de Electricidad e Iluminación.',
+        'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel y Decoración en el C.C. Ciudad Crepuscular.',
       image: '/images/cat-electricidad.webp',
-      theme: 'light',
+      theme: 'dark',
       iconName: 'bolt'
     },
     {
-      id: 'plomeria-tuberias',
-      title: 'Plomería y Tuberías',
-      subtitle: 'SOLUCIONES CERO FUGAS • AGUA Y PRESIÓN',
-      badge: 'REPUESTOS Y CONEXIONES',
+      id: 'lavaplatos-duchas-artefactos',
+      title: 'Lavaplatos, Duchas y Artefactos',
+      subtitle: 'COCINAS Y BAÑOS • FUNCIONALIDAD Y ELEGANCIA',
+      badge: 'EXHIBICIÓN EN TIENDA',
       description:
-        'Encuentra desde el empaque o herraje específico para una emergencia doméstica hasta sistemas completos de tuberías, llaves de paso y bombas de agua.',
+        'Equipa tu cocina y baño con artefactos modernos de alta durabilidad. Ven a verlos directamente en nuestra exhibición del Local PB-06.',
       highlights: [
-        'Tuberías y conexiones en PVC, CPVC y Termofusión (1/2", 3/4", 1", 2", 4")',
-        'Grifería para lavamanos, fregaderos, duchas y llaves de arresto',
-        'Herrajes universales para sanitarios, canillas flexibles y sifones',
-        'Bombas periféricas, presurizadores automáticos, teflón y pega PVC'
+        'Lavaplatos inteligentes multifuncionales (cascada) y de acero inoxidable',
+        'Columnas de ducha hidromasaje, regaderas tipo lluvia y monocontroles',
+        'Grifería moderna para lavamanos y fregaderos en negro mate, cromo y dorado',
+        'Espejos LED, accesorios de baño y desagües automáticos'
       ],
-      popularBrands: ['Pavco', 'Coflex', 'Ingco', 'Griven'],
+      popularBrands: ['Lavaplatos Cascada', 'Duchas Pro', 'Grifería', 'Accesorios'],
       whatsappMessage:
-        'Hola Órbita Marketing, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías.',
+        'Hola Órbita Marketing, vi su página y quiero consultar modelos y precios de Lavaplatos, Duchas y Artefactos.',
       image: '/images/cat-plomeria.webp',
       theme: 'light',
       iconName: 'droplet'
     },
     {
-      id: 'pinturas-adhesivos-construccion',
-      title: 'Pinturas, Adhesivos y Construcción Ligera',
-      subtitle: 'ACABADOS DURADEROS • IMPERMEABILIZACIÓN Y FIJACIÓN',
+      id: 'ferreteria-herramientas',
+      title: 'Ferretería y Herramientas',
+      subtitle: 'POTENCIA Y PRECISIÓN • USO PROFESIONAL Y HOGAR',
+      badge: 'GARANTÍA EN TIENDA',
+      description:
+        'Ahora somos tu ferretería completa en el C.C. Ciudad Crepuscular: herramientas eléctricas, manuales, consumibles y material eléctrico.',
+      highlights: [
+        'Taladros percutores, atornilladores inalámbricos, esmeriles y rotomartillos',
+        'Juegos de llaves, alicates, destornilladores, cintas métricas y niveles láser',
+        'Discos de corte, mechas para concreto/metal/madera, tornillería y chazos',
+        'Cables eléctricos, breakers, tomacorrientes, paneles y reflectores LED'
+      ],
+      popularBrands: ['DeWalt', 'Truper', 'Ingco', 'Stanley'],
+      whatsappMessage:
+        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Ferretería y Herramientas.',
+      image: '/images/cat-herramientas.webp',
+      theme: 'dark',
+      iconName: 'wrench'
+    },
+    {
+      id: 'cemento-bloques-pinturas',
+      title: 'Cemento, Bloques y Pinturas',
+      subtitle: 'CONSTRUCCIÓN Y ACABADOS • OBRA GRIS Y RENOVACIÓN',
       badge: 'ALTA DEMANDA',
       description:
-        'Renueva y protege cualquier espacio con pinturas lavables, selladores de alto agarre, impermeabilizantes y accesorios para tabiquería y fijación.',
+        'Desde los materiales de construcción pesada como cemento y bloques hasta las pinturas, selladores e impermeabilizantes para el acabado final.',
       highlights: [
-        'Pinturas en caucho mate/satinado, esmaltes sintéticos y fondos anticorrosivos',
-        'Siliconas acéticas/neutras, Sikaflex, epóxicos de 2 componentes y pega amarilla',
-        'Impermeabilizantes acrílicos, manto asfáltico en frío y pasta profesional',
-        'Brochas, rodillos antigota, cintas de enmascarar, chazos, tornillería y drywall'
+        'Sacos de cemento gris, pego para cerámica/porcelanato, pasta profesional y cal',
+        'Bloques para tabiquería y construcción, malla electrosoldada y agregados',
+        'Pinturas en caucho clase A y B, esmaltes, fondos anticorrosivos e impermeabilizantes',
+        'Rodillos antigota, brochas, siliconas, Sikaflex y cintas de enmascarar'
       ],
-      popularBrands: ['Sika', 'Venezolana de Pinturas', '3M', 'Truper'],
+      popularBrands: ['Cemento', 'Sika', 'Venezolana de Pinturas', '3M'],
       whatsappMessage:
-        'Hola Órbita Marketing, vi su página y quiero cotizar productos de Pinturas, Adhesivos y Construcción Ligera.',
+        'Hola Órbita Marketing, vi su página y quiero cotizar Cemento, Bloques y Pinturas.',
       image: '/images/cat-pinturas.webp',
-      theme: 'dark',
+      theme: 'light',
       iconName: 'paint'
     }
   ] as ProductCategory[],
@@ -287,25 +256,25 @@ export const siteConfig = {
   storePhotos: [
     {
       id: 'fachada-cc',
-      title: 'Fachada Principal en Planta Baja - Local PB-06',
+      title: 'Showroom y Tienda en Planta Baja - Local PB-06',
       caption:
-        'Ubicados en el C.C. Ciudad Crepuscular (Av. 20 entre calles 40 y 41, Barquisimeto) con atención directa en mostrador.',
+        'Ubicados en el C.C. Ciudad Crepuscular (Barquisimeto) con exhibición real de Wall Panel, lavaplatos, duchas y ferretería.',
       badge: 'Local Verificado',
       image: '/images/local-fachada.webp'
     },
     {
       id: 'pasillo-herramientas',
-      title: 'Exhibición de Herramientas y Equipos Eléctricos',
+      title: 'Área de Ferretería y Herramientas',
       caption:
-        'Stock real a la vista de marcas líderes como DeWalt, Truper, Bosch y Stanley listas para entrega inmediata.',
+        'Stock real a la vista de herramientas manuales, eléctricas, adhesivos y fijaciones listas para entrega inmediata.',
       badge: 'Inventario Real',
       image: '/images/local-pasillo.webp'
     },
     {
       id: 'mostrador-asesoria',
-      title: 'Mostrador Técnico de Electricidad y Plomería',
+      title: 'Asesoría en Revestimientos, Pinturas y Construcción',
       caption:
-        'Trae tu muestra o lista de materiales: nuestros asesores te ayudan a encontrar la conexión, breaker o repuesto exacto.',
+        'Te ayudamos a calcular la cantidad exacta de paneles, pintura, cemento, bloques o materiales para tu remodelación.',
       badge: 'Asesoría Técnica',
       image: '/images/local-mostrador.webp'
     }

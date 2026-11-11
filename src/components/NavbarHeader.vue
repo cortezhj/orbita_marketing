@@ -37,24 +37,25 @@ onUnmounted(() => {
         : 'bg-transparent'
     "
   >
-    <!-- Row 1: Logo Image (Left) + Short Address & Phone/WhatsApp Callout (Right) -->
+    <!-- Row 1: Larger Logo Image (Left) + Location (Local + Schedule) & Phone (Phone + RIF) (Right) -->
     <div class="border-b border-white/15">
       <div
         class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-all duration-300 sm:px-6 lg:px-8"
-        :class="isScrolled ? 'py-2.5' : 'py-3.5 sm:py-4'"
+        :class="isScrolled ? 'py-2' : 'py-3 sm:py-3.5'"
       >
-        <!-- Left: Logo Image from /Logo.png replacing the header title -->
+        <!-- Left: Larger Logo Image from /Logo.png -->
         <a href="#" class="group flex items-center focus:outline-none">
           <img
             :src="siteConfig.business.logoUrl"
             :alt="siteConfig.business.legalName"
-            class="h-9 w-auto object-contain transition duration-200 group-hover:scale-[1.02] sm:h-11"
+            class="w-auto object-contain transition-all duration-200 group-hover:scale-[1.02]"
+            :class="isScrolled ? 'h-11 sm:h-13' : 'h-13 sm:h-16 md:h-18'"
           />
         </a>
 
-        <!-- Right: Short Address Block + Phone / WhatsApp Callback Block -->
+        <!-- Right: Location (Local + Horario) + Phone (+ RIF J500390335) -->
         <div class="flex items-center gap-6 lg:gap-10">
-          <!-- Location Pin Item (Short Address) -->
+          <!-- Location Pin Item: C.C. Ciudad Crepuscular / Local + Horario -->
           <a
             href="#ubicacion"
             class="hidden items-start gap-2.5 text-left transition hover:opacity-90 md:flex"
@@ -66,13 +67,13 @@ onUnmounted(() => {
               <span class="block text-sm font-bold leading-tight text-white">
                 {{ siteConfig.business.mallShort }}
               </span>
-              <span class="mt-0.5 block text-[11px] font-medium text-[#f6892c]">
-                {{ siteConfig.business.shortAddress }}
+              <span class="mt-0.5 block text-[11px] font-semibold text-[#f6892c]">
+                {{ siteConfig.business.headerLocationSub }}
               </span>
             </div>
           </a>
 
-          <!-- Phone & WhatsApp Direct Action -->
+          <!-- Phone & RIF J500390335 Underneath -->
           <div class="flex items-start gap-2.5">
             <svg class="mt-0.5 hidden h-5 w-5 shrink-0 text-[#f6892c] sm:block" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
@@ -86,14 +87,9 @@ onUnmounted(() => {
               >
                 {{ siteConfig.business.phoneDisplay }}
               </a>
-              <a
-                :href="headerWhatsappUrl"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block border-b border-dashed border-[#f6892c]/80 pb-0.5 text-[11px] font-bold text-[#f6892c] transition hover:border-solid hover:text-[#ff9f4d]"
-              >
-                solicitar cotización
-              </a>
+              <span class="block text-[11px] font-bold tracking-wider text-[#f6892c]">
+                RIF: {{ siteConfig.business.rif }}
+              </span>
             </div>
           </div>
 
@@ -115,12 +111,12 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- Row 2: Left-Aligned Navigation Bar with Thin White Line on BOTH Top (from Row 1) and Bottom -->
+    <!-- Row 2: Left-Aligned Navigation Bar with Thin White Line on Top and Bottom -->
     <div
       class="hidden border-b border-white/15 transition-colors duration-300 md:block"
       :class="isScrolled ? 'bg-[#0D0D0D]/90' : 'bg-transparent'"
     >
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">
         <nav class="flex items-center gap-8" aria-label="Navegación principal">
           <a
             v-for="item in navLinks"
@@ -162,9 +158,9 @@ onUnmounted(() => {
         </a>
         <div class="mt-2 rounded border border-[#f6892c]/30 bg-black/60 p-3 text-xs text-neutral-300">
           <p class="font-bold text-[#f6892c]">
-            📍 {{ siteConfig.business.mallShort }} — {{ siteConfig.business.shortAddress }}
+            📍 {{ siteConfig.business.mallShort }} — {{ siteConfig.business.headerLocationSub }}
           </p>
-          <p class="mt-1">Tel: {{ siteConfig.business.phoneDisplay }}</p>
+          <p class="mt-1">Tel: {{ siteConfig.business.phoneDisplay }} • RIF: {{ siteConfig.business.rif }}</p>
         </div>
       </div>
     </div>

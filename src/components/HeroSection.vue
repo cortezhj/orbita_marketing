@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import heroBackgroundUrl from '../assets/background.avif'
-import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
+import { buildWhatsAppUrl } from '../config/siteConfig'
 
 interface HeroSlide {
   shortLabel: string
@@ -16,65 +16,91 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    shortLabel: 'ELECTRICIDAD',
-    headlineTop: 'ELECTRICIDAD Y LED',
-    headlineBottom: 'para cualquier instalación',
+    shortLabel: 'WALL PANEL Y DECO',
+    headlineTop: 'WALL PANEL Y DECORACIÓN',
+    headlineBottom: 'revestimientos, lavaplatos y duchas',
     description:
-      'Cables THHN, breakers termomagnéticos, tomacorrientes Bticino, paneles y reflectores LED disponibles hoy en el C.C. Ciudad Crepuscular (Local PB-06).',
-    image: '/images/cat-electricidad.webp',
+      'Transforma tus espacios con nuestra línea de revestimientos, Wall Panel WPC, láminas decorativas, lavaplatos multifuncionales, duchas y grifería moderna en el C.C. Ciudad Crepuscular (Local PB-06).',
+    image: '/images/hero-wallpanel.png',
     whatsappMessage:
-      'Hola Órbita Marketing, vi su página y quiero cotizar materiales de Electricidad e Iluminación en el C.C. Ciudad Crepuscular.',
+      'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
     nodeX: 74,
     nodeY: 64
   },
   {
     shortLabel: 'HERRAMIENTAS',
-    headlineTop: 'HERRAMIENTAS PRO',
-    headlineBottom: 'para cualquier trabajo',
+    headlineTop: 'FERRETERÍA Y HERRAMIENTAS',
+    headlineBottom: 'para cualquier proyecto',
     description:
-      'Venta de herramientas eléctricas, manuales, plomería y materiales para todo tipo de trabajos de construcción, remodelación y mantenimiento en el C.C. Ciudad Crepuscular, Barquisimeto.',
-    image: '/images/hero-local.webp',
-    whatsappMessage: siteConfig.defaultWhatsappMessages.heroPrimary,
+      'Ahora también somos tu ferretería de confianza en Barquisimeto: taladros, esmeriles, herramientas manuales y eléctricas, electricidad, iluminación LED y fijaciones.',
+    image: '/images/hero-herramientas.png',
+    whatsappMessage:
+      'Hola Órbita Marketing, vi su página y quiero cotizar Herramientas y artículos de Ferretería en el C.C. Ciudad Crepuscular.',
     nodeX: 52,
     nodeY: 158
   },
   {
-    shortLabel: 'PLOMERÍA',
-    headlineTop: 'PLOMERÍA Y TUBERÍAS',
-    headlineBottom: 'para cualquier reparación',
+    shortLabel: 'CEMENTO Y BLOQUES',
+    headlineTop: 'CEMENTO Y BLOQUES',
+    headlineBottom: 'materiales de construcción',
     description:
-      'Tuberías y conexiones PVC/CPVC, grifería, llaves de paso, herrajes sanitarios y bombas de agua con entrega inmediata en nuestro mostrador del Local PB-06.',
-    image: '/images/cat-plomeria.webp',
+      'Todo para tu obra y remodelación en un solo lugar: sacos de cemento, pego, bloques, aditivos e impermeabilizantes con atención directa en el C.C. Ciudad Crepuscular.',
+    image: '/images/hero-cemento.png',
     whatsappMessage:
-      'Hola Órbita Marketing, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías en el C.C. Ciudad Crepuscular.',
+      'Hola Órbita Marketing, vi su página y necesito cotizar Cemento, Bloques y Materiales de Construcción.',
     nodeX: 76,
     nodeY: 252
   },
   {
     shortLabel: 'PINTURAS',
-    headlineTop: 'PINTURAS Y SELLADORES',
-    headlineBottom: 'para cualquier acabado',
+    headlineTop: 'PINTURAS Y ACABADOS',
+    headlineBottom: 'para renovar tus espacios',
     description:
-      'Pinturas en caucho clase A, esmaltes, impermeabilizantes Sika, siliconas, adhesivos epóxicos y fijaciones para renovar y proteger tu hogar o local.',
-    image: '/images/cat-pinturas.webp',
+      'Pinturas en caucho, esmaltes, impermeabilizantes Sika, siliconas, adhesivos para Wall Panel, rodillos y brochas con disponibilidad inmediata en nuestro local PB-06.',
+    image: '/images/hero-pinturas.png',
     whatsappMessage:
-      'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Construcción Ligera en el C.C. Ciudad Crepuscular.',
+      'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Acabados en el C.C. Ciudad Crepuscular.',
     nodeX: 132,
     nodeY: 332
   }
 ]
 
-const activeIndex = ref(1)
+const activeIndex = ref(0)
+let autoplayTimer: ReturnType<typeof setInterval> | null = null
 
-const currentSlide = computed(() => slides[activeIndex.value] ?? slides[1]!)
+const currentSlide = computed(() => slides[activeIndex.value] ?? slides[0]!)
 const currentWhatsappUrl = computed(() =>
   buildWhatsAppUrl(currentSlide.value.whatsappMessage)
 )
+
+function selectSlide(idx: number) {
+  activeIndex.value = idx
+  restartAutoplay()
+}
+
+function startAutoplay() {
+  autoplayTimer = setInterval(() => {
+    activeIndex.value = (activeIndex.value + 1) % slides.length
+  }, 4200)
+}
+
+function restartAutoplay() {
+  if (autoplayTimer) clearInterval(autoplayTimer)
+  startAutoplay()
+}
+
+onMounted(() => {
+  startAutoplay()
+})
+
+onUnmounted(() => {
+  if (autoplayTimer) clearInterval(autoplayTimer)
+})
 </script>
 
 <template>
-  <!-- Hero extends under the fixed transparent Header & Menu (pt-28 / lg:pt-38) -->
-  <section class="relative overflow-hidden bg-[#0a0a0a] pt-28 text-white sm:pt-34 lg:pt-38">
+  <!-- Exact Screen-Sized Hero (h-dvh) with Fixed Header Clearance and Bottom Jagged Divider -->
+  <section class="relative flex min-h-[580px] flex-col justify-between overflow-hidden bg-[#0a0a0a] pt-26 text-white sm:pt-30 lg:h-dvh lg:max-h-dvh lg:pt-32">
     <!-- Background Image from src/assets/background.avif with Dark Black Overlay -->
     <div class="pointer-events-none absolute inset-0">
       <img
@@ -85,7 +111,7 @@ const currentWhatsappUrl = computed(() =>
         decoding="async"
         class="h-full w-full object-cover opacity-40 brightness-75 contrast-125"
       />
-      <!-- Rich dark black overlay + vignette so the cement texture blends into a deep dark background -->
+      <!-- Rich dark black overlay + vignette -->
       <div
         class="absolute inset-0 bg-black/55"
         style="
@@ -94,29 +120,29 @@ const currentWhatsappUrl = computed(() =>
       ></div>
     </div>
 
-    <!-- Main Hero Container -->
-    <div class="relative mx-auto max-w-7xl px-4 pt-6 pb-20 sm:px-6 sm:pt-10 sm:pb-24 lg:px-8 lg:pt-12 lg:pb-28">
-      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-4">
-        <!-- Left Column: Brand Orange (#f6892c) 2-Line Headline + Description + Clean Modern CTA Button -->
-        <div class="lg:col-span-5">
-          <h1 class="text-3xl font-black tracking-tight text-[#f6892c] drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.12]">
+    <!-- Main Hero Container (Centered Vertically Inside Screen Height) -->
+    <div class="relative mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-4 sm:px-6 lg:px-8">
+      <div class="grid w-full items-center gap-6 lg:grid-cols-12 lg:gap-4">
+        <!-- Left Column: Brand Orange (#f6892c) Headline + Description + Clean Modern CTA Button -->
+        <div class="lg:col-span-6">
+          <h1 class="text-3xl font-black tracking-tight text-[#f6892c] drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] sm:text-4xl lg:text-[3.1rem] lg:leading-[1.1]">
             <span class="block uppercase">{{ currentSlide.headlineTop }}</span>
             <span class="mt-1 block font-extrabold text-[#f6892c]">
               {{ currentSlide.headlineBottom }}
             </span>
           </h1>
 
-          <p class="mt-6 max-w-md text-xs leading-relaxed text-neutral-200/90 sm:text-sm">
+          <p class="mt-4 max-w-lg text-xs leading-relaxed text-neutral-200/90 sm:text-sm">
             {{ currentSlide.description }}
           </p>
 
           <!-- Clean, Refined Brand-Orange Button -->
-          <div class="mt-9">
+          <div class="mt-7">
             <a
               :href="currentWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-3 rounded-lg bg-[#f6892c] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-lg shadow-black/45 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99] sm:text-sm"
+              class="group inline-flex items-center justify-center gap-3 rounded-lg bg-[#f6892c] px-8 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-lg shadow-black/45 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99] sm:text-sm"
             >
               <span>Cotizar Ahora</span>
               <svg
@@ -132,11 +158,11 @@ const currentWhatsappUrl = computed(() =>
           </div>
         </div>
 
-        <!-- Right Column: Orbital Arc Selector + Cutout Blended Equipment/Tool (No Numbering) -->
-        <div class="relative lg:col-span-7">
-          <div class="relative mx-auto flex min-h-[320px] max-w-2xl items-center justify-end sm:min-h-[380px]">
-            <!-- Desktop Curved Orbital Arc with 4 Interactive Category Nodes -->
-            <div class="pointer-events-none absolute inset-y-0 left-2 z-20 hidden w-72 sm:block lg:left-6">
+        <!-- Right Column: Orbital Arc Selector + Half-Body Cutout Worker from Assets -->
+        <div class="relative lg:col-span-6">
+          <div class="relative mx-auto flex max-w-xl items-center justify-end">
+            <!-- Desktop Curved Orbital Arc with 4 Auto-Rotating & Clickable Category Nodes -->
+            <div class="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-68 sm:block">
               <svg
                 viewBox="0 0 220 380"
                 class="h-full w-full overflow-visible"
@@ -154,7 +180,7 @@ const currentWhatsappUrl = computed(() =>
                   v-for="(slide, idx) in slides"
                   :key="slide.shortLabel"
                   class="pointer-events-auto cursor-pointer"
-                  @click="activeIndex = idx"
+                  @click="selectSlide(idx)"
                 >
                   <!-- Soft Outer Halo Ring when Active -->
                   <circle
@@ -162,13 +188,13 @@ const currentWhatsappUrl = computed(() =>
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
                     r="12"
-                    fill="rgba(255, 255, 255, 0.22)"
+                    fill="rgba(246, 137, 44, 0.32)"
                   />
                   <!-- Core Dot -->
                   <circle
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
-                    :r="activeIndex === idx ? 5 : 3.5"
+                    :r="activeIndex === idx ? 5.5 : 3.5"
                     :fill="activeIndex === idx ? '#FFFFFF' : 'rgba(255,255,255,0.38)'"
                   />
                 </g>
@@ -189,14 +215,14 @@ const currentWhatsappUrl = computed(() =>
                   top: `${(slide.nodeY / 380) * 100}%`,
                   right: `${100 - (slide.nodeX / 220) * 100 + 7}%`
                 }"
-                @click="activeIndex = idx"
+                @click="selectSlide(idx)"
               >
                 {{ slide.shortLabel }}
               </button>
             </div>
 
             <!-- Mobile Category Selector Pills -->
-            <div class="mb-4 flex flex-wrap gap-1.5 sm:hidden">
+            <div class="mb-3 flex flex-wrap gap-1.5 sm:hidden">
               <button
                 v-for="(slide, idx) in slides"
                 :key="slide.shortLabel"
@@ -207,34 +233,31 @@ const currentWhatsappUrl = computed(() =>
                     ? 'bg-[#f6892c] text-white'
                     : 'bg-white/10 text-neutral-300'
                 "
-                @click="activeIndex = idx"
+                @click="selectSlide(idx)"
               >
                 {{ slide.shortLabel }}
               </button>
             </div>
 
-            <!-- Frameless Blended Equipment/Tool Showcase -->
-            <div class="relative z-10 w-full sm:w-[72%]">
-              <!-- Subtle Warm Spotlight Behind Equipment -->
-              <div class="pointer-events-none absolute inset-6 rounded-full bg-white/10 blur-3xl"></div>
+            <!-- Half-Body Cutout Image from Assets (Transparent Background) -->
+            <div class="relative z-10 flex w-full items-center justify-center sm:w-[70%]">
+              <!-- Subtle Warm Spotlight Behind Cutout -->
+              <div class="pointer-events-none absolute inset-8 rounded-full bg-[#f6892c]/12 blur-3xl"></div>
 
-              <div class="relative flex items-center justify-center">
-                <img
-                  :src="currentSlide.image"
-                  :alt="currentSlide.headlineTop"
-                  width="720"
-                  height="480"
-                  fetchpriority="high"
-                  decoding="async"
-                  class="h-64 w-full object-cover transition duration-300 sm:h-82"
-                  style="
-                    -webkit-mask-image: radial-gradient(ellipse 78% 74% at 52% 50%, #000 55%, transparent 100%);
-                    mask-image: radial-gradient(ellipse 78% 74% at 52% 50%, #000 55%, transparent 100%);
-                  "
-                />
-                <!-- Ground Contact Shadow under the Equipment -->
-                <div class="pointer-events-none absolute -bottom-3 h-7 w-4/5 rounded-full bg-black/85 blur-xl"></div>
-              </div>
+              <img
+                :key="currentSlide.image"
+                :src="currentSlide.image"
+                :alt="currentSlide.headlineTop"
+                width="650"
+                height="540"
+                fetchpriority="high"
+                decoding="async"
+                class="h-64 w-auto max-w-full object-contain drop-shadow-[0_18px_35px_rgba(0,0,0,0.85)] transition-all duration-500 sm:h-80 lg:h-[360px]"
+                style="
+                  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+                  mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+                "
+              />
             </div>
           </div>
         </div>
@@ -242,12 +265,12 @@ const currentWhatsappUrl = computed(() =>
     </div>
 
     <!-- Rugged / Torn Paper-Asphalt White Bottom Divider -->
-    <div class="relative z-20 -mb-px w-full overflow-hidden leading-none">
+    <div class="relative z-20 -mb-px w-full shrink-0 overflow-hidden leading-none">
       <svg
         viewBox="0 0 1440 44"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="h-7 w-full sm:h-10"
+        class="h-6 w-full sm:h-8"
         preserveAspectRatio="none"
       >
         <path

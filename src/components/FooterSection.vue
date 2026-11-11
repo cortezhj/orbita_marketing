@@ -83,22 +83,22 @@ const currentYear = new Date().getFullYear()
             </li>
             <li>
               <a href="#categorias" class="text-neutral-300 transition hover:text-[#f6892c]">
-                Herramientas Manuales y Eléctricas
+                Revestimientos, Wall Panel y Decoración
               </a>
             </li>
             <li>
               <a href="#categorias" class="text-neutral-300 transition hover:text-[#f6892c]">
-                Electricidad e Iluminación
+                Lavaplatos, Duchas y Artefactos
               </a>
             </li>
             <li>
               <a href="#categorias" class="text-neutral-300 transition hover:text-[#f6892c]">
-                Plomería y Tuberías
+                Ferretería y Herramientas
               </a>
             </li>
             <li>
               <a href="#categorias" class="text-neutral-300 transition hover:text-[#f6892c]">
-                Pinturas, Adhesivos y Construcción
+                Cemento, Bloques y Pinturas
               </a>
             </li>
             <li>
