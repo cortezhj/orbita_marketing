@@ -24,8 +24,8 @@ const slides: HeroSlide[] = [
     image: '/images/slide-revestimientos.jpg',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
-    nodeX: 60,
-    nodeY: 42
+    nodeX: 70,
+    nodeY: 56
   },
   {
     shortLabel: 'HERRAMIENTAS',
@@ -36,8 +36,8 @@ const slides: HeroSlide[] = [
     image: '/images/slide-herramientas.jpg',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Herramientas y artículos de Ferretería en el C.C. Ciudad Crepuscular.',
-    nodeX: 42,
-    nodeY: 105
+    nodeX: 48,
+    nodeY: 140
   },
   {
     shortLabel: 'ELECTRICIDAD',
@@ -48,8 +48,8 @@ const slides: HeroSlide[] = [
     image: '/images/slide-electricidad.jpg',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y necesito cotizar materiales de Electricidad e Iluminación en el C.C. Ciudad Crepuscular.',
-    nodeX: 62,
-    nodeY: 168
+    nodeX: 72,
+    nodeY: 224
   },
   {
     shortLabel: 'PINTURAS',
@@ -60,8 +60,8 @@ const slides: HeroSlide[] = [
     image: '/images/slide-pinturas.jpg',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Acabados en el C.C. Ciudad Crepuscular.',
-    nodeX: 106,
-    nodeY: 222
+    nodeX: 124,
+    nodeY: 298
   }
 ]
 
@@ -99,8 +99,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- Natural Hero Height with Balanced Proportions -->
-  <section class="relative overflow-hidden bg-[#0a0a0a] pt-28 text-white sm:pt-32 lg:pt-36">
+  <!-- Generous Hero Height Restored (pt-28 / lg:pt-38 and pb-20 / lg:pb-28) -->
+  <section class="relative overflow-hidden bg-[#0a0a0a] pt-28 text-white sm:pt-34 lg:pt-38">
     <!-- Background Image from src/assets/background.avif with Dark Black Overlay -->
     <div class="pointer-events-none absolute inset-0">
       <img
@@ -120,35 +120,35 @@ onUnmounted(() => {
       ></div>
     </div>
 
-    <!-- Main Hero Container with Refined, Balanced Proportions -->
-    <div class="relative mx-auto max-w-6xl px-4 pt-4 pb-12 sm:px-6 sm:pt-6 sm:pb-14 lg:px-8 lg:pt-8 lg:pb-16">
-      <div class="grid items-center gap-8 lg:grid-cols-12 lg:gap-4">
-        <!-- Left Column: Proportioned Headline + Compact Description + Clean CTA -->
+    <!-- Main Hero Container with Restored Vertical Breathing Room & Balanced Proportions -->
+    <div class="relative mx-auto max-w-6xl px-4 pt-8 pb-20 sm:px-6 sm:pt-10 sm:pb-24 lg:px-8 lg:pt-12 lg:pb-28">
+      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
+        <!-- Left Column: Well-Proportioned Headline + Description + Clean CTA -->
         <div class="lg:col-span-5">
-          <h1 class="font-black tracking-tight text-[#f6892c] drop-shadow-[0_3px_12px_rgba(0,0,0,0.65)]">
-            <span class="block text-xl uppercase sm:text-2xl lg:text-[2rem] lg:leading-[1.15]">
+          <h1 class="font-black tracking-tight text-[#f6892c] drop-shadow-[0_3px_14px_rgba(0,0,0,0.65)]">
+            <span class="block text-2xl uppercase sm:text-3xl lg:text-[2.2rem] lg:leading-[1.15]">
               {{ currentSlide.headlineTop }}
             </span>
-            <span class="mt-1 block text-lg font-extrabold text-[#f6892c] sm:text-xl lg:text-[1.5rem] lg:leading-[1.2]">
+            <span class="mt-1.5 block text-lg font-extrabold text-[#f6892c] sm:text-2xl lg:text-[1.6rem] lg:leading-[1.2]">
               {{ currentSlide.headlineBottom }}
             </span>
           </h1>
 
-          <p class="mt-4 max-w-sm text-xs leading-relaxed text-neutral-300/85 sm:text-[13px]">
+          <p class="mt-5 max-w-md text-xs leading-relaxed text-neutral-300/90 sm:text-sm">
             {{ currentSlide.description }}
           </p>
 
           <!-- Clean, Proportioned Brand-Orange Button -->
-          <div class="mt-6">
+          <div class="mt-8">
             <a
               :href="currentWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-2.5 rounded-md bg-[#f6892c] px-6 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-md shadow-black/50 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99]"
+              class="group inline-flex items-center justify-center gap-2.5 rounded-md bg-[#f6892c] px-7 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-md shadow-black/50 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99]"
             >
               <span>Cotizar Ahora</span>
               <svg
-                class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
+                class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -160,21 +160,21 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Right Column: Proportioned Orbital Arc + Studio Product Render -->
+        <!-- Right Column: Proportioned Orbital Arc + Specialist Portrait Showcase -->
         <div class="relative lg:col-span-7">
-          <div class="relative mx-auto flex h-[230px] max-w-xl items-center justify-end sm:h-[260px] lg:h-[280px]">
+          <div class="relative mx-auto flex min-h-[320px] max-w-2xl items-center justify-end sm:min-h-[370px] lg:min-h-[390px]">
             <!-- Desktop Curved Orbital Arc with 4 Interactive Category Nodes -->
-            <div class="pointer-events-none absolute inset-y-0 left-4 z-20 hidden w-52 sm:block lg:left-6">
+            <div class="pointer-events-none absolute inset-y-0 left-2 z-20 hidden w-60 sm:block lg:left-4">
               <svg
-                viewBox="0 0 165 255"
+                viewBox="0 0 195 340"
                 class="h-full w-full overflow-visible"
                 fill="none"
               >
                 <!-- Delicate Orbital Curve Path -->
                 <path
-                  d="M 88 12 Q 6 128 124 243"
+                  d="M 102 18 Q 6 170 146 322"
                   stroke="rgba(255,255,255,0.22)"
-                  stroke-width="1"
+                  stroke-width="1.15"
                 />
 
                 <!-- Nodes along the curve -->
@@ -189,14 +189,14 @@ onUnmounted(() => {
                     v-if="activeIndex === idx"
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
-                    r="8.5"
+                    r="10"
                     fill="rgba(255, 255, 255, 0.22)"
                   />
                   <!-- Core Dot -->
                   <circle
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
-                    :r="activeIndex === idx ? 3.8 : 2.6"
+                    :r="activeIndex === idx ? 4.2 : 3"
                     :fill="activeIndex === idx ? '#FFFFFF' : 'rgba(255,255,255,0.35)'"
                   />
                 </g>
@@ -207,15 +207,15 @@ onUnmounted(() => {
                 v-for="(slide, idx) in slides"
                 :key="slide.shortLabel"
                 type="button"
-                class="pointer-events-auto absolute -translate-y-1/2 text-right text-[10px] font-bold uppercase tracking-[0.11em] transition focus:outline-none"
+                class="pointer-events-auto absolute -translate-y-1/2 text-right text-[10px] font-bold uppercase tracking-[0.12em] transition focus:outline-none sm:text-[11px]"
                 :class="
                   activeIndex === idx
                     ? 'text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.65)]'
                     : 'text-neutral-500 hover:text-neutral-300'
                 "
                 :style="{
-                  top: `${(slide.nodeY / 255) * 100}%`,
-                  right: `${100 - (slide.nodeX / 165) * 100 + 8}%`
+                  top: `${(slide.nodeY / 340) * 100}%`,
+                  right: `${100 - (slide.nodeX / 195) * 100 + 7}%`
                 }"
                 @click="selectSlide(idx)"
               >
@@ -241,23 +241,23 @@ onUnmounted(() => {
               </button>
             </div>
 
-            <!-- Studio Product Image Showcase (Proportioned & Seamlessly Blended) -->
-            <div class="relative z-10 flex h-full w-full items-center justify-center sm:w-[68%]">
+            <!-- Specialist With Product Showcase (Seamlessly Blended on Dark Background) -->
+            <div class="relative z-10 flex w-full items-center justify-center sm:w-[70%]">
               <!-- Subtle Warm Ambient Glow -->
-              <div class="pointer-events-none absolute inset-10 rounded-full bg-[#f6892c]/10 blur-2xl"></div>
+              <div class="pointer-events-none absolute inset-10 rounded-full bg-[#f6892c]/12 blur-3xl"></div>
 
               <img
                 :key="currentSlide.image"
                 :src="currentSlide.image"
                 :alt="currentSlide.headlineTop"
                 width="760"
-                height="428"
+                height="540"
                 fetchpriority="high"
                 decoding="async"
-                class="max-h-full w-full object-contain mix-blend-lighten transition-all duration-500"
+                class="h-72 w-full object-contain mix-blend-lighten transition-all duration-500 sm:h-84 lg:h-[360px]"
                 style="
-                  -webkit-mask-image: radial-gradient(ellipse 82% 80% at 50% 50%, #000 65%, transparent 100%);
-                  mask-image: radial-gradient(ellipse 82% 80% at 50% 50%, #000 65%, transparent 100%);
+                  -webkit-mask-image: radial-gradient(ellipse 82% 80% at 52% 48%, #000 62%, transparent 100%);
+                  mask-image: radial-gradient(ellipse 82% 80% at 52% 48%, #000 62%, transparent 100%);
                 "
               />
             </div>
@@ -272,7 +272,7 @@ onUnmounted(() => {
         viewBox="0 0 1440 44"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-full sm:h-8"
+        class="h-7 w-full sm:h-10"
         preserveAspectRatio="none"
       >
         <path
