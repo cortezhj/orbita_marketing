@@ -122,9 +122,9 @@ onUnmounted(() => {
 
     <!-- Main Hero Container with Restored Vertical Breathing Room & Balanced Proportions -->
     <div class="relative mx-auto max-w-6xl px-4 pt-8 pb-20 sm:px-6 sm:pt-10 sm:pb-24 lg:px-8 lg:pt-12 lg:pb-28">
-      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-6">
+      <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
         <!-- Left Column: Well-Proportioned Headline + Description + Clean CTA -->
-        <div class="lg:col-span-5">
+        <div class="lg:col-span-5 lg:pr-4">
           <h1 class="font-black tracking-tight text-[#f6892c] drop-shadow-[0_3px_14px_rgba(0,0,0,0.65)]">
             <span class="block text-2xl uppercase sm:text-3xl lg:text-[2.2rem] lg:leading-[1.15]">
               {{ currentSlide.headlineTop }}
@@ -161,10 +161,10 @@ onUnmounted(() => {
         </div>
 
         <!-- Right Column: Proportioned Orbital Arc + Specialist Portrait Showcase -->
-        <div class="relative lg:col-span-7">
-          <div class="relative mx-auto flex min-h-[320px] max-w-2xl items-center justify-end sm:min-h-[370px] lg:min-h-[390px]">
-            <!-- Desktop Curved Orbital Arc with 4 Interactive Category Nodes -->
-            <div class="pointer-events-none absolute inset-y-0 left-2 z-20 hidden w-60 sm:block lg:left-4">
+        <div class="relative lg:col-span-7 lg:pl-6">
+          <div class="relative ml-auto flex min-h-[320px] w-full max-w-xl items-center justify-end sm:min-h-[370px] lg:min-h-[390px]">
+            <!-- Desktop Curved Orbital Arc Positioned Closely Along the Specialist Image -->
+            <div class="pointer-events-none absolute inset-y-0 right-[45%] z-20 hidden w-52 sm:block md:right-[44%] lg:right-[43%] lg:w-56">
               <svg
                 viewBox="0 0 195 340"
                 class="h-full w-full overflow-visible"
@@ -242,7 +242,7 @@ onUnmounted(() => {
             </div>
 
             <!-- Specialist With Product Cutout PNG (Transparent Background) -->
-            <div class="relative z-10 flex w-full items-center justify-center sm:w-[70%]">
+            <div class="relative z-10 flex w-full items-center justify-center sm:w-[66%] lg:w-[64%]">
               <!-- Subtle Warm Ambient Glow -->
               <div class="pointer-events-none absolute inset-10 rounded-full bg-[#f6892c]/12 blur-3xl"></div>
 
