@@ -74,8 +74,8 @@ const currentWhatsappUrl = computed(() =>
 
 <template>
   <!-- Hero extends under the fixed transparent Header & Menu (pt-28 / lg:pt-38) -->
-  <section class="relative overflow-hidden bg-[#141414] pt-28 text-white sm:pt-34 lg:pt-38">
-    <!-- Background Image from src/assets/background.avif -->
+  <section class="relative overflow-hidden bg-[#0a0a0a] pt-28 text-white sm:pt-34 lg:pt-38">
+    <!-- Background Image from src/assets/background.avif with Dark Black Overlay -->
     <div class="pointer-events-none absolute inset-0">
       <img
         :src="heroBackgroundUrl"
@@ -83,13 +83,13 @@ const currentWhatsappUrl = computed(() =>
         aria-hidden="true"
         fetchpriority="high"
         decoding="async"
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover opacity-40 brightness-75 contrast-125"
       />
-      <!-- Subtle vignette so text and header stay legible while showing the full background.avif texture -->
+      <!-- Rich dark black overlay + vignette so the cement texture blends into a deep dark background -->
       <div
-        class="absolute inset-0"
+        class="absolute inset-0 bg-black/55"
         style="
-          background: radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.65) 100%);
+          background: radial-gradient(ellipse 85% 80% at 55% 50%, rgba(10, 10, 10, 0.55) 0%, rgba(5, 5, 5, 0.88) 100%);
         "
       ></div>
     </div>
