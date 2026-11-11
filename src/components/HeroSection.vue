@@ -123,19 +123,19 @@ onUnmounted(() => {
     <!-- Main Hero Container with Restored Vertical Breathing Room & Balanced Proportions -->
     <div class="relative mx-auto max-w-6xl px-4 pt-8 pb-20 sm:px-6 sm:pt-10 sm:pb-24 lg:px-8 lg:pt-12 lg:pb-28">
       <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
-        <!-- Left Column: Well-Proportioned Headline + Description + Clean CTA -->
+        <!-- Left Column: Static Headline & Description about Órbita Marketing -->
         <div class="lg:col-span-5 lg:pr-4">
           <h1 class="font-black tracking-tight text-[#f6892c] drop-shadow-[0_3px_14px_rgba(0,0,0,0.65)]">
-            <span class="block text-2xl uppercase sm:text-3xl lg:text-[2.2rem] lg:leading-[1.15]">
-              {{ currentSlide.headlineTop }}
+            <span class="block text-2xl uppercase sm:text-3xl lg:text-[2.15rem] lg:leading-[1.15]">
+              REVESTIMIENTOS, DECORACIÓN Y FERRETERÍA
             </span>
-            <span class="mt-1.5 block text-lg font-extrabold text-[#f6892c] sm:text-2xl lg:text-[1.6rem] lg:leading-[1.2]">
-              {{ currentSlide.headlineBottom }}
+            <span class="mt-1.5 block text-lg font-extrabold text-[#f6892c] sm:text-2xl lg:text-[1.55rem] lg:leading-[1.2]">
+              todo para remodelar y equipar tus espacios
             </span>
           </h1>
 
           <p class="mt-5 max-w-md text-xs leading-relaxed text-neutral-300/90 sm:text-sm">
-            {{ currentSlide.description }}
+            En <strong class="font-bold text-white">Órbita Marketing</strong> somos especialistas en Wall Panel WPC, revestimientos decorativos, lavaplatos y duchas modernas, además de contar con ferretería, herramientas, electricidad, pinturas y materiales de construcción en el C.C. Ciudad Crepuscular (Local PB-06).
           </p>
 
           <!-- Clean, Proportioned Brand-Orange Button -->
