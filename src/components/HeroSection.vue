@@ -3,7 +3,6 @@ import { computed, ref } from 'vue'
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 
 interface HeroSlide {
-  indexLabel: string
   shortLabel: string
   headlineTop: string
   headlineBottom: string
@@ -16,45 +15,41 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    indexLabel: '01',
     shortLabel: 'ELECTRICIDAD',
     headlineTop: 'ELECTRICIDAD Y LED',
     headlineBottom: 'para cualquier instalación',
     description:
-      'Cables THHN, breakers termomagnéticos, tomacorrientes Bticino, paneles y reflectores LED disponibles hoy en el C.C. Parque Los Aviadores (Local PB-114).',
+      'Cables THHN, breakers termomagnéticos, tomacorrientes Bticino, paneles y reflectores LED disponibles hoy en el C.C. Ciudad Crepuscular (Local PB-06).',
     image: '/images/cat-electricidad.webp',
     whatsappMessage:
-      'Hola, vi su página y quiero cotizar materiales de Electricidad e Iluminación en su local del C.C. Parque Los Aviadores.',
+      'Hola Órbita Marketing, vi su página y quiero cotizar materiales de Electricidad e Iluminación en el C.C. Ciudad Crepuscular.',
     nodeX: 74,
     nodeY: 64
   },
   {
-    indexLabel: '02',
     shortLabel: 'HERRAMIENTAS',
     headlineTop: 'HERRAMIENTAS PRO',
     headlineBottom: 'para cualquier trabajo',
     description:
-      'Ofrecemos venta de herramientas eléctricas, manuales, plomería y materiales para todo tipo de trabajos de construcción, remodelación y mantenimiento en el C.C. Los Aviadores.',
+      'Venta de herramientas eléctricas, manuales, plomería y materiales para todo tipo de trabajos de construcción, remodelación y mantenimiento en el C.C. Ciudad Crepuscular, Barquisimeto.',
     image: '/images/hero-local.webp',
     whatsappMessage: siteConfig.defaultWhatsappMessages.heroPrimary,
     nodeX: 52,
     nodeY: 158
   },
   {
-    indexLabel: '03',
     shortLabel: 'PLOMERÍA',
     headlineTop: 'PLOMERÍA Y TUBERÍAS',
     headlineBottom: 'para cualquier reparación',
     description:
-      'Tuberías y conexiones PVC/CPVC, grifería, llaves de paso, herrajes sanitarios y bombas de agua con entrega inmediata en nuestro mostrador del Centro Comercial.',
+      'Tuberías y conexiones PVC/CPVC, grifería, llaves de paso, herrajes sanitarios y bombas de agua con entrega inmediata en nuestro mostrador del Local PB-06.',
     image: '/images/cat-plomeria.webp',
     whatsappMessage:
-      'Hola, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías en el C.C. Parque Los Aviadores.',
+      'Hola Órbita Marketing, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías en el C.C. Ciudad Crepuscular.',
     nodeX: 76,
     nodeY: 252
   },
   {
-    indexLabel: '04',
     shortLabel: 'PINTURAS',
     headlineTop: 'PINTURAS Y SELLADORES',
     headlineBottom: 'para cualquier acabado',
@@ -62,51 +57,41 @@ const slides: HeroSlide[] = [
       'Pinturas en caucho clase A, esmaltes, impermeabilizantes Sika, siliconas, adhesivos epóxicos y fijaciones para renovar y proteger tu hogar o local.',
     image: '/images/cat-pinturas.webp',
     whatsappMessage:
-      'Hola, vi su página y quiero cotizar Pinturas, Adhesivos y Construcción Ligera en el C.C. Parque Los Aviadores.',
+      'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Construcción Ligera en el C.C. Ciudad Crepuscular.',
     nodeX: 132,
     nodeY: 332
   }
 ]
 
-// Default to slide index 1 ("02 / 04 - HERRAMIENTAS") matching the reference image
 const activeIndex = ref(1)
 
 const currentSlide = computed(() => slides[activeIndex.value] ?? slides[1]!)
 const currentWhatsappUrl = computed(() =>
   buildWhatsAppUrl(currentSlide.value.whatsappMessage)
 )
-
-function prevSlide() {
-  activeIndex.value = (activeIndex.value - 1 + slides.length) % slides.length
-}
-
-function nextSlide() {
-  activeIndex.value = (activeIndex.value + 1) % slides.length
-}
 </script>
 
 <template>
-  <!-- Hero extends under the fixed transparent Header & Menu (pt-28 / lg:pt-36) -->
-  <section class="relative overflow-hidden bg-[#141414] pt-28 text-white sm:pt-34 lg:pt-38">
-    <!-- Exact Dark Grunge Concrete / Slate Wall Texture Backdrop (Like Reference Photo) -->
+  <!-- Hero extends under the fixed transparent Header & Menu (pt-28 / lg:pt-38) -->
+  <section class="relative overflow-hidden bg-[#1e1f21] pt-28 text-white sm:pt-34 lg:pt-38">
+    <!-- Authentic Dark Cement / Concrete Wall Texture Backdrop -->
     <div class="pointer-events-none absolute inset-0">
-      <!-- Real compressed dark concrete/slate texture image -->
+      <!-- Raw Cement Texture Image -->
       <img
         src="/images/hero-bg-texture.webp"
         alt=""
         aria-hidden="true"
-        width="1080"
-        height="720"
+        width="1200"
+        height="800"
         decoding="async"
-        class="h-full w-full object-cover opacity-45 mix-blend-luminosity contrast-125"
+        class="h-full w-full object-cover opacity-90 contrast-125 brightness-110"
       />
-      <!-- Dark vignette around edges + smoky lighter charcoal center behind product -->
+      <!-- Fine SVG Cement Grain + Subtle Soft Vignette so Cement Texture Stays Clearly Visible -->
       <div
         class="absolute inset-0"
         style="
           background:
-            radial-gradient(circle at 68% 52%, rgba(75, 75, 75, 0.36) 0%, rgba(22, 22, 22, 0.86) 52%, rgba(10, 10, 10, 0.97) 100%),
-            linear-gradient(to bottom, rgba(10, 10, 10, 0.78) 0%, rgba(18, 18, 18, 0.25) 28%, rgba(18, 18, 18, 0.35) 75%, rgba(10, 10, 10, 0.92) 100%);
+            radial-gradient(circle at 65% 50%, rgba(255, 255, 255, 0.06) 0%, rgba(22, 23, 25, 0.35) 55%, rgba(12, 13, 14, 0.78) 100%);
         "
       ></div>
     </div>
@@ -114,35 +99,44 @@ function nextSlide() {
     <!-- Main Hero Container -->
     <div class="relative mx-auto max-w-7xl px-4 pt-6 pb-20 sm:px-6 sm:pt-10 sm:pb-24 lg:px-8 lg:pt-12 lg:pb-28">
       <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-4">
-        <!-- Left Column: Bold Golden-Yellow 2-Line Headline + Muted Gray Text + Glowing Yellow Button -->
+        <!-- Left Column: Brand Orange (#f6892c) 2-Line Headline + Description + Clean Modern CTA Button -->
         <div class="lg:col-span-5">
-          <h1 class="text-3xl font-black tracking-tight text-[#FFB800] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.12]">
+          <h1 class="text-3xl font-black tracking-tight text-[#f6892c] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.12]">
             <span class="block uppercase">{{ currentSlide.headlineTop }}</span>
-            <span class="mt-1 block font-extrabold text-[#FFB800]">
+            <span class="mt-1 block font-extrabold text-[#f6892c]">
               {{ currentSlide.headlineBottom }}
             </span>
           </h1>
 
-          <p class="mt-6 max-w-md text-xs leading-relaxed text-neutral-300/85 sm:text-sm">
+          <p class="mt-6 max-w-md text-xs leading-relaxed text-neutral-200/90 sm:text-sm">
             {{ currentSlide.description }}
           </p>
 
-          <!-- Glowing Golden-Yellow Rectangular Button (Exact Reference Look) -->
-          <div class="mt-10">
+          <!-- Clean, Refined Brand-Orange Button without harsh yellow glare -->
+          <div class="mt-9">
             <a
               :href="currentWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center rounded bg-gradient-to-b from-[#FFD859] to-[#F5A623] px-11 py-4 text-xs font-black uppercase tracking-[0.16em] text-[#141414] shadow-[0_14px_38px_-4px_rgba(245,166,35,0.58)] transition duration-200 hover:-translate-y-0.5 hover:from-[#FFE074] hover:to-[#FFB800] active:scale-[0.99]"
+              class="group inline-flex items-center justify-center gap-3 rounded-lg bg-[#f6892c] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-lg shadow-black/40 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99] sm:text-sm"
             >
-              <span>COTIZAR AHORA</span>
+              <span>Cotizar Ahora</span>
+              <svg
+                class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
           </div>
         </div>
 
-        <!-- Right Column: Orbital Arc Selector + Cutout Blended Equipment/Tool + < 02/04 > Counter -->
+        <!-- Right Column: Orbital Arc Selector + Cutout Blended Equipment/Tool (No Numbering) -->
         <div class="relative lg:col-span-7">
-          <div class="relative mx-auto flex min-h-[320px] max-w-2xl items-center justify-end sm:min-h-[390px]">
+          <div class="relative mx-auto flex min-h-[320px] max-w-2xl items-center justify-end sm:min-h-[380px]">
             <!-- Desktop Curved Orbital Arc with 4 Interactive Category Nodes -->
             <div class="pointer-events-none absolute inset-y-0 left-2 z-20 hidden w-72 sm:block lg:left-6">
               <svg
@@ -160,17 +154,17 @@ function nextSlide() {
                 <!-- Nodes along the curve -->
                 <g
                   v-for="(slide, idx) in slides"
-                  :key="slide.indexLabel"
+                  :key="slide.shortLabel"
                   class="pointer-events-auto cursor-pointer"
                   @click="activeIndex = idx"
                 >
-                  <!-- Soft Outer Glow Ring when Active -->
+                  <!-- Soft Outer Halo Ring when Active -->
                   <circle
                     v-if="activeIndex === idx"
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
                     r="11"
-                    fill="rgba(255, 255, 255, 0.2)"
+                    fill="rgba(246, 137, 44, 0.28)"
                   />
                   <!-- Core Dot -->
                   <circle
@@ -191,7 +185,7 @@ function nextSlide() {
                 :class="
                   activeIndex === idx
                     ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.65)]'
-                    : 'text-neutral-500 hover:text-neutral-300'
+                    : 'text-neutral-400 hover:text-neutral-200'
                 "
                 :style="{
                   top: `${(slide.nodeY / 380) * 100}%`,
@@ -212,7 +206,7 @@ function nextSlide() {
                 class="rounded px-2.5 py-1 text-[10px] font-black uppercase tracking-wider transition"
                 :class="
                   activeIndex === idx
-                    ? 'bg-[#FFB800] text-[#141414]'
+                    ? 'bg-[#f6892c] text-white'
                     : 'bg-white/10 text-neutral-300'
                 "
                 @click="activeIndex = idx"
@@ -221,10 +215,10 @@ function nextSlide() {
               </button>
             </div>
 
-            <!-- Frameless Blended Equipment/Tool Showcase (No Card Box, Soft Radial Edge Mask) -->
+            <!-- Frameless Blended Equipment/Tool Showcase -->
             <div class="relative z-10 w-full sm:w-[72%]">
-              <!-- Subtle Smoky Spotlight Behind Equipment -->
-              <div class="pointer-events-none absolute inset-8 rounded-full bg-[#FFB800]/12 blur-3xl"></div>
+              <!-- Subtle Warm Spotlight Behind Equipment -->
+              <div class="pointer-events-none absolute inset-8 rounded-full bg-[#f6892c]/15 blur-3xl"></div>
 
               <div class="relative flex items-center justify-center">
                 <img
@@ -243,43 +237,13 @@ function nextSlide() {
                 <!-- Ground Contact Shadow under the Equipment -->
                 <div class="pointer-events-none absolute -bottom-3 h-7 w-4/5 rounded-full bg-black/80 blur-xl"></div>
               </div>
-
-              <!-- Bottom-Right Numeric Slide Counter (< 02/04 > Exact Reference Match) -->
-              <div class="mt-4 flex items-center justify-end gap-3 pr-2 select-none">
-                <button
-                  type="button"
-                  aria-label="Anterior categoría"
-                  class="flex h-8 w-8 items-center justify-center text-neutral-400 transition hover:text-[#FFB800]"
-                  @click="prevSlide"
-                >
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-
-                <div class="flex items-baseline font-black tracking-tight">
-                  <span class="text-3xl text-[#FFB800] sm:text-4xl">{{ currentSlide.indexLabel }}</span>
-                  <span class="ml-0.5 text-xs text-neutral-400">/04</span>
-                </div>
-
-                <button
-                  type="button"
-                  aria-label="Siguiente categoría"
-                  class="flex h-8 w-8 items-center justify-center text-neutral-400 transition hover:text-[#FFB800]"
-                  @click="nextSlide"
-                >
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Rugged / Torn Paper-Asphalt White Bottom Divider (Exact Reference Bottom Transition) -->
+    <!-- Rugged / Torn Paper-Asphalt White Bottom Divider -->
     <div class="relative z-20 -mb-px w-full overflow-hidden leading-none">
       <svg
         viewBox="0 0 1440 44"

@@ -22,7 +22,7 @@ defineEmits<{
       <!-- Top Bar -->
       <div class="flex items-start justify-between gap-4 border-b-2 border-[#121417] pb-5">
         <div>
-          <span class="bg-[#FFCC00] px-3 py-1 text-xs font-black uppercase tracking-widest text-[#121417]">
+          <span class="bg-[#f6892c] px-3 py-1 text-xs font-black uppercase tracking-widest text-white">
             CUMPLIMIENTO LEGAL • /politica-de-privacidad
           </span>
           <h2 id="privacy-policy-title" class="mt-2 text-2xl font-black uppercase text-[#121417] sm:text-3xl">
@@ -35,7 +35,7 @@ defineEmits<{
 
         <button
           type="button"
-          class="bg-[#121417] px-3.5 py-2 text-xs font-black uppercase text-[#FFCC00] hover:bg-neutral-800"
+          class="bg-[#121417] px-3.5 py-2 text-xs font-black uppercase text-[#f6892c] hover:bg-neutral-800"
           @click="$emit('close')"
         >
           Cerrar ✕
@@ -84,7 +84,7 @@ defineEmits<{
             <a :href="`mailto:${siteConfig.business.complianceEmail}`" class="font-bold text-[#121417] underline">
               {{ siteConfig.business.complianceEmail }}
             </a>
-            o directamente en nuestro local físico ubicado en el {{ siteConfig.business.mallName }}, {{ siteConfig.business.level }}, {{ siteConfig.business.localNumber }}.
+            o directamente en nuestro local físico ubicado en el {{ siteConfig.business.fullAddress }}
           </p>
         </section>
       </div>
@@ -92,7 +92,7 @@ defineEmits<{
       <div class="mt-8 flex justify-end border-t border-neutral-200 pt-5">
         <button
           type="button"
-          class="bg-[#FFCC00] px-6 py-3 text-xs font-black uppercase tracking-wider text-[#121417] hover:bg-[#FFD633]"
+          class="rounded-lg bg-[#f6892c] px-6 py-3 text-xs font-black uppercase tracking-wider text-white hover:bg-[#e07519]"
           @click="$emit('close')"
         >
           Volver a la Ferretería

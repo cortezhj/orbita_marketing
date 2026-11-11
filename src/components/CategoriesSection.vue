@@ -5,9 +5,9 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 <template>
   <section id="categorias" class="cv-auto scroll-mt-24 border-b border-neutral-200 bg-[#F4F5F7] py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <!-- Section Header (DeWalt / Tool Shop Editorial Style) -->
+      <!-- Section Header -->
       <div class="mx-auto max-w-3xl text-center">
-        <span class="inline-block bg-[#FFCC00] px-4 py-1 text-xs font-black uppercase tracking-widest text-[#121417]">
+        <span class="inline-block bg-[#f6892c] px-4 py-1 text-xs font-black uppercase tracking-widest text-white">
           DEPARTAMENTOS EN TIENDA
         </span>
         <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-5xl">
@@ -15,11 +15,11 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
         </h2>
         <p class="mt-3 text-base font-medium text-neutral-600">
           Selecciona el departamento que necesitas para cotizar al instante por WhatsApp y retirar hoy en el
-          <strong class="font-black text-[#121417]">{{ siteConfig.business.mallName }}</strong>.
+          <strong class="font-black text-[#121417]">{{ siteConfig.business.mallShort }} ({{ siteConfig.business.localNumber }})</strong>.
         </p>
       </div>
 
-      <!-- Alternating Dark & Light Industrial Category Showcase (Inspired by Photos 1, 2 & 3) -->
+      <!-- Alternating Dark & Light Industrial Category Showcase -->
       <div class="mt-14 space-y-10">
         <article
           v-for="(cat, idx) in siteConfig.categories"
@@ -31,7 +31,7 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
               : 'border-neutral-200 bg-white text-[#121417]'
           ]"
         >
-          <!-- Industrial Corner Screws (Photo 3 DeWalt Plate Detail) -->
+          <!-- Industrial Corner Screws -->
           <span
             class="pointer-events-none absolute top-3 left-3 h-2 w-2 rounded-full"
             :class="cat.theme === 'dark' ? 'bg-white/25' : 'bg-neutral-300'"
@@ -52,7 +52,7 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
           <div
             class="grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-12 lg:gap-12"
           >
-            <!-- Image Column with Yellow Geometric Offset Square (Photo 1 Style) -->
+            <!-- Image Column with Brand Orange (#f6892c) Geometric Offset Square -->
             <div
               :class="[
                 'lg:col-span-5',
@@ -60,9 +60,9 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
               ]"
             >
               <div class="relative mx-auto max-w-md lg:max-w-none">
-                <!-- Offset Yellow Square Block -->
+                <!-- Offset Orange Square Block -->
                 <div
-                  class="absolute -top-3 h-full w-4/5 bg-[#FFCC00]"
+                  class="absolute -top-3 h-full w-4/5 bg-[#f6892c]"
                   :class="idx % 2 === 1 ? '-right-3' : '-left-3'"
                 ></div>
 
@@ -77,24 +77,21 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
                     class="h-60 w-full object-cover transition duration-500 hover:scale-105 sm:h-72"
                   />
                   <!-- Top Badge -->
-                  <div class="absolute top-3 left-3 bg-[#FFCC00] px-3 py-1 text-[11px] font-black uppercase tracking-widest text-[#121417]">
-                    {{ cat.code }} • {{ cat.badge }}
+                  <div class="absolute top-3 left-3 bg-[#f6892c] px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
+                    {{ cat.badge }}
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Content Column (Photo 2 "TOOL SHOP / QUALITY TOOLS FOR EVERY JOB" Style) -->
+            <!-- Content Column -->
             <div
               :class="[
                 'lg:col-span-7',
                 idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'
               ]"
             >
-              <p
-                class="text-xs font-black uppercase tracking-[0.2em]"
-                :class="cat.theme === 'dark' ? 'text-[#FFCC00]' : 'text-amber-600'"
-              >
+              <p class="text-xs font-black uppercase tracking-[0.2em] text-[#f6892c]">
                 {{ cat.subtitle }}
               </p>
 
@@ -109,7 +106,7 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
                 {{ cat.description }}
               </p>
 
-              <!-- 2-Column Bullet List (Like Photo 1 Warehouse / Manufacturer bullets) -->
+              <!-- 2-Column Bullet List -->
               <ul class="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 <li
                   v-for="item in cat.highlights"
@@ -117,7 +114,7 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
                   class="flex items-start gap-2.5 text-xs font-medium sm:text-sm"
                   :class="cat.theme === 'dark' ? 'text-neutral-200' : 'text-neutral-800'"
                 >
-                  <span class="mt-1 h-2 w-2 shrink-0 bg-[#FFCC00]"></span>
+                  <span class="mt-1 h-2 w-2 shrink-0 bg-[#f6892c]"></span>
                   <span>{{ item }}</span>
                 </li>
               </ul>
@@ -140,20 +137,20 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
                     class="px-2.5 py-0.5 text-xs font-black uppercase"
                     :class="
                       cat.theme === 'dark'
-                        ? 'bg-white/10 text-[#FFCC00]'
-                        : 'bg-[#121417] text-[#FFCC00]'
+                        ? 'bg-white/10 text-[#f6892c]'
+                        : 'bg-[#121417] text-[#f6892c]'
                     "
                   >
                     {{ brand }}
                   </span>
                 </div>
 
-                <!-- Solid Construction Yellow WhatsApp Button -->
+                <!-- Solid Brand Orange WhatsApp Button -->
                 <a
                   :href="buildWhatsAppUrl(cat.whatsappMessage)"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex w-full items-center justify-center gap-2.5 bg-[#FFCC00] px-6 py-3.5 text-xs font-black uppercase tracking-wider text-[#121417] shadow-md transition hover:bg-[#FFD633] active:scale-[0.99] sm:w-auto sm:text-sm"
+                  class="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-[#f6892c] px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white shadow-md transition hover:bg-[#e07519] active:scale-[0.99] sm:w-auto sm:text-sm"
                 >
                   <span>Consultar por WhatsApp</span>
                   <span>→</span>

@@ -9,7 +9,6 @@ export interface BrandItem {
 
 export interface ProductCategory {
   id: string
-  code: string
   title: string
   subtitle: string
   badge: string
@@ -38,65 +37,67 @@ export interface ScheduleItem {
 
 export const siteConfig = {
   business: {
-    brandName: 'FerreCentro Órbita',
-    shortName: 'FERRECENTRO',
-    legalName: 'Inversiones y Suministros FerreCentro Órbita, C.A.',
+    brandName: 'Órbita Marketing',
+    shortName: 'ÓRBITA',
+    legalName: 'Órbita Marketing, C.A.',
     rif: 'J-41298456-0',
-    tagline: 'HERRAMIENTAS, ELECTRICIDAD Y PLOMERÍA',
-    mallName: 'C.C. Parque Los Aviadores',
-    mallShort: 'C.C. Los Aviadores',
-    level: 'Nivel Planta Baja (PB)',
-    localNumber: 'Local PB-114',
+    logoUrl: '/Logo.png',
+    tagline: 'FERRETERÍA, HERRAMIENTAS Y SUMINISTROS',
+    mallName: 'Centro Comercial Ciudad Crepuscular',
+    mallShort: 'C.C. Ciudad Crepuscular',
+    level: 'Planta Baja',
+    localNumber: 'Local PB-06',
+    shortAddress: 'Av. 20 entre calles 40 y 41 • Local PB-06',
     referencePoints: [
-      'Entrada Este (Acceso directo desde el Estacionamiento Techado Zona B)',
-      'A 30 metros de la Feria de Comida y frente a las escaleras mecánicas centrales',
-      'Zona de carga rápida habilitada para clientes con compras de volumen'
+      'Avenida 20 entre calles 40 y 41, Barquisimeto 3001',
+      'Centro Comercial Ciudad Crepuscular, Planta Baja, Local PB-06',
+      'Fácil acceso peatonal y vehicular en pleno centro comercial de Barquisimeto'
     ],
-    city: 'Maracay, Edo. Aragua - Venezuela',
+    city: 'Barquisimeto 3001, Edo. Lara',
     fullAddress:
-      'Av. Intercomunal Turmero - Maracay, Centro Comercial Parque Los Aviadores, Nivel PB, Local PB-114, Palo Negro, Edo. Aragua, Zona Postal 2117.',
-    phoneDisplay: '+58 (412) 890-4520',
-    landlineDisplay: '+58 (243) 267-8891',
-    whatsappNumber: '584128904520',
-    email: 'ventas@ferrecentroorbita.com',
-    complianceEmail: 'legal@ferrecentroorbita.com',
+      'Avenida 20 entre calles 40 y 41, Centro Comercial Ciudad Crepuscular, Local Planta Baja 06, Órbita Marketing, Barquisimeto 3001, Edo. Lara.',
+    phoneDisplay: '+58 412-3682831',
+    landlineDisplay: '+58 412-3682831',
+    whatsappNumber: '584123682831',
+    email: 'ventas@orbitamarketing.com',
+    complianceEmail: 'legal@orbitamarketing.com',
     foundedYear: 2018,
     skuCount: '+4,500',
     responseMinutes: '< 5 min',
     heroImage: '/images/hero-local.webp',
     catalogUrl: '/catalogo-ferreteria.pdf',
-    catalogVersion: 'Edición Noviembre 2026 • PDF Optimizado',
+    catalogVersion: 'Edición 2026 • PDF Optimizado',
     googleMapsDirectionsUrl:
-      'https://www.google.com/maps/dir/?api=1&destination=10.2038,-67.5514',
+      'https://www.google.com/maps/dir/?api=1&destination=Centro+Comercial+Ciudad+Crepuscular+Avenida+20+Barquisimeto',
     googleMapsEmbedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.557941328372!2d-67.5539749!3d10.2038001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e803b9a720262df%3A0x8c250134c70a1c7!2sMaracay%2C%20Aragua!5e0!3m2!1ses!2sve!4v1700000000000!5m2!1ses!2sve',
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.3742!2d-69.3275!3d10.0678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e87671b78555555%3A0x1!2sBarquisimeto%203001%2C%20Lara!5e0!3m2!1ses!2sve!4v1700000000000!5m2!1ses!2sve',
     socials: {
-      instagram: 'https://instagram.com/ferrecentroorbita',
-      facebook: 'https://facebook.com/ferrecentroorbita',
-      tiktok: 'https://tiktok.com/@ferrecentroorbita'
+      instagram: 'https://instagram.com/orbitamarketing',
+      facebook: 'https://facebook.com/orbitamarketing',
+      tiktok: 'https://tiktok.com/@orbitamarketing'
     }
   },
 
   defaultWhatsappMessages: {
     header:
-      'Hola, vi su página y quiero consultar disponibilidad de un producto en el local del Centro Comercial.',
+      'Hola Órbita Marketing, vi su página web y quiero consultar disponibilidad de un producto en el C.C. Ciudad Crepuscular (Local PB-06).',
     heroPrimary:
-      'Hola, vi su página y quiero cotizar unas herramientas y materiales para retirar en el C.C. Parque Los Aviadores.',
+      'Hola Órbita Marketing, vi su página y quiero cotizar unas herramientas y materiales para retirar en el C.C. Ciudad Crepuscular (Local PB-06).',
     catalogRequest:
-      'Hola, vi su página y me gustaría recibir el catálogo actualizado con lista de precios por WhatsApp.',
+      'Hola Órbita Marketing, vi su página y me gustaría recibir el catálogo actualizado con lista de precios por WhatsApp.',
     locationHelp:
-      'Hola, voy en camino al Centro Comercial. ¿Me confirman la ubicación exacta del Local PB-114?'
+      'Hola Órbita Marketing, voy en camino al C.C. Ciudad Crepuscular en la Av. 20. ¿Me confirman la ubicación del Local PB-06?'
   },
 
   schedule: [
     {
       days: 'Lunes a Sábado',
-      hours: '9:00 AM – 8:00 PM',
-      note: 'Horario corrido en el Centro Comercial'
+      hours: '8:30 AM – 6:30 PM',
+      note: 'Horario corrido en C.C. Ciudad Crepuscular'
     },
     {
       days: 'Domingos y Feriados',
-      hours: '10:00 AM – 7:00 PM',
+      hours: '9:00 AM – 3:00 PM',
       note: 'Atención presencial y despacho rápido'
     }
   ] as ScheduleItem[],
@@ -107,7 +108,7 @@ export const siteConfig = {
       name: 'DeWALT',
       category: 'Herramientas Eléctricas Industriales',
       badge: 'Garantía Oficial',
-      accentColor: '#FFCC00',
+      accentColor: '#f6892c',
       description: 'Taladros percutores, esmeriles inalámbricos, baterías 20V MAX y accesorios.'
     },
     {
@@ -115,7 +116,7 @@ export const siteConfig = {
       name: 'STANLEY',
       category: 'Herramientas Manuales y Precisión',
       badge: 'En Stock',
-      accentColor: '#FFCC00',
+      accentColor: '#f6892c',
       description: 'Cintas métricas, juegos de llaves, destornilladores y cajas organizadoras.'
     },
     {
@@ -123,7 +124,7 @@ export const siteConfig = {
       name: 'TRUPER',
       category: 'Herramientas y Ferretería General',
       badge: 'Stock Permanente',
-      accentColor: '#FF7A00',
+      accentColor: '#f6892c',
       description: 'Línea completa de herramientas manuales, eléctricas, corte y medición.'
     },
     {
@@ -131,7 +132,7 @@ export const siteConfig = {
       name: 'INGCO',
       category: 'Maquinaria y Herramientas Pro',
       badge: 'Alto Desempeño',
-      accentColor: '#FFB800',
+      accentColor: '#f6892c',
       description: 'Bombas periféricas, compresores, pistolas de pintar y kits para el hogar.'
     },
     {
@@ -147,7 +148,7 @@ export const siteConfig = {
       name: 'BTICINO',
       category: 'Material Eléctrico Residencial',
       badge: 'Alta Rotación',
-      accentColor: '#FF7A00',
+      accentColor: '#f6892c',
       description: 'Tomacorrientes, interruptores, breakers, tableros y protección eléctrica.'
     },
     {
@@ -163,7 +164,7 @@ export const siteConfig = {
       name: 'SIKA',
       category: 'Adhesivos e Impermeabilizantes',
       badge: 'Línea Construcción',
-      accentColor: '#FFCC00',
+      accentColor: '#f6892c',
       description: 'Sikaflex, aditivos para concreto, selladores de poliuretano y epóxicos.'
     },
     {
@@ -179,7 +180,7 @@ export const siteConfig = {
       name: 'COFLEX',
       category: 'Plomería y Grifería',
       badge: 'Repuestos Originales',
-      accentColor: '#FFCC00',
+      accentColor: '#f6892c',
       description: 'Mangueras flexibles, herrajes para WC, sifones, desagües y llaves de arresto.'
     },
     {
@@ -187,7 +188,7 @@ export const siteConfig = {
       name: 'OSRAM / LEDVANCE',
       category: 'Iluminación LED Comercial y Hogar',
       badge: 'Ahorro Energético',
-      accentColor: '#FF7A00',
+      accentColor: '#f6892c',
       description: 'Paneles LED empotrables/superficiales, reflectores IP65, tubos y bombillos.'
     },
     {
@@ -203,9 +204,8 @@ export const siteConfig = {
   categories: [
     {
       id: 'herramientas-manuales-electricas',
-      code: '01',
       title: 'Herramientas Manuales y Eléctricas',
-      subtitle: 'BUILD, FIX, CREATE • POTENCIA Y PRECISIÓN',
+      subtitle: 'POTENCIA Y PRECISIÓN • USO PROFESIONAL Y HOGAR',
       badge: 'GARANTÍA EN TIENDA',
       description:
         'Equípate con herramientas originales de alto desempeño. Asesoría técnica en mostrador para elegir el equipo y consumible exacto para tu trabajo.',
@@ -217,16 +217,15 @@ export const siteConfig = {
       ],
       popularBrands: ['DeWalt', 'Truper', 'Bosch', 'Stanley'],
       whatsappMessage:
-        'Hola, vi su página y quiero consultar disponibilidad y precio de Herramientas Manuales y Eléctricas.',
+        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Herramientas Manuales y Eléctricas.',
       image: '/images/cat-herramientas.webp',
       theme: 'dark',
       iconName: 'wrench'
     },
     {
       id: 'electricidad-iluminacion',
-      code: '02',
       title: 'Electricidad e Iluminación',
-      subtitle: 'HIGH VOLTAGE & LED • INSTALACIONES SEGURAS',
+      subtitle: 'INSTALACIONES SEGURAS • PROTECCIÓN Y LED',
       badge: 'STOCK INMEDIATO',
       description:
         'Todo para remodelaciones residenciales y locales comerciales: cableado certificado, protección térmica e iluminación LED decorativa e industrial.',
@@ -238,16 +237,15 @@ export const siteConfig = {
       ],
       popularBrands: ['Bticino', 'Osram', 'Exceline', '3M'],
       whatsappMessage:
-        'Hola, vi su página y quiero consultar disponibilidad y precio en la categoría de Electricidad e Iluminación.',
+        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio en la categoría de Electricidad e Iluminación.',
       image: '/images/cat-electricidad.webp',
       theme: 'light',
       iconName: 'bolt'
     },
     {
       id: 'plomeria-tuberias',
-      code: '03',
       title: 'Plomería y Tuberías',
-      subtitle: 'EMERGENCY PLUMBING • CERO FUGAS Y PRESIÓN',
+      subtitle: 'SOLUCIONES CERO FUGAS • AGUA Y PRESIÓN',
       badge: 'REPUESTOS Y CONEXIONES',
       description:
         'Encuentra desde el empaque o herraje específico para una emergencia doméstica hasta sistemas completos de tuberías, llaves de paso y bombas de agua.',
@@ -259,16 +257,15 @@ export const siteConfig = {
       ],
       popularBrands: ['Pavco', 'Coflex', 'Ingco', 'Griven'],
       whatsappMessage:
-        'Hola, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías.',
+        'Hola Órbita Marketing, vi su página y necesito cotizar repuestos o materiales de Plomería y Tuberías.',
       image: '/images/cat-plomeria.webp',
       theme: 'light',
       iconName: 'droplet'
     },
     {
       id: 'pinturas-adhesivos-construccion',
-      code: '04',
       title: 'Pinturas, Adhesivos y Construcción Ligera',
-      subtitle: 'PRO FINISH • IMPERMEABILIZACIÓN Y FIJACIÓN',
+      subtitle: 'ACABADOS DURADEROS • IMPERMEABILIZACIÓN Y FIJACIÓN',
       badge: 'ALTA DEMANDA',
       description:
         'Renueva y protege cualquier espacio con pinturas lavables, selladores de alto agarre, impermeabilizantes y accesorios para tabiquería y fijación.',
@@ -280,7 +277,7 @@ export const siteConfig = {
       ],
       popularBrands: ['Sika', 'Venezolana de Pinturas', '3M', 'Truper'],
       whatsappMessage:
-        'Hola, vi su página y quiero cotizar productos de Pinturas, Adhesivos y Construcción Ligera.',
+        'Hola Órbita Marketing, vi su página y quiero cotizar productos de Pinturas, Adhesivos y Construcción Ligera.',
       image: '/images/cat-pinturas.webp',
       theme: 'dark',
       iconName: 'paint'
@@ -290,9 +287,9 @@ export const siteConfig = {
   storePhotos: [
     {
       id: 'fachada-cc',
-      title: 'Fachada Principal en Nivel PB - Local PB-114',
+      title: 'Fachada Principal en Planta Baja - Local PB-06',
       caption:
-        'Pasillo climatizado con exhibición iluminada y atención directa en mostrador dentro del C.C. Parque Los Aviadores.',
+        'Ubicados en el C.C. Ciudad Crepuscular (Av. 20 entre calles 40 y 41, Barquisimeto) con atención directa en mostrador.',
       badge: 'Local Verificado',
       image: '/images/local-fachada.webp'
     },
@@ -300,7 +297,7 @@ export const siteConfig = {
       id: 'pasillo-herramientas',
       title: 'Exhibición de Herramientas y Equipos Eléctricos',
       caption:
-        'Stock real a la vista de marcas líderes como DeWalt, Truper, Bosch y Stanley listas para prueba y entrega inmediata.',
+        'Stock real a la vista de marcas líderes como DeWalt, Truper, Bosch y Stanley listas para entrega inmediata.',
       badge: 'Inventario Real',
       image: '/images/local-pasillo.webp'
     },
