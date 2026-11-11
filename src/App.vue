@@ -24,13 +24,32 @@ function closePrivacyPolicy() {
   }
 }
 
+const routeSectionMap: Record<string, string> = {
+  '/productos': 'categorias',
+  '/marcas': 'marcas',
+  '/ubicacion': 'ubicacion'
+}
+
+function handleRouteNavigation(pathname: string) {
+  showPrivacyPolicy.value = pathname === '/politica-de-privacidad'
+
+  const sectionId = routeSectionMap[pathname]
+  if (sectionId) {
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 50)
+  } else if (pathname === '/') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+}
+
 onMounted(() => {
-  if (window.location.pathname === '/politica-de-privacidad') {
-    showPrivacyPolicy.value = true
+  if (window.location.pathname !== '/') {
+    handleRouteNavigation(window.location.pathname)
   }
 
   window.addEventListener('popstate', () => {
-    showPrivacyPolicy.value = window.location.pathname === '/politica-de-privacidad'
+    handleRouteNavigation(window.location.pathname)
   })
 })
 </script>

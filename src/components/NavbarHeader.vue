@@ -7,17 +7,17 @@ const isScrolled = ref(false)
 const headerWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.header)
 
 const navLinks = [
-  { label: 'INICIO', sectionId: '', hasArrow: false },
-  { label: 'NUESTROS PRODUCTOS', sectionId: 'categorias', hasArrow: true },
-  { label: 'MARCAS EN STOCK', sectionId: 'marcas', hasArrow: false },
-  { label: 'UBICACIÓN Y HORARIOS', sectionId: 'ubicacion', hasArrow: false }
+  { label: 'INICIO', path: '/', sectionId: '', hasArrow: false },
+  { label: 'NUESTROS PRODUCTOS', path: '/productos', sectionId: 'categorias', hasArrow: true },
+  { label: 'MARCAS EN STOCK', path: '/marcas', sectionId: 'marcas', hasArrow: false },
+  { label: 'UBICACIÓN Y HORARIOS', path: '/ubicacion', sectionId: 'ubicacion', hasArrow: false }
 ]
 
-function scrollToSection(sectionId?: string) {
+function scrollToSection(sectionId?: string, path = '/') {
   mobileMenuOpen.value = false
 
-  if (window.location.hash) {
-    window.history.replaceState(null, '', window.location.pathname)
+  if (window.location.pathname !== path || window.location.hash) {
+    window.history.pushState({}, '', path)
   }
 
   if (!sectionId) {
@@ -64,7 +64,7 @@ onUnmounted(() => {
         <a
           href="/"
           class="group flex items-center focus:outline-none"
-          @click.prevent="scrollToSection()"
+          @click.prevent="scrollToSection('', '/')"
         >
           <img
             :src="siteConfig.business.logoUrl"
@@ -78,9 +78,9 @@ onUnmounted(() => {
         <div class="flex items-center gap-6 lg:gap-10">
           <!-- Location Pin Item: C.C. Ciudad Crepuscular / Local + Horario -->
           <a
-            href="/"
+            href="/ubicacion"
             class="hidden items-start gap-2.5 text-left transition hover:opacity-90 md:flex"
-            @click.prevent="scrollToSection('ubicacion')"
+            @click.prevent="scrollToSection('ubicacion', '/ubicacion')"
           >
             <svg class="mt-0.5 h-5 w-5 shrink-0 text-[#f6892c]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
@@ -143,9 +143,9 @@ onUnmounted(() => {
           <a
             v-for="item in navLinks"
             :key="item.label"
-            href="/"
+            :href="item.path"
             class="inline-flex cursor-pointer items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-neutral-200 transition hover:text-[#f6892c]"
-            @click.prevent="scrollToSection(item.sectionId)"
+            @click.prevent="scrollToSection(item.sectionId, item.path)"
           >
             <span>{{ item.label }}</span>
             <svg
@@ -172,9 +172,9 @@ onUnmounted(() => {
         <a
           v-for="item in navLinks"
           :key="item.label"
-          href="/"
+          :href="item.path"
           class="flex cursor-pointer items-center justify-between border-l-2 border-transparent px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-white hover:border-[#f6892c] hover:bg-white/5 hover:text-[#f6892c]"
-          @click.prevent="scrollToSection(item.sectionId)"
+          @click.prevent="scrollToSection(item.sectionId, item.path)"
         >
           <span>{{ item.label }}</span>
           <span class="text-[#f6892c]">→</span>

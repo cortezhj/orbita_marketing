@@ -17,9 +17,9 @@ const socialLinks = [
   { name: 'TikTok', href: siteConfig.business.socials.tiktok, icon: iconTiktok }
 ]
 
-function scrollToSection(sectionId?: string) {
-  if (window.location.hash) {
-    window.history.replaceState(null, '', window.location.pathname)
+function scrollToSection(sectionId?: string, path = '/') {
+  if (window.location.pathname !== path || window.location.hash) {
+    window.history.pushState({}, '', path)
   }
 
   if (!sectionId) {
@@ -93,34 +93,34 @@ function scrollToSection(sectionId?: string) {
               <a
                 href="/"
                 class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection()"
+                @click.prevent="scrollToSection('', '/')"
               >
                 Inicio
               </a>
             </li>
             <li>
               <a
-                href="/"
+                href="/marcas"
                 class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection('marcas')"
+                @click.prevent="scrollToSection('marcas', '/marcas')"
               >
                 Marcas que Distribuimos
               </a>
             </li>
             <li>
               <a
-                href="/"
+                href="/productos"
                 class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection('categorias')"
+                @click.prevent="scrollToSection('categorias', '/productos')"
               >
                 Nuestros Productos
               </a>
             </li>
             <li>
               <a
-                href="/"
+                href="/ubicacion"
                 class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection('ubicacion')"
+                @click.prevent="scrollToSection('ubicacion', '/ubicacion')"
               >
                 Ubicación y Horarios
               </a>
