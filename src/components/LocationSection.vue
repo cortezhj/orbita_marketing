@@ -51,36 +51,40 @@ const socialLinks = [
               </span>
             </li>
 
-            <li class="flex items-center gap-2.5">
-              <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#f6892c]"></span>
-              <strong class="font-bold text-[#141619]">Redes Sociales:</strong>
-              <div class="flex items-center gap-3">
-                <a
-                  v-for="social in socialLinks"
-                  :key="social.name"
-                  :href="social.href"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  :aria-label="social.name"
-                  :title="social.name"
-                  class="inline-flex items-center justify-center transition-transform duration-200 hover:scale-110"
-                >
-                  <img
-                    :src="social.icon"
-                    :alt="social.name"
-                    width="26"
-                    height="26"
-                    loading="lazy"
-                    decoding="async"
-                    class="h-6 w-6 object-contain sm:h-6.5 sm:w-6.5"
-                  />
-                </a>
-              </div>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#f6892c]"></span>
+              <span>
+                <strong class="font-bold text-[#141619]">Síguenos en nuestras redes sociales:</strong>
+                Instagram, TikTok y Facebook.
+              </span>
             </li>
           </ul>
 
-          <!-- Compact Rectangular Brand-Orange CTA Button -->
-          <div class="mt-8">
+          <!-- Social Icons (Left) + Cómo Llegar Button (Right) -->
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <div class="flex items-center gap-3">
+              <a
+                v-for="social in socialLinks"
+                :key="social.name"
+                :href="social.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                :aria-label="social.name"
+                :title="social.name"
+                class="inline-flex items-center justify-center transition-transform duration-200 hover:-translate-y-0.5 hover:scale-110"
+              >
+                <img
+                  :src="social.icon"
+                  :alt="social.name"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-8 w-8 object-contain"
+                />
+              </a>
+            </div>
+
             <a
               :href="siteConfig.business.googleMapsDirectionsUrl"
               target="_blank"
