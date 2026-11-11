@@ -16,52 +16,52 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    shortLabel: 'WALL PANEL Y DECO',
-    headlineTop: 'WALL PANEL Y DECORACIÓN',
-    headlineBottom: 'revestimientos, lavaplatos y duchas',
+    shortLabel: 'REVESTIMIENTOS',
+    headlineTop: 'REVESTIMIENTOS Y WALL PANEL',
+    headlineBottom: 'decoración, lavaplatos y duchas',
     description:
-      'Transforma tus espacios con nuestra línea de revestimientos, Wall Panel WPC, láminas decorativas, lavaplatos multifuncionales, duchas y grifería moderna en el C.C. Ciudad Crepuscular (Local PB-06).',
-    image: '/images/hero-wallpanel.png',
+      'Transforma tus espacios con Wall Panel WPC, láminas decorativas tipo mármol, lavaplatos multifuncionales y duchas modernas en el C.C. Ciudad Crepuscular (Local PB-06).',
+    image: '/images/slide-revestimientos.jpg',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
-    nodeX: 74,
-    nodeY: 64
+    nodeX: 60,
+    nodeY: 42
   },
   {
     shortLabel: 'HERRAMIENTAS',
-    headlineTop: 'FERRETERÍA Y HERRAMIENTAS',
+    headlineTop: 'HERRAMIENTAS Y FERRETERÍA',
     headlineBottom: 'para cualquier proyecto',
     description:
-      'Ahora también somos tu ferretería de confianza en Barquisimeto: taladros, esmeriles, herramientas manuales y eléctricas, electricidad, iluminación LED y fijaciones.',
-    image: '/images/hero-herramientas.png',
+      'Equípate con taladros, esmeriles, herramientas manuales y eléctricas, cemento, bloques y fijaciones para construcción y remodelación en Barquisimeto.',
+    image: '/images/slide-herramientas.jpg',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Herramientas y artículos de Ferretería en el C.C. Ciudad Crepuscular.',
-    nodeX: 52,
-    nodeY: 158
+    nodeX: 42,
+    nodeY: 105
   },
   {
-    shortLabel: 'CEMENTO Y BLOQUES',
-    headlineTop: 'CEMENTO Y BLOQUES',
-    headlineBottom: 'materiales de construcción',
+    shortLabel: 'ELECTRICIDAD',
+    headlineTop: 'ELECTRICIDAD E ILUMINACIÓN',
+    headlineBottom: 'para cualquier instalación',
     description:
-      'Todo para tu obra y remodelación en un solo lugar: sacos de cemento, pego, bloques, aditivos e impermeabilizantes con atención directa en el C.C. Ciudad Crepuscular.',
-    image: '/images/hero-cemento.png',
+      'Cables eléctricos, breakers termomagnéticos, tomacorrientes, interruptores modernos, paneles y reflectores LED con entrega inmediata en nuestro local PB-06.',
+    image: '/images/slide-electricidad.jpg',
     whatsappMessage:
-      'Hola Órbita Marketing, vi su página y necesito cotizar Cemento, Bloques y Materiales de Construcción.',
-    nodeX: 76,
-    nodeY: 252
+      'Hola Órbita Marketing, vi su página y necesito cotizar materiales de Electricidad e Iluminación en el C.C. Ciudad Crepuscular.',
+    nodeX: 62,
+    nodeY: 168
   },
   {
     shortLabel: 'PINTURAS',
     headlineTop: 'PINTURAS Y ACABADOS',
     headlineBottom: 'para renovar tus espacios',
     description:
-      'Pinturas en caucho, esmaltes, impermeabilizantes Sika, siliconas, adhesivos para Wall Panel, rodillos y brochas con disponibilidad inmediata en nuestro local PB-06.',
-    image: '/images/hero-pinturas.png',
+      'Pinturas en caucho, esmaltes, impermeabilizantes Sika, siliconas, adhesivos para Wall Panel, cemento, pego, rodillos y brochas en el C.C. Ciudad Crepuscular.',
+    image: '/images/slide-pinturas.jpg',
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Acabados en el C.C. Ciudad Crepuscular.',
-    nodeX: 132,
-    nodeY: 332
+    nodeX: 106,
+    nodeY: 222
   }
 ]
 
@@ -99,8 +99,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- Exact Screen-Sized Hero (h-dvh) with Fixed Header Clearance and Bottom Jagged Divider -->
-  <section class="relative flex min-h-[580px] flex-col justify-between overflow-hidden bg-[#0a0a0a] pt-26 text-white sm:pt-30 lg:h-dvh lg:max-h-dvh lg:pt-32">
+  <!-- Natural Hero Height with Balanced Proportions -->
+  <section class="relative overflow-hidden bg-[#0a0a0a] pt-28 text-white sm:pt-32 lg:pt-36">
     <!-- Background Image from src/assets/background.avif with Dark Black Overlay -->
     <div class="pointer-events-none absolute inset-0">
       <img
@@ -120,33 +120,35 @@ onUnmounted(() => {
       ></div>
     </div>
 
-    <!-- Main Hero Container (Centered Vertically Inside Screen Height) -->
-    <div class="relative mx-auto flex w-full max-w-7xl flex-1 items-center px-4 py-4 sm:px-6 lg:px-8">
-      <div class="grid w-full items-center gap-6 lg:grid-cols-12 lg:gap-4">
-        <!-- Left Column: Brand Orange (#f6892c) Headline + Description + Clean Modern CTA Button -->
-        <div class="lg:col-span-6">
-          <h1 class="text-3xl font-black tracking-tight text-[#f6892c] drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] sm:text-4xl lg:text-[3.1rem] lg:leading-[1.1]">
-            <span class="block uppercase">{{ currentSlide.headlineTop }}</span>
-            <span class="mt-1 block font-extrabold text-[#f6892c]">
+    <!-- Main Hero Container with Refined, Balanced Proportions -->
+    <div class="relative mx-auto max-w-6xl px-4 pt-4 pb-12 sm:px-6 sm:pt-6 sm:pb-14 lg:px-8 lg:pt-8 lg:pb-16">
+      <div class="grid items-center gap-8 lg:grid-cols-12 lg:gap-4">
+        <!-- Left Column: Proportioned Headline + Compact Description + Clean CTA -->
+        <div class="lg:col-span-5">
+          <h1 class="font-black tracking-tight text-[#f6892c] drop-shadow-[0_3px_12px_rgba(0,0,0,0.65)]">
+            <span class="block text-xl uppercase sm:text-2xl lg:text-[2rem] lg:leading-[1.15]">
+              {{ currentSlide.headlineTop }}
+            </span>
+            <span class="mt-1 block text-lg font-extrabold text-[#f6892c] sm:text-xl lg:text-[1.5rem] lg:leading-[1.2]">
               {{ currentSlide.headlineBottom }}
             </span>
           </h1>
 
-          <p class="mt-4 max-w-lg text-xs leading-relaxed text-neutral-200/90 sm:text-sm">
+          <p class="mt-4 max-w-sm text-xs leading-relaxed text-neutral-300/85 sm:text-[13px]">
             {{ currentSlide.description }}
           </p>
 
-          <!-- Clean, Refined Brand-Orange Button -->
-          <div class="mt-7">
+          <!-- Clean, Proportioned Brand-Orange Button -->
+          <div class="mt-6">
             <a
               :href="currentWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-3 rounded-lg bg-[#f6892c] px-8 py-3.5 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-lg shadow-black/45 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99] sm:text-sm"
+              class="group inline-flex items-center justify-center gap-2.5 rounded-md bg-[#f6892c] px-6 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-md shadow-black/50 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99]"
             >
               <span>Cotizar Ahora</span>
               <svg
-                class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -158,21 +160,21 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Right Column: Orbital Arc Selector + Half-Body Cutout Worker from Assets -->
-        <div class="relative lg:col-span-6">
-          <div class="relative mx-auto flex max-w-xl items-center justify-end">
-            <!-- Desktop Curved Orbital Arc with 4 Auto-Rotating & Clickable Category Nodes -->
-            <div class="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-68 sm:block">
+        <!-- Right Column: Proportioned Orbital Arc + Studio Product Render -->
+        <div class="relative lg:col-span-7">
+          <div class="relative mx-auto flex h-[230px] max-w-xl items-center justify-end sm:h-[260px] lg:h-[280px]">
+            <!-- Desktop Curved Orbital Arc with 4 Interactive Category Nodes -->
+            <div class="pointer-events-none absolute inset-y-0 left-4 z-20 hidden w-52 sm:block lg:left-6">
               <svg
-                viewBox="0 0 220 380"
+                viewBox="0 0 165 255"
                 class="h-full w-full overflow-visible"
                 fill="none"
               >
-                <!-- Subtle Orbital Curve Path -->
+                <!-- Delicate Orbital Curve Path -->
                 <path
-                  d="M 112 20 Q 6 190 158 360"
-                  stroke="rgba(255,255,255,0.24)"
-                  stroke-width="1.25"
+                  d="M 88 12 Q 6 128 124 243"
+                  stroke="rgba(255,255,255,0.22)"
+                  stroke-width="1"
                 />
 
                 <!-- Nodes along the curve -->
@@ -187,33 +189,33 @@ onUnmounted(() => {
                     v-if="activeIndex === idx"
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
-                    r="12"
-                    fill="rgba(246, 137, 44, 0.32)"
+                    r="8.5"
+                    fill="rgba(255, 255, 255, 0.22)"
                   />
                   <!-- Core Dot -->
                   <circle
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
-                    :r="activeIndex === idx ? 5.5 : 3.5"
-                    :fill="activeIndex === idx ? '#FFFFFF' : 'rgba(255,255,255,0.38)'"
+                    :r="activeIndex === idx ? 3.8 : 2.6"
+                    :fill="activeIndex === idx ? '#FFFFFF' : 'rgba(255,255,255,0.35)'"
                   />
                 </g>
               </svg>
 
-              <!-- Text Labels Positioned Next to the 4 Arc Nodes -->
+              <!-- Refined Category Labels Positioned Next to the 4 Arc Nodes -->
               <button
                 v-for="(slide, idx) in slides"
                 :key="slide.shortLabel"
                 type="button"
-                class="pointer-events-auto absolute -translate-y-1/2 text-right text-[11px] font-extrabold uppercase tracking-wider transition focus:outline-none"
+                class="pointer-events-auto absolute -translate-y-1/2 text-right text-[10px] font-bold uppercase tracking-[0.11em] transition focus:outline-none"
                 :class="
                   activeIndex === idx
-                    ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.75)]'
-                    : 'text-neutral-400 hover:text-neutral-200'
+                    ? 'text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.65)]'
+                    : 'text-neutral-500 hover:text-neutral-300'
                 "
                 :style="{
-                  top: `${(slide.nodeY / 380) * 100}%`,
-                  right: `${100 - (slide.nodeX / 220) * 100 + 7}%`
+                  top: `${(slide.nodeY / 255) * 100}%`,
+                  right: `${100 - (slide.nodeX / 165) * 100 + 8}%`
                 }"
                 @click="selectSlide(idx)"
               >
@@ -227,7 +229,7 @@ onUnmounted(() => {
                 v-for="(slide, idx) in slides"
                 :key="slide.shortLabel"
                 type="button"
-                class="rounded px-2.5 py-1 text-[10px] font-black uppercase tracking-wider transition"
+                class="rounded px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider transition"
                 :class="
                   activeIndex === idx
                     ? 'bg-[#f6892c] text-white'
@@ -239,23 +241,23 @@ onUnmounted(() => {
               </button>
             </div>
 
-            <!-- Half-Body Cutout Image from Assets (Transparent Background) -->
-            <div class="relative z-10 flex w-full items-center justify-center sm:w-[70%]">
-              <!-- Subtle Warm Spotlight Behind Cutout -->
-              <div class="pointer-events-none absolute inset-8 rounded-full bg-[#f6892c]/12 blur-3xl"></div>
+            <!-- Studio Product Image Showcase (Proportioned & Seamlessly Blended) -->
+            <div class="relative z-10 flex h-full w-full items-center justify-center sm:w-[68%]">
+              <!-- Subtle Warm Ambient Glow -->
+              <div class="pointer-events-none absolute inset-10 rounded-full bg-[#f6892c]/10 blur-2xl"></div>
 
               <img
                 :key="currentSlide.image"
                 :src="currentSlide.image"
                 :alt="currentSlide.headlineTop"
-                width="650"
-                height="540"
+                width="760"
+                height="428"
                 fetchpriority="high"
                 decoding="async"
-                class="h-64 w-auto max-w-full object-contain drop-shadow-[0_18px_35px_rgba(0,0,0,0.85)] transition-all duration-500 sm:h-80 lg:h-[360px]"
+                class="max-h-full w-full object-contain mix-blend-lighten transition-all duration-500"
                 style="
-                  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
-                  mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+                  -webkit-mask-image: radial-gradient(ellipse 82% 80% at 50% 50%, #000 65%, transparent 100%);
+                  mask-image: radial-gradient(ellipse 82% 80% at 50% 50%, #000 65%, transparent 100%);
                 "
               />
             </div>
@@ -265,7 +267,7 @@ onUnmounted(() => {
     </div>
 
     <!-- Rugged / Torn Paper-Asphalt White Bottom Divider -->
-    <div class="relative z-20 -mb-px w-full shrink-0 overflow-hidden leading-none">
+    <div class="relative z-20 -mb-px w-full overflow-hidden leading-none">
       <svg
         viewBox="0 0 1440 44"
         fill="none"

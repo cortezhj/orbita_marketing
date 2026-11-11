@@ -173,81 +173,81 @@ export const siteConfig = {
   categories: [
     {
       id: 'revestimientos-wall-panel-decoracion',
-      title: 'Revestimientos, Wall Panel y Decoración',
-      subtitle: 'DISEÑO MODERNO • ACABADOS DE LUJO PARA HOGAR Y COMERCIO',
+      title: 'Revestimientos, Wall Panel y Artefactos',
+      subtitle: 'DISEÑO MODERNO • WALL PANEL, LAVAPLATOS Y DUCHAS',
       badge: 'ESPECIALIDAD DE LA CASA',
       description:
-        'Transforma tus espacios en horas con nuestra línea exclusiva de revestimientos arquitectónicos, Wall Panels WPC acanalados y láminas decorativas.',
+        'Transforma tus espacios con nuestra línea exclusiva de revestimientos arquitectónicos, Wall Panels WPC acanalados, láminas decorativas, lavaplatos multifuncionales y duchas.',
       highlights: [
-        'Wall Panel WPC interior y exterior en variedad de tonos madera y modernos',
-        'Láminas UV tipo mármol de alto brillo, pisos vinílicos SPC y grama artificial',
-        'Follaje artificial, perfiles de terminación, esquineros y luces LED integrables',
+        'Wall Panel WPC interior y exterior y láminas UV tipo mármol de alto brillo',
+        'Lavaplatos inteligentes multifuncionales (cascada) y de acero inoxidable',
+        'Columnas de ducha hidromasaje, regaderas tipo lluvia y grifería moderna',
         'Adhesivos de montaje de alto agarre y asesoría para calcular tu metraje exacto'
       ],
-      popularBrands: ['WPC Wall Panel', 'Láminas UV', 'Pisos SPC', 'Sika'],
+      popularBrands: ['WPC Wall Panel', 'Láminas UV', 'Lavaplatos Cascada', 'Duchas Pro'],
       whatsappMessage:
-        'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel y Decoración en el C.C. Ciudad Crepuscular.',
-      image: '/images/cat-electricidad.webp',
+        'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
+      image: '/images/slide-revestimientos.jpg',
       theme: 'dark',
-      iconName: 'bolt'
-    },
-    {
-      id: 'lavaplatos-duchas-artefactos',
-      title: 'Lavaplatos, Duchas y Artefactos',
-      subtitle: 'COCINAS Y BAÑOS • FUNCIONALIDAD Y ELEGANCIA',
-      badge: 'EXHIBICIÓN EN TIENDA',
-      description:
-        'Equipa tu cocina y baño con artefactos modernos de alta durabilidad. Ven a verlos directamente en nuestra exhibición del Local PB-06.',
-      highlights: [
-        'Lavaplatos inteligentes multifuncionales (cascada) y de acero inoxidable',
-        'Columnas de ducha hidromasaje, regaderas tipo lluvia y monocontroles',
-        'Grifería moderna para lavamanos y fregaderos en negro mate, cromo y dorado',
-        'Espejos LED, accesorios de baño y desagües automáticos'
-      ],
-      popularBrands: ['Lavaplatos Cascada', 'Duchas Pro', 'Grifería', 'Accesorios'],
-      whatsappMessage:
-        'Hola Órbita Marketing, vi su página y quiero consultar modelos y precios de Lavaplatos, Duchas y Artefactos.',
-      image: '/images/cat-plomeria.webp',
-      theme: 'light',
       iconName: 'droplet'
     },
     {
       id: 'ferreteria-herramientas',
-      title: 'Ferretería y Herramientas',
+      title: 'Herramientas y Ferretería',
       subtitle: 'POTENCIA Y PRECISIÓN • USO PROFESIONAL Y HOGAR',
       badge: 'GARANTÍA EN TIENDA',
       description:
-        'Ahora somos tu ferretería completa en el C.C. Ciudad Crepuscular: herramientas eléctricas, manuales, consumibles y material eléctrico.',
+        'Ahora somos tu ferretería completa en el C.C. Ciudad Crepuscular: herramientas eléctricas, manuales, cemento, bloques, consumibles y fijaciones.',
       highlights: [
         'Taladros percutores, atornilladores inalámbricos, esmeriles y rotomartillos',
         'Juegos de llaves, alicates, destornilladores, cintas métricas y niveles láser',
         'Discos de corte, mechas para concreto/metal/madera, tornillería y chazos',
-        'Cables eléctricos, breakers, tomacorrientes, paneles y reflectores LED'
+        'Sacos de cemento gris, pego, bloques y materiales para obra y remodelación'
       ],
       popularBrands: ['DeWalt', 'Truper', 'Ingco', 'Stanley'],
       whatsappMessage:
-        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Ferretería y Herramientas.',
-      image: '/images/cat-herramientas.webp',
-      theme: 'dark',
+        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Herramientas y Ferretería.',
+      image: '/images/slide-herramientas.jpg',
+      theme: 'light',
       iconName: 'wrench'
     },
     {
-      id: 'cemento-bloques-pinturas',
-      title: 'Cemento, Bloques y Pinturas',
+      id: 'electricidad-iluminacion',
+      title: 'Electricidad e Iluminación',
+      subtitle: 'INSTALACIONES SEGURAS • PROTECCIÓN Y LED',
+      badge: 'STOCK INMEDIATO',
+      description:
+        'Todo para remodelaciones residenciales y locales comerciales: cableado certificado, protección térmica e iluminación LED decorativa e industrial.',
+      highlights: [
+        'Cables THHN / TW #8, #10, #12 y #14 (por metro o rollo)',
+        'Breakers termomagnéticos, tableros y protectores de voltaje 110V/220V',
+        'Paneles LED, reflectores exteriores IP65, cintas LED para Wall Panel y sensores',
+        'Tomacorrientes, interruptores modernos, cajetines y canaletas'
+      ],
+      popularBrands: ['Bticino', 'Osram', 'Exceline', '3M'],
+      whatsappMessage:
+        'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio en Electricidad e Iluminación.',
+      image: '/images/slide-electricidad.jpg',
+      theme: 'dark',
+      iconName: 'bolt'
+    },
+    {
+      id: 'pinturas-acabados-construccion',
+      title: 'Pinturas, Adhesivos y Construcción',
       subtitle: 'CONSTRUCCIÓN Y ACABADOS • OBRA GRIS Y RENOVACIÓN',
       badge: 'ALTA DEMANDA',
       description:
-        'Desde los materiales de construcción pesada como cemento y bloques hasta las pinturas, selladores e impermeabilizantes para el acabado final.',
+        'Desde pinturas lavables, selladores e impermeabilizantes hasta cemento, bloques y pego para completar tu obra o remodelación de principio a fin.',
       highlights: [
-        'Sacos de cemento gris, pego para cerámica/porcelanato, pasta profesional y cal',
-        'Bloques para tabiquería y construcción, malla electrosoldada y agregados',
         'Pinturas en caucho clase A y B, esmaltes, fondos anticorrosivos e impermeabilizantes',
-        'Rodillos antigota, brochas, siliconas, Sikaflex y cintas de enmascarar'
+        'Siliconas acéticas/neutras, Sikaflex y adhesivo especial para Wall Panel',
+        'Sacos de cemento gris, pego para cerámica/porcelanato, pasta profesional y bloques',
+        'Rodillos antigota, brochas, espátulas y cintas de enmascarar'
       ],
-      popularBrands: ['Cemento', 'Sika', 'Venezolana de Pinturas', '3M'],
+      popularBrands: ['Sika', 'Venezolana de Pinturas', 'Cemento', '3M'],
       whatsappMessage:
-        'Hola Órbita Marketing, vi su página y quiero cotizar Cemento, Bloques y Pinturas.',
-      image: '/images/cat-pinturas.webp',
+        'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Materiales de Construcción.',
+      image: '/images/slide-pinturas.jpg',
       theme: 'light',
       iconName: 'paint'
     }
