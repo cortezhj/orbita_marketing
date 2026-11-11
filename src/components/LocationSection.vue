@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { siteConfig } from '../config/siteConfig'
+import iconFacebook from '../assets/2023_Facebook_icon.svg.webp'
+import iconInstagram from '../assets/Instagram_icon.png.webp'
+import iconTiktok from '../assets/Tiktok_icon.svg.webp'
+
+const socialLinks = [
+  { name: 'Instagram', href: siteConfig.business.socials.instagram, icon: iconInstagram },
+  { name: 'TikTok', href: siteConfig.business.socials.tiktok, icon: iconTiktok },
+  { name: 'Facebook', href: siteConfig.business.socials.facebook, icon: iconFacebook }
+]
 </script>
 
 <template>
-  <section id="ubicacion" class="cv-auto scroll-mt-24 bg-white pt-20 pb-8 text-[#141619] sm:pt-28 sm:pb-10">
+  <section id="ubicacion" class="cv-auto scroll-mt-24 bg-white py-20 text-[#141619] sm:py-28">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <!-- Right Column on Desktop: Minimalist Editorial Content -->
@@ -40,6 +49,33 @@ import { siteConfig } from '../config/siteConfig'
                 <strong class="font-bold text-[#141619]">Contacto Directo:</strong>
                 {{ siteConfig.business.phoneDisplay }}
               </span>
+            </li>
+
+            <li class="flex items-center gap-2.5">
+              <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#f6892c]"></span>
+              <strong class="font-bold text-[#141619]">Redes Sociales:</strong>
+              <div class="flex items-center gap-3">
+                <a
+                  v-for="social in socialLinks"
+                  :key="social.name"
+                  :href="social.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  :aria-label="social.name"
+                  :title="social.name"
+                  class="inline-flex items-center justify-center transition-transform duration-200 hover:scale-110"
+                >
+                  <img
+                    :src="social.icon"
+                    :alt="social.name"
+                    width="26"
+                    height="26"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-6 w-6 object-contain sm:h-6.5 sm:w-6.5"
+                  />
+                </a>
+              </div>
             </li>
           </ul>
 
