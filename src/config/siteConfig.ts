@@ -37,12 +37,12 @@ export interface ScheduleItem {
 
 export const siteConfig = {
   business: {
-    brandName: 'Órbita Marketing',
-    shortName: 'ÓRBITA',
-    legalName: 'Órbita Marketing, C.A.',
+    brandName: 'Orbita Marketing',
+    shortName: 'ORBITA',
+    legalName: 'Orbita Marketing, C.A.',
     rif: 'J500390335',
     logoUrl: '/Logo.png',
-    tagline: 'REVESTIMIENTOS, WALL PANEL, FERRETERÍA Y CONSTRUCCIÓN',
+    tagline: 'REVESTIMIENTOS, FERRETERÍA Y CONSTRUCCIÓN',
     mallName: 'Centro Comercial Ciudad Crepuscular',
     mallShort: 'C.C. Ciudad Crepuscular',
     level: 'Planta Baja',
@@ -60,8 +60,8 @@ export const siteConfig = {
     phoneDisplay: '+58 412-3682831',
     landlineDisplay: '+58 412-3682831',
     whatsappNumber: '584123682831',
-    email: 'ventas@orbitamarketing.com',
-    complianceEmail: 'legal@orbitamarketing.com',
+    email: 'ventas@orbitamarketingve.com',
+    complianceEmail: 'ventas@orbitamarketingve.com',
     foundedYear: 2018,
     skuCount: '+4,500',
     responseMinutes: '< 5 min',
