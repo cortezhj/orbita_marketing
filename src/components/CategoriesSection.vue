@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 
-const bandBgColors = ['#e5e5e3', '#2b2e33', '#e7e7e7', '#1b1e23']
+const bandBgColors = ['#e5e5e3', '#24272c', '#e7e7e7', '#1b1e23']
 </script>
 
 <template>
@@ -44,15 +44,9 @@ const bandBgColors = ['#e5e5e3', '#2b2e33', '#e7e7e7', '#1b1e23']
             <img
               :src="cat.image"
               :alt="cat.title"
-              width="680"
-              height="650"
               loading="lazy"
               decoding="async"
-              class="h-full w-full max-w-[600px] scale-110 object-contain object-center transition-transform duration-500 group-hover:scale-[1.18] lg:scale-[1.15]"
-              style="
-                -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 76%, transparent 100%);
-                mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 76%, transparent 100%);
-              "
+              class="h-full w-auto max-w-full scale-108 object-contain object-center transition-transform duration-500 group-hover:scale-[1.14] lg:scale-[1.12]"
             />
           </div>
 
