@@ -16,6 +16,22 @@ const socialLinks = [
   { name: 'Instagram', href: siteConfig.business.socials.instagram, icon: iconInstagram },
   { name: 'TikTok', href: siteConfig.business.socials.tiktok, icon: iconTiktok }
 ]
+
+function scrollToSection(sectionId?: string) {
+  if (window.location.hash) {
+    window.history.replaceState(null, '', window.location.pathname)
+  }
+
+  if (!sectionId) {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    return
+  }
+
+  const target = document.getElementById(sectionId)
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
 </script>
 
 <template>
@@ -25,7 +41,7 @@ const socialLinks = [
       <div class="grid grid-cols-1 gap-10 md:grid-cols-12 lg:gap-12">
         <!-- Col 1: Logo, Brief Identity & Social Icons (5 cols) -->
         <div class="md:col-span-5">
-          <a href="#" class="inline-block">
+          <a href="/" class="inline-block" @click.prevent="scrollToSection()">
             <img
               :src="siteConfig.business.logoUrl"
               :alt="siteConfig.business.legalName"
@@ -74,22 +90,38 @@ const socialLinks = [
           </h3>
           <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
             <li>
-              <a href="#" class="text-neutral-300 transition hover:text-[#f6892c]">
+              <a
+                href="/"
+                class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
+                @click.prevent="scrollToSection()"
+              >
                 Inicio
               </a>
             </li>
             <li>
-              <a href="#marcas" class="text-neutral-300 transition hover:text-[#f6892c]">
+              <a
+                href="/"
+                class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
+                @click.prevent="scrollToSection('marcas')"
+              >
                 Marcas que Distribuimos
               </a>
             </li>
             <li>
-              <a href="#categorias" class="text-neutral-300 transition hover:text-[#f6892c]">
+              <a
+                href="/"
+                class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
+                @click.prevent="scrollToSection('categorias')"
+              >
                 Nuestros Productos
               </a>
             </li>
             <li>
-              <a href="#ubicacion" class="text-neutral-300 transition hover:text-[#f6892c]">
+              <a
+                href="/"
+                class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
+                @click.prevent="scrollToSection('ubicacion')"
+              >
                 Ubicación y Horarios
               </a>
             </li>
