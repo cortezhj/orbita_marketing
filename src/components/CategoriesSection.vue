@@ -34,8 +34,8 @@ const bandBgColors = ['#e5e5e3', '#2b2e33', '#e7e7e7', '#1b1e23']
           cat.theme === 'dark' ? 'text-white' : 'text-[#141619]'
         ]"
       >
-        <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:min-h-[420px] lg:grid-cols-12 lg:gap-14 lg:px-8 lg:py-8 xl:min-h-[450px] xl:gap-18">
-          <!-- Centered, Larger Product Image Column (Left on Even 0/2, Right on Odd 1/3) -->
+        <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:min-h-[450px] lg:grid-cols-12 lg:gap-14 lg:px-8 lg:py-8 xl:min-h-[480px] xl:gap-18">
+          <!-- Centered, Larger Transparent PNG Product Cutout Column (Left on Even 0/2, Right on Odd 1/3) -->
           <div
             :class="[
               'flex w-full items-center justify-center lg:col-span-6',
@@ -49,11 +49,7 @@ const bandBgColors = ['#e5e5e3', '#2b2e33', '#e7e7e7', '#1b1e23']
               height="650"
               loading="lazy"
               decoding="async"
-              class="h-72 w-full max-w-[540px] object-contain object-center transition-transform duration-500 group-hover:scale-[1.03] sm:h-88 lg:h-[390px] xl:h-[420px]"
-              style="
-                -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 76%, transparent 100%);
-                mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, #000 76%, transparent 100%);
-              "
+              class="h-80 w-full max-w-[580px] object-contain object-center drop-shadow-[0_14px_24px_rgba(0,0,0,0.28)] transition-transform duration-500 group-hover:scale-[1.03] sm:h-96 lg:h-[420px] xl:h-[450px]"
             />
           </div>
 
