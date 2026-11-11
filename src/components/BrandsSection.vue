@@ -7,6 +7,7 @@ import logoUyustools from '../assets/images (1).png'
 import logoEmtop from '../assets/images (2).png'
 import logoTolsen from '../assets/images.png'
 import logoStanley from '../assets/logo_stanley.png'
+import logoQuimicolor from '../assets/quimicolor-logo-png_seeklogo-294365.png'
 
 const brandLogos = [
   { name: 'Stanley', src: logoStanley },
@@ -15,6 +16,7 @@ const brandLogos = [
   { name: 'Emtop', src: logoEmtop },
   { name: 'Uyustools', src: logoUyustools },
   { name: 'Manpica', src: logoManpica },
+  { name: 'Quimicolor', src: logoQuimicolor },
   { name: '3M', src: logo3M }
 ]
 </script>
@@ -30,7 +32,7 @@ const brandLogos = [
         <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-4xl">
           Marcas que Distribuimos en Tienda
         </h2>
-        <p class="mt-2 max-w-2xl text-sm font-medium text-neutral-600 sm:text-base">
+        <p class="mt-2 text-sm font-medium text-neutral-600 sm:text-base">
           Disponibilidad inmediata de marcas líderes en revestimientos, herramientas, electricidad y pinturas en nuestro local del {{ siteConfig.business.mallShort }}.
         </p>
       </div>
