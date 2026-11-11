@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import heroBackgroundUrl from '../assets/background.avif'
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 
 interface HeroSlide {
@@ -73,48 +74,22 @@ const currentWhatsappUrl = computed(() =>
 
 <template>
   <!-- Hero extends under the fixed transparent Header & Menu (pt-28 / lg:pt-38) -->
-  <section class="relative overflow-hidden bg-[#181818] pt-28 text-white sm:pt-34 lg:pt-38">
-    <!-- Multi-Layer Stylized Dark Grunge Cement / Asphalt Wall Texture (Exact Match to Reference Photo) -->
+  <section class="relative overflow-hidden bg-[#141414] pt-28 text-white sm:pt-34 lg:pt-38">
+    <!-- Background Image from src/assets/background.avif -->
     <div class="pointer-events-none absolute inset-0">
-      <!-- Layer 1: High-Definition Distressed Dark Cement Wall with Boosted Midtone Relief -->
       <img
-        src="/images/hero-bg-texture.webp"
+        :src="heroBackgroundUrl"
         alt=""
         aria-hidden="true"
-        width="1400"
-        height="900"
+        fetchpriority="high"
         decoding="async"
-        class="h-full w-full object-cover brightness-[2.15] contrast-[1.45] saturate-0"
+        class="h-full w-full object-cover"
       />
-
-      <!-- Layer 2: Procedural SVG Micro-Cement & Scratched Stucco Grain (Sharp at any resolution) -->
-      <svg class="absolute inset-0 h-full w-full opacity-30 mix-blend-overlay" aria-hidden="true">
-        <filter id="hero-cement-grain">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.65"
-            numOctaves="4"
-            stitchTiles="stitch"
-          />
-          <feColorMatrix type="saturate" values="0" />
-          <feComponentTransfer>
-            <feFuncR type="linear" slope="1.7" intercept="-0.35" />
-            <feFuncG type="linear" slope="1.7" intercept="-0.35" />
-            <feFuncB type="linear" slope="1.7" intercept="-0.35" />
-          </feComponentTransfer>
-        </filter>
-        <rect width="100%" height="100%" filter="url(#hero-cement-grain)" />
-      </svg>
-
-      <!-- Layer 3: Smoky Center-Right Studio Spotlight + Deep Outer Vignette (Like Reference Photo) -->
+      <!-- Subtle vignette so text and header stay legible while showing the full background.avif texture -->
       <div
         class="absolute inset-0"
         style="
-          background:
-            radial-gradient(ellipse 52% 48% at 68% 50%, rgba(255, 255, 255, 0.13) 0%, rgba(246, 137, 44, 0.06) 42%, transparent 75%),
-            radial-gradient(ellipse 45% 42% at 26% 48%, rgba(255, 255, 255, 0.07) 0%, transparent 70%),
-            radial-gradient(ellipse 95% 90% at 50% 50%, transparent 48%, rgba(8, 8, 8, 0.88) 100%);
-          box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.85);
+          background: radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.65) 100%);
         "
       ></div>
     </div>
