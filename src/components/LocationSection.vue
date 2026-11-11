@@ -3,7 +3,7 @@ import { siteConfig } from '../config/siteConfig'
 </script>
 
 <template>
-  <section id="ubicacion" class="cv-auto scroll-mt-24 bg-white py-20 text-[#141619] sm:py-28">
+  <section id="ubicacion" class="cv-auto scroll-mt-24 bg-white pt-20 pb-8 text-[#141619] sm:pt-28 sm:pb-10">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
         <!-- Right Column on Desktop: Minimalist Editorial Content -->
