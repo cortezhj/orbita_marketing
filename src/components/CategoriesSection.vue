@@ -46,7 +46,7 @@ const bandBgColors = ['#e5e5e3', '#24272c', '#e7e7e7', '#1b1e23']
               :alt="cat.title"
               loading="lazy"
               decoding="async"
-              class="h-full w-auto max-w-full scale-108 object-contain object-center transition-transform duration-500 group-hover:scale-[1.14] lg:scale-[1.12]"
+              class="h-64 w-auto max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03] sm:h-76 lg:h-[340px] xl:h-[365px]"
             />
           </div>
 
