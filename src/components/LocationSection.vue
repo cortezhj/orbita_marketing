@@ -59,7 +59,7 @@ import { siteConfig } from '../config/siteConfig'
 
         <!-- Right Column: Clean Rectangular Map Block -->
         <div class="relative lg:col-span-7">
-          <div class="relative ml-auto h-[320px] w-full overflow-hidden rounded-sm bg-[#16181C] shadow-[0_20px_50px_rgba(0,0,0,0.16)] sm:h-[370px] lg:h-[400px]">
+          <div class="relative mx-auto h-[270px] w-full max-w-lg overflow-hidden rounded-sm bg-[#16181C] shadow-[0_20px_50px_rgba(0,0,0,0.16)] sm:h-[310px] lg:ml-auto lg:mr-0 lg:h-[330px]">
             <iframe
               :src="siteConfig.business.googleMapsEmbedUrl"
               title="Ubicación de Órbita Marketing en Google Maps"
