@@ -69,9 +69,9 @@ export const siteConfig = {
     catalogUrl: '/catalogo-ferreteria.pdf',
     catalogVersion: 'Edición 2026 • PDF Optimizado',
     googleMapsDirectionsUrl:
-      'https://www.google.com/maps/dir/?api=1&destination=Centro+Comercial+Ciudad+Crepuscular+Avenida+20+Barquisimeto',
+      'https://www.google.com/maps/dir/?api=1&destination=Centro+Comercial+Ciudad+Crepuscular,+Avenida+20,+Barquisimeto,+Lara,+Venezuela',
     googleMapsEmbedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.3742!2d-69.3275!3d10.0678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e87671b78555555%3A0x1!2sBarquisimeto%203001%2C%20Lara!5e0!3m2!1ses!2sve!4v1700000000000!5m2!1ses!2sve',
+      'https://maps.google.com/maps?q=Centro+Comercial+Ciudad+Crepuscular,+Avenida+20,+Barquisimeto,+Lara,+Venezuela&hl=es&z=17&output=embed',
     socials: {
       instagram: 'https://instagram.com/orbitamarketing',
       facebook: 'https://facebook.com/orbitamarketing',
