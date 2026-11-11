@@ -1,3 +1,9 @@
+import logoOrbitaMarketing from '../assets/logo-orbita-marketing.png'
+import productoElectricidad from '../assets/products/producto-electricidad.jpg'
+import productoHerramientas from '../assets/products/producto-herramientas.jpg'
+import productoPinturas from '../assets/products/producto-pinturas.jpg'
+import productoRevestimientos from '../assets/products/producto-revestimientos.jpg'
+
 export interface BrandItem {
   id: string
   name: string
@@ -41,7 +47,7 @@ export const siteConfig = {
     shortName: 'ORBITA',
     legalName: 'Orbita Marketing, C.A.',
     rif: 'J500390335',
-    logoUrl: '/Logo.png',
+    logoUrl: logoOrbitaMarketing,
     tagline: 'REVESTIMIENTOS, FERRETERÍA Y CONSTRUCCIÓN',
     mallName: 'Centro Comercial Ciudad Crepuscular',
     mallShort: 'C.C. Ciudad Crepuscular',
@@ -187,7 +193,7 @@ export const siteConfig = {
       popularBrands: ['WPC Wall Panel', 'Láminas UV', 'Lavaplatos Cascada', 'Duchas Pro'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
-      image: '/images/prod-revestimientos.jpg',
+      image: productoRevestimientos,
       theme: 'light',
       iconName: 'droplet'
     },
@@ -207,7 +213,7 @@ export const siteConfig = {
       popularBrands: ['Stanley', 'Tolsen', 'Bellota', 'Emtop', 'Uyustools'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Herramientas y Ferretería.',
-      image: '/images/prod-herramientas.jpg',
+      image: productoHerramientas,
       theme: 'dark',
       iconName: 'wrench'
     },
@@ -227,7 +233,7 @@ export const siteConfig = {
       popularBrands: ['3M', 'Exceline', 'Bticino', 'Osram'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio en Electricidad e Iluminación.',
-      image: '/images/prod-electricidad.jpg',
+      image: productoElectricidad,
       theme: 'light',
       iconName: 'bolt'
     },
@@ -247,38 +253,11 @@ export const siteConfig = {
       popularBrands: ['Manpica', 'Quimicolor', 'Sika', '3M'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Materiales de Construcción.',
-      image: '/images/prod-pinturas.jpg',
+      image: productoPinturas,
       theme: 'dark',
       iconName: 'paint'
     }
-  ] as ProductCategory[],
-
-  storePhotos: [
-    {
-      id: 'fachada-cc',
-      title: 'Showroom y Tienda en Planta Baja - Local PB-06',
-      caption:
-        'Ubicados en el C.C. Ciudad Crepuscular (Barquisimeto) con exhibición real de Wall Panel, lavaplatos, duchas y ferretería.',
-      badge: 'Local Verificado',
-      image: '/images/local-fachada.webp'
-    },
-    {
-      id: 'pasillo-herramientas',
-      title: 'Área de Ferretería y Herramientas',
-      caption:
-        'Stock real a la vista de herramientas manuales, eléctricas, adhesivos y fijaciones listas para entrega inmediata.',
-      badge: 'Inventario Real',
-      image: '/images/local-pasillo.webp'
-    },
-    {
-      id: 'mostrador-asesoria',
-      title: 'Asesoría en Revestimientos, Pinturas y Construcción',
-      caption:
-        'Te ayudamos a calcular la cantidad exacta de paneles, pintura, cemento, bloques o materiales para tu remodelación.',
-      badge: 'Asesoría Técnica',
-      image: '/images/local-mostrador.webp'
-    }
-  ] as StorePhoto[]
+  ] as ProductCategory[]
 }
 
 export function buildWhatsAppUrl(customMessage?: string): string {

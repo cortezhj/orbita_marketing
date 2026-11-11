@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { siteConfig } from '../config/siteConfig'
-import logoManpica from '../assets/3.png'
-import logo3M from '../assets/3M_wordmark.svg.webp'
-import logoBellota from '../assets/bellota-logo-png_seeklogo-474288.png'
-import logoUyustools from '../assets/images (1).png'
-import logoEmtop from '../assets/images (2).png'
-import logoTolsen from '../assets/images.png'
-import logoStanley from '../assets/logo_stanley.png'
-import logoQuimicolor from '../assets/quimicolor-logo-png_seeklogo-294365.png'
+import logo3M from '../assets/brands/logo-3m.webp'
+import logoBellota from '../assets/brands/logo-bellota.png'
+import logoEmtop from '../assets/brands/logo-emtop.png'
+import logoManpica from '../assets/brands/logo-manpica.png'
+import logoQuimicolor from '../assets/brands/logo-quimicolor.png'
+import logoStanley from '../assets/brands/logo-stanley.png'
+import logoTolsen from '../assets/brands/logo-tolsen.png'
+import logoUyustools from '../assets/brands/logo-uyustools.png'
 
 const brandLogos = [
   { name: 'Stanley', src: logoStanley },

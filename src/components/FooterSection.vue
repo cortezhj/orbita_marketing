@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
-import iconFacebook from '../assets/2023_Facebook_icon.svg.webp'
-import iconInstagram from '../assets/instagram.png'
-import iconTiktok from '../assets/3116491.png'
+import iconFacebook from '../assets/socials/icon-facebook.webp'
+import iconInstagram from '../assets/socials/icon-instagram.png'
+import iconTiktok from '../assets/socials/icon-tiktok.png'
 
 defineEmits<{
   (e: 'openPrivacy'): void
@@ -12,9 +12,9 @@ const footerWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.he
 const currentYear = new Date().getFullYear()
 
 const socialLinks = [
+  { name: 'Facebook', href: siteConfig.business.socials.facebook, icon: iconFacebook },
   { name: 'Instagram', href: siteConfig.business.socials.instagram, icon: iconInstagram },
-  { name: 'TikTok', href: siteConfig.business.socials.tiktok, icon: iconTiktok },
-  { name: 'Facebook', href: siteConfig.business.socials.facebook, icon: iconFacebook }
+  { name: 'TikTok', href: siteConfig.business.socials.tiktok, icon: iconTiktok }
 ]
 </script>
 
