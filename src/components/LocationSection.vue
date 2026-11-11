@@ -54,8 +54,8 @@ const socialLinks = [
             <li class="flex items-start gap-2.5">
               <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#f6892c]"></span>
               <span>
-                <strong class="font-bold text-[#141619]">Síguenos en nuestras redes sociales:</strong>
-                Instagram, TikTok y Facebook.
+                <strong class="font-bold text-[#141619]">Contáctanos en:</strong>
+                @orbitamarketyngca
               </span>
             </li>
           </ul>
@@ -76,11 +76,11 @@ const socialLinks = [
                 <img
                   :src="social.icon"
                   :alt="social.name"
-                  width="32"
-                  height="32"
+                  width="40"
+                  height="40"
                   loading="lazy"
                   decoding="async"
-                  class="h-8 w-8 object-contain"
+                  class="h-9 w-9 object-contain sm:h-10 sm:w-10"
                 />
               </a>
             </div>
