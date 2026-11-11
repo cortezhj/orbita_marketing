@@ -1,165 +1,126 @@
 <script setup lang="ts">
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
+
+const bandBgColors = ['#dcdbd7', '#25292d', '#e5e5e5', '#1a1f23']
 </script>
 
 <template>
-  <section id="categorias" class="cv-auto scroll-mt-24 border-b border-neutral-200 bg-[#F4F5F7] py-16 sm:py-24">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="mx-auto max-w-3xl text-center">
-        <span class="inline-block bg-[#f6892c] px-4 py-1 text-xs font-black uppercase tracking-widest text-white">
-          DEPARTAMENTOS EN TIENDA
-        </span>
-        <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-5xl">
-          Categorías de Productos
-        </h2>
-        <p class="mt-3 text-base font-medium text-neutral-600">
-          Selecciona el departamento que necesitas para cotizar al instante por WhatsApp y retirar hoy en el
-          <strong class="font-black text-[#121417]">{{ siteConfig.business.mallShort }} ({{ siteConfig.business.localNumber }})</strong>.
-        </p>
-      </div>
+  <section id="categorias" class="cv-auto scroll-mt-24 bg-white pt-14 sm:pt-20">
+    <!-- Section Title Header -->
+    <div class="mx-auto max-w-7xl px-4 pb-10 text-center sm:px-6 sm:pb-14 lg:px-8">
+      <span class="inline-block bg-[#f6892c] px-4 py-1 text-xs font-black uppercase tracking-widest text-white">
+        LÍNEAS DISPONIBLES EN TIENDA
+      </span>
+      <h2 class="mt-3 text-3xl font-black uppercase tracking-tight text-[#121417] sm:text-5xl">
+        Nuestros Productos
+      </h2>
+      <p class="mx-auto mt-3 max-w-2xl text-sm font-medium text-neutral-600 sm:text-base">
+        Explora nuestras líneas de productos y cotiza al instante por WhatsApp con retiro inmediato en el
+        <strong class="font-black text-[#121417]">{{ siteConfig.business.mallShort }} ({{ siteConfig.business.localNumber }})</strong>.
+      </p>
+    </div>
 
-      <!-- Alternating Dark & Light Industrial Category Showcase -->
-      <div class="mt-14 space-y-10">
-        <article
-          v-for="(cat, idx) in siteConfig.categories"
-          :key="cat.id"
-          :class="[
-            'relative overflow-hidden border-2 transition duration-300 shadow-xl',
-            cat.theme === 'dark'
-              ? 'border-[#121417] bg-[#121417] text-white'
-              : 'border-neutral-200 bg-white text-[#121417]'
-          ]"
-        >
-          <!-- Industrial Corner Screws -->
-          <span
-            class="pointer-events-none absolute top-3 left-3 h-2 w-2 rounded-full"
-            :class="cat.theme === 'dark' ? 'bg-white/25' : 'bg-neutral-300'"
-          ></span>
-          <span
-            class="pointer-events-none absolute top-3 right-3 h-2 w-2 rounded-full"
-            :class="cat.theme === 'dark' ? 'bg-white/25' : 'bg-neutral-300'"
-          ></span>
-          <span
-            class="pointer-events-none absolute bottom-3 left-3 h-2 w-2 rounded-full"
-            :class="cat.theme === 'dark' ? 'bg-white/25' : 'bg-neutral-300'"
-          ></span>
-          <span
-            class="pointer-events-none absolute right-3 bottom-3 h-2 w-2 rounded-full"
-            :class="cat.theme === 'dark' ? 'bg-white/25' : 'bg-neutral-300'"
-          ></span>
+    <!-- Full-Width Stacked Alternating Left/Right & Light/Dark Horizontal Product Banners -->
+    <div class="flex flex-col">
+      <article
+        v-for="(cat, idx) in siteConfig.categories"
+        :key="cat.id"
+        :style="{
+          zIndex: siteConfig.categories.length - idx,
+          backgroundColor: bandBgColors[idx] || (cat.theme === 'dark' ? '#1a1f23' : '#e5e5e5')
+        }"
+        :class="[
+          'group relative w-full overflow-hidden shadow-[0_16px_36px_rgba(0,0,0,0.22)]',
+          cat.theme === 'dark' ? 'text-white' : 'text-[#141619]'
+        ]"
+      >
+        <!-- Desktop Full-Bleed Studio Flat-Lay Banner Background -->
+        <div class="pointer-events-none absolute inset-0 hidden lg:block">
+          <img
+            :src="cat.image"
+            :alt="cat.title"
+            width="1200"
+            height="672"
+            loading="lazy"
+            decoding="async"
+            class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.015]"
+          />
+        </div>
 
+        <!-- Mobile / Tablet Product Half View (Cropped to the Product Side) -->
+        <div class="relative h-60 w-full overflow-hidden sm:h-72 lg:hidden">
+          <img
+            :src="cat.image"
+            :alt="cat.title"
+            width="1200"
+            height="672"
+            loading="lazy"
+            decoding="async"
+            class="h-full w-[175%] max-w-none object-cover"
+            :class="idx % 2 === 0 ? 'object-left' : 'ml-auto object-right'"
+          />
+        </div>
+
+        <!-- Content Grid (Alternating Right on Even 0/2, Left on Odd 1/3) -->
+        <div class="relative z-10 mx-auto grid max-w-7xl items-center lg:min-h-[380px] lg:grid-cols-12 xl:min-h-[420px]">
           <div
-            class="grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-12 lg:gap-12"
+            :class="[
+              'flex flex-col justify-center px-6 py-9 sm:px-12 lg:col-span-6 lg:py-14',
+              idx % 2 === 0
+                ? 'lg:col-start-7 lg:pl-12 lg:pr-10'
+                : 'lg:col-start-1 lg:pl-12 lg:pr-10'
+            ]"
           >
-            <!-- Image Column with Brand Orange (#f6892c) Geometric Offset Square -->
-            <div
-              :class="[
-                'lg:col-span-5',
-                idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'
-              ]"
+            <!-- Bold Industrial Uppercase Headline (Matching Reference Photo) -->
+            <h3
+              class="text-2xl font-black uppercase tracking-tight sm:text-4xl lg:text-[2.45rem] lg:leading-[1.06]"
+              :class="cat.theme === 'dark' ? 'text-white' : 'text-[#141619]'"
             >
-              <div class="relative mx-auto max-w-md lg:max-w-none">
-                <!-- Offset Orange Square Block -->
-                <div
-                  class="absolute -top-3 h-full w-4/5 bg-[#f6892c]"
-                  :class="idx % 2 === 1 ? '-right-3' : '-left-3'"
-                ></div>
+              {{ cat.title }}
+            </h3>
 
-                <div class="relative overflow-hidden border-2 border-[#121417] bg-[#181B20]">
-                  <img
-                    :src="cat.image"
-                    :alt="cat.title"
-                    width="640"
-                    height="360"
-                    loading="lazy"
-                    decoding="async"
-                    class="h-60 w-full object-cover transition duration-500 hover:scale-105 sm:h-72"
-                  />
-                  <!-- Top Badge -->
-                  <div class="absolute top-3 left-3 bg-[#f6892c] px-3 py-1 text-[11px] font-black uppercase tracking-widest text-white">
-                    {{ cat.badge }}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Content Column -->
-            <div
-              :class="[
-                'lg:col-span-7',
-                idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'
-              ]"
+            <!-- Clean Uppercase Subtitle -->
+            <p
+              class="mt-2.5 text-xs font-extrabold uppercase tracking-[0.06em] sm:text-sm"
+              :class="cat.theme === 'dark' ? 'text-neutral-100' : 'text-[#1E2229]'"
             >
-              <p class="text-xs font-black uppercase tracking-[0.2em] text-[#f6892c]">
-                {{ cat.subtitle }}
-              </p>
+              {{ cat.subtitle }}
+            </p>
 
-              <h3 class="mt-2 text-2xl font-black uppercase tracking-tight sm:text-4xl">
-                {{ cat.title }}
-              </h3>
+            <!-- Brand Orange Uppercase Tagline -->
+            <p class="mt-1 text-xs font-black uppercase tracking-[0.08em] text-[#f6892c] sm:text-sm">
+              {{ cat.badge }}
+            </p>
 
-              <p
-                class="mt-3 text-sm leading-relaxed sm:text-base"
-                :class="cat.theme === 'dark' ? 'text-neutral-300' : 'text-neutral-600'"
+            <!-- Concise Product Line Description -->
+            <p
+              class="mt-3 max-w-md text-xs leading-relaxed sm:text-sm"
+              :class="cat.theme === 'dark' ? 'text-neutral-300/90' : 'text-neutral-700'"
+            >
+              {{ cat.description }}
+            </p>
+
+            <!-- Rectangular Outline Button Matching Reference Photo -->
+            <div class="mt-5">
+              <a
+                :href="buildWhatsAppUrl(cat.whatsappMessage)"
+                target="_blank"
+                rel="noopener noreferrer"
+                :class="[
+                  'inline-flex items-center justify-center gap-2 border-[1.5px] px-5 py-2 text-[11px] font-black uppercase tracking-[0.12em] transition duration-200 sm:text-xs',
+                  cat.theme === 'dark'
+                    ? 'border-[#f6892c] text-white hover:bg-[#f6892c] hover:text-white'
+                    : idx === 0
+                      ? 'border-[#f6892c] bg-white/50 text-[#141619] hover:bg-[#f6892c] hover:text-white'
+                      : 'border-[#141619] bg-white/50 text-[#141619] hover:bg-[#141619] hover:text-white'
+                ]"
               >
-                {{ cat.description }}
-              </p>
-
-              <!-- 2-Column Bullet List -->
-              <ul class="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                <li
-                  v-for="item in cat.highlights"
-                  :key="item"
-                  class="flex items-start gap-2.5 text-xs font-medium sm:text-sm"
-                  :class="cat.theme === 'dark' ? 'text-neutral-200' : 'text-neutral-800'"
-                >
-                  <span class="mt-1 h-2 w-2 shrink-0 bg-[#f6892c]"></span>
-                  <span>{{ item }}</span>
-                </li>
-              </ul>
-
-              <!-- Brands + Action Row -->
-              <div
-                class="mt-7 flex flex-col items-start justify-between gap-4 border-t pt-5 sm:flex-row sm:items-center"
-                :class="cat.theme === 'dark' ? 'border-white/15' : 'border-neutral-200'"
-              >
-                <div class="flex flex-wrap items-center gap-1.5">
-                  <span
-                    class="text-xs font-extrabold uppercase tracking-wider"
-                    :class="cat.theme === 'dark' ? 'text-neutral-400' : 'text-neutral-500'"
-                  >
-                    Marcas:
-                  </span>
-                  <span
-                    v-for="brand in cat.popularBrands"
-                    :key="brand"
-                    class="px-2.5 py-0.5 text-xs font-black uppercase"
-                    :class="
-                      cat.theme === 'dark'
-                        ? 'bg-white/10 text-[#f6892c]'
-                        : 'bg-[#121417] text-[#f6892c]'
-                    "
-                  >
-                    {{ brand }}
-                  </span>
-                </div>
-
-                <!-- Solid Brand Orange WhatsApp Button -->
-                <a
-                  :href="buildWhatsAppUrl(cat.whatsappMessage)"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-[#f6892c] px-6 py-3.5 text-xs font-black uppercase tracking-wider text-white shadow-md transition hover:bg-[#e07519] active:scale-[0.99] sm:w-auto sm:text-sm"
-                >
-                  <span>Consultar por WhatsApp</span>
-                  <span>→</span>
-                </a>
-              </div>
+                <span>Cotizar Ahora</span>
+              </a>
             </div>
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </div>
   </section>
 </template>

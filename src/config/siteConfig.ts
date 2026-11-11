@@ -173,82 +173,82 @@ export const siteConfig = {
   categories: [
     {
       id: 'revestimientos-wall-panel-decoracion',
-      title: 'Revestimientos, Wall Panel y Artefactos',
-      subtitle: 'DISEÑO MODERNO • WALL PANEL, LAVAPLATOS Y DUCHAS',
-      badge: 'ESPECIALIDAD DE LA CASA',
+      title: 'REVESTIMIENTOS Y WALL PANEL',
+      subtitle: 'LAVAPLATOS, DUCHAS Y DECORACIÓN PARA EL HOGAR',
+      badge: 'DISEÑO, CONFORT, MODERNIDAD',
       description:
-        'Transforma tus espacios con nuestra línea exclusiva de revestimientos arquitectónicos, Wall Panels WPC acanalados, láminas decorativas, lavaplatos multifuncionales y duchas.',
+        'Wall Panel WPC interior y exterior, láminas UV tipo mármol, lavaplatos multifuncionales tipo cascada, columnas de ducha y grifería.',
       highlights: [
-        'Wall Panel WPC interior y exterior y láminas UV tipo mármol de alto brillo',
-        'Lavaplatos inteligentes multifuncionales (cascada) y de acero inoxidable',
-        'Columnas de ducha hidromasaje, regaderas tipo lluvia y grifería moderna',
-        'Adhesivos de montaje de alto agarre y asesoría para calcular tu metraje exacto'
+        'Wall Panel WPC y láminas UV tipo mármol',
+        'Lavaplatos inteligentes multifuncionales',
+        'Columnas de ducha y regaderas modernas',
+        'Adhesivos de montaje y perfiles decorativos'
       ],
       popularBrands: ['WPC Wall Panel', 'Láminas UV', 'Lavaplatos Cascada', 'Duchas Pro'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
-      image: '/images/slide-revestimientos.jpg',
-      theme: 'dark',
+      image: '/images/prod-revestimientos.jpg',
+      theme: 'light',
       iconName: 'droplet'
     },
     {
       id: 'ferreteria-herramientas',
-      title: 'Herramientas y Ferretería',
-      subtitle: 'POTENCIA Y PRECISIÓN • USO PROFESIONAL Y HOGAR',
-      badge: 'GARANTÍA EN TIENDA',
+      title: 'HERRAMIENTAS Y FERRETERÍA',
+      subtitle: 'HERRAMIENTAS DE CALIDAD PARA CADA TRABAJO',
+      badge: 'CONSTRUYE, REPARA, CREA',
       description:
-        'Ahora somos tu ferretería completa en el C.C. Ciudad Crepuscular: herramientas eléctricas, manuales, cemento, bloques, consumibles y fijaciones.',
+        'Taladros percutores, esmeriles, juegos de llaves, martillos, alicates, destornilladores, discos de corte, tornillería y fijaciones.',
       highlights: [
-        'Taladros percutores, atornilladores inalámbricos, esmeriles y rotomartillos',
-        'Juegos de llaves, alicates, destornilladores, cintas métricas y niveles láser',
-        'Discos de corte, mechas para concreto/metal/madera, tornillería y chazos',
-        'Sacos de cemento gris, pego, bloques y materiales para obra y remodelación'
+        'Taladros, esmeriles y herramientas eléctricas',
+        'Llaves, martillos, alicates y destornilladores',
+        'Discos de corte, mechas, cintas y niveles',
+        'Tornillería, chazos y ferretería general'
       ],
-      popularBrands: ['DeWalt', 'Truper', 'Ingco', 'Stanley'],
+      popularBrands: ['Stanley', 'Tolsen', 'Bellota', 'Emtop', 'Uyustools'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Herramientas y Ferretería.',
-      image: '/images/slide-herramientas.jpg',
-      theme: 'light',
+      image: '/images/prod-herramientas.jpg',
+      theme: 'dark',
       iconName: 'wrench'
     },
     {
       id: 'electricidad-iluminacion',
-      title: 'Electricidad e Iluminación',
-      subtitle: 'INSTALACIONES SEGURAS • PROTECCIÓN Y LED',
-      badge: 'STOCK INMEDIATO',
+      title: 'ELECTRICIDAD E ILUMINACIÓN',
+      subtitle: 'INSTALACIONES SEGURAS, PROTECCIÓN Y LED',
+      badge: 'POTENCIA, SEGURIDAD, ILUMINACIÓN',
       description:
-        'Todo para remodelaciones residenciales y locales comerciales: cableado certificado, protección térmica e iluminación LED decorativa e industrial.',
+        'Cables eléctricos THHN/TW, breakers termomagnéticos, protectores de voltaje, paneles LED, reflectores, cintas LED y tomacorrientes.',
       highlights: [
-        'Cables THHN / TW #8, #10, #12 y #14 (por metro o rollo)',
-        'Breakers termomagnéticos, tableros y protectores de voltaje 110V/220V',
-        'Paneles LED, reflectores exteriores IP65, cintas LED para Wall Panel y sensores',
-        'Tomacorrientes, interruptores modernos, cajetines y canaletas'
+        'Cables THHN / TW por metro o por rollo',
+        'Breakers, tableros y protectores de voltaje',
+        'Paneles LED, reflectores y cintas LED',
+        'Tomacorrientes, interruptores y canaletas'
       ],
-      popularBrands: ['Bticino', 'Osram', 'Exceline', '3M'],
+      popularBrands: ['3M', 'Exceline', 'Bticino', 'Osram'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio en Electricidad e Iluminación.',
-      image: '/images/slide-electricidad.jpg',
-      theme: 'dark',
+      image: '/images/prod-electricidad.jpg',
+      theme: 'light',
       iconName: 'bolt'
     },
     {
       id: 'pinturas-acabados-construccion',
-      title: 'Pinturas, Adhesivos y Construcción',
-      subtitle: 'CONSTRUCCIÓN Y ACABADOS • OBRA GRIS Y RENOVACIÓN',
-      badge: 'ALTA DEMANDA',
+      title: 'PINTURAS Y CONSTRUCCIÓN',
+      subtitle: 'ACABADOS, ADHESIVOS, CEMENTO Y OBRA GRIS',
+      badge: 'RENUEVA, IMPERMEABILIZA, CONSTRUYE',
       description:
-        'Desde pinturas lavables, selladores e impermeabilizantes hasta cemento, bloques y pego para completar tu obra o remodelación de principio a fin.',
+        'Pinturas en caucho, esmaltes, impermeabilizantes, siliconas, adhesivos para Wall Panel, cemento gris, pego, bloques, rodillos y brochas.',
       highlights: [
-        'Pinturas en caucho clase A y B, esmaltes, fondos anticorrosivos e impermeabilizantes',
-        'Siliconas acéticas/neutras, Sikaflex y adhesivo especial para Wall Panel',
-        'Sacos de cemento gris, pego para cerámica/porcelanato, pasta profesional y bloques',
-        'Rodillos antigota, brochas, espátulas y cintas de enmascarar'
+        'Pinturas en caucho, esmaltes y selladores',
+        'Adhesivos de montaje, siliconas e impermeabilizantes',
+        'Cemento gris, pego, bloques y pasta profesional',
+        'Rodillos antigota, brochas y espátulas'
       ],
-      popularBrands: ['Sika', 'Venezolana de Pinturas', 'Cemento', '3M'],
+      popularBrands: ['Manpica', 'Quimicolor', 'Sika', '3M'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Materiales de Construcción.',
-      image: '/images/slide-pinturas.jpg',
-      theme: 'light',
+      image: '/images/prod-pinturas.jpg',
+      theme: 'dark',
       iconName: 'paint'
     }
   ] as ProductCategory[],
