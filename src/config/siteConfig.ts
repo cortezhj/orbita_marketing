@@ -187,7 +187,7 @@ export const siteConfig = {
       popularBrands: ['WPC Wall Panel', 'Láminas UV', 'Lavaplatos Cascada', 'Duchas Pro'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
-      image: '/images/prod-revestimientos.png',
+      image: '/images/prod-revestimientos.jpg',
       theme: 'light',
       iconName: 'droplet'
     },
@@ -207,7 +207,7 @@ export const siteConfig = {
       popularBrands: ['Stanley', 'Tolsen', 'Bellota', 'Emtop', 'Uyustools'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio de Herramientas y Ferretería.',
-      image: '/images/prod-herramientas.png',
+      image: '/images/prod-herramientas.jpg',
       theme: 'dark',
       iconName: 'wrench'
     },
@@ -227,7 +227,7 @@ export const siteConfig = {
       popularBrands: ['3M', 'Exceline', 'Bticino', 'Osram'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero consultar disponibilidad y precio en Electricidad e Iluminación.',
-      image: '/images/prod-electricidad.png',
+      image: '/images/prod-electricidad.jpg',
       theme: 'light',
       iconName: 'bolt'
     },
@@ -247,7 +247,7 @@ export const siteConfig = {
       popularBrands: ['Manpica', 'Quimicolor', 'Sika', '3M'],
       whatsappMessage:
         'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Materiales de Construcción.',
-      image: '/images/prod-pinturas.png',
+      image: '/images/prod-pinturas.jpg',
       theme: 'dark',
       iconName: 'paint'
     }
