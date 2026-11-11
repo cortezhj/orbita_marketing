@@ -73,25 +73,48 @@ const currentWhatsappUrl = computed(() =>
 
 <template>
   <!-- Hero extends under the fixed transparent Header & Menu (pt-28 / lg:pt-38) -->
-  <section class="relative overflow-hidden bg-[#1e1f21] pt-28 text-white sm:pt-34 lg:pt-38">
-    <!-- Authentic Dark Cement / Concrete Wall Texture Backdrop -->
+  <section class="relative overflow-hidden bg-[#181818] pt-28 text-white sm:pt-34 lg:pt-38">
+    <!-- Multi-Layer Stylized Dark Grunge Cement / Asphalt Wall Texture (Exact Match to Reference Photo) -->
     <div class="pointer-events-none absolute inset-0">
-      <!-- Raw Cement Texture Image -->
+      <!-- Layer 1: High-Definition Distressed Dark Cement Wall with Boosted Midtone Relief -->
       <img
         src="/images/hero-bg-texture.webp"
         alt=""
         aria-hidden="true"
-        width="1200"
-        height="800"
+        width="1400"
+        height="900"
         decoding="async"
-        class="h-full w-full object-cover opacity-90 contrast-125 brightness-110"
+        class="h-full w-full object-cover brightness-[2.15] contrast-[1.45] saturate-0"
       />
-      <!-- Fine SVG Cement Grain + Subtle Soft Vignette so Cement Texture Stays Clearly Visible -->
+
+      <!-- Layer 2: Procedural SVG Micro-Cement & Scratched Stucco Grain (Sharp at any resolution) -->
+      <svg class="absolute inset-0 h-full w-full opacity-30 mix-blend-overlay" aria-hidden="true">
+        <filter id="hero-cement-grain">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.65"
+            numOctaves="4"
+            stitchTiles="stitch"
+          />
+          <feColorMatrix type="saturate" values="0" />
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="1.7" intercept="-0.35" />
+            <feFuncG type="linear" slope="1.7" intercept="-0.35" />
+            <feFuncB type="linear" slope="1.7" intercept="-0.35" />
+          </feComponentTransfer>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#hero-cement-grain)" />
+      </svg>
+
+      <!-- Layer 3: Smoky Center-Right Studio Spotlight + Deep Outer Vignette (Like Reference Photo) -->
       <div
         class="absolute inset-0"
         style="
           background:
-            radial-gradient(circle at 65% 50%, rgba(255, 255, 255, 0.06) 0%, rgba(22, 23, 25, 0.35) 55%, rgba(12, 13, 14, 0.78) 100%);
+            radial-gradient(ellipse 52% 48% at 68% 50%, rgba(255, 255, 255, 0.13) 0%, rgba(246, 137, 44, 0.06) 42%, transparent 75%),
+            radial-gradient(ellipse 45% 42% at 26% 48%, rgba(255, 255, 255, 0.07) 0%, transparent 70%),
+            radial-gradient(ellipse 95% 90% at 50% 50%, transparent 48%, rgba(8, 8, 8, 0.88) 100%);
+          box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.85);
         "
       ></div>
     </div>
@@ -101,7 +124,7 @@ const currentWhatsappUrl = computed(() =>
       <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-4">
         <!-- Left Column: Brand Orange (#f6892c) 2-Line Headline + Description + Clean Modern CTA Button -->
         <div class="lg:col-span-5">
-          <h1 class="text-3xl font-black tracking-tight text-[#f6892c] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.12]">
+          <h1 class="text-3xl font-black tracking-tight text-[#f6892c] drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)] sm:text-5xl lg:text-[3.25rem] lg:leading-[1.12]">
             <span class="block uppercase">{{ currentSlide.headlineTop }}</span>
             <span class="mt-1 block font-extrabold text-[#f6892c]">
               {{ currentSlide.headlineBottom }}
@@ -112,13 +135,13 @@ const currentWhatsappUrl = computed(() =>
             {{ currentSlide.description }}
           </p>
 
-          <!-- Clean, Refined Brand-Orange Button without harsh yellow glare -->
+          <!-- Clean, Refined Brand-Orange Button -->
           <div class="mt-9">
             <a
               :href="currentWhatsappUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-3 rounded-lg bg-[#f6892c] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-lg shadow-black/40 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99] sm:text-sm"
+              class="group inline-flex items-center justify-center gap-3 rounded-lg bg-[#f6892c] px-8 py-4 text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-lg shadow-black/45 transition duration-200 hover:-translate-y-0.5 hover:bg-[#e07519] active:scale-[0.99] sm:text-sm"
             >
               <span>Cotizar Ahora</span>
               <svg
@@ -147,7 +170,7 @@ const currentWhatsappUrl = computed(() =>
                 <!-- Subtle Orbital Curve Path -->
                 <path
                   d="M 112 20 Q 6 190 158 360"
-                  stroke="rgba(255,255,255,0.22)"
+                  stroke="rgba(255,255,255,0.24)"
                   stroke-width="1.25"
                 />
 
@@ -163,15 +186,15 @@ const currentWhatsappUrl = computed(() =>
                     v-if="activeIndex === idx"
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
-                    r="11"
-                    fill="rgba(246, 137, 44, 0.28)"
+                    r="12"
+                    fill="rgba(255, 255, 255, 0.22)"
                   />
                   <!-- Core Dot -->
                   <circle
                     :cx="slide.nodeX"
                     :cy="slide.nodeY"
                     :r="activeIndex === idx ? 5 : 3.5"
-                    :fill="activeIndex === idx ? '#FFFFFF' : 'rgba(255,255,255,0.35)'"
+                    :fill="activeIndex === idx ? '#FFFFFF' : 'rgba(255,255,255,0.38)'"
                   />
                 </g>
               </svg>
@@ -184,7 +207,7 @@ const currentWhatsappUrl = computed(() =>
                 class="pointer-events-auto absolute -translate-y-1/2 text-right text-[11px] font-extrabold uppercase tracking-wider transition focus:outline-none"
                 :class="
                   activeIndex === idx
-                    ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.65)]'
+                    ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.75)]'
                     : 'text-neutral-400 hover:text-neutral-200'
                 "
                 :style="{
@@ -218,7 +241,7 @@ const currentWhatsappUrl = computed(() =>
             <!-- Frameless Blended Equipment/Tool Showcase -->
             <div class="relative z-10 w-full sm:w-[72%]">
               <!-- Subtle Warm Spotlight Behind Equipment -->
-              <div class="pointer-events-none absolute inset-8 rounded-full bg-[#f6892c]/15 blur-3xl"></div>
+              <div class="pointer-events-none absolute inset-6 rounded-full bg-white/10 blur-3xl"></div>
 
               <div class="relative flex items-center justify-center">
                 <img
@@ -235,7 +258,7 @@ const currentWhatsappUrl = computed(() =>
                   "
                 />
                 <!-- Ground Contact Shadow under the Equipment -->
-                <div class="pointer-events-none absolute -bottom-3 h-7 w-4/5 rounded-full bg-black/80 blur-xl"></div>
+                <div class="pointer-events-none absolute -bottom-3 h-7 w-4/5 rounded-full bg-black/85 blur-xl"></div>
               </div>
             </div>
           </div>
