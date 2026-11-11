@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import BrandsSection from './components/BrandsSection.vue'
-import CatalogSection from './components/CatalogSection.vue'
 import CategoriesSection from './components/CategoriesSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import HeroSection from './components/HeroSection.vue'
@@ -50,13 +49,10 @@ onMounted(() => {
       <!-- 3. Marcas que distribuyen (Logotipos de marcas reconocidas) -->
       <BrandsSection />
 
-      <!-- 4. Categorías de productos (Cards visuales con botón de consulta) -->
+      <!-- 4. Nuestros Productos -->
       <CategoriesSection />
 
-      <!-- 5. Catálogo descargable (PDF optimizado o enlace dinámico) -->
-      <CatalogSection />
-
-      <!-- 6. Ubicación y cómo llegar (Mapa interactivo y fotos del local comercial) -->
+      <!-- 5. Ubicación y cómo llegar (Mapa interactivo y fotos del local comercial) -->
       <LocationSection />
     </main>
 

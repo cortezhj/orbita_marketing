@@ -8,7 +8,6 @@ const headerWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.he
 
 const navLinks = [
   { label: 'INICIO', href: '#', hasArrow: false },
-  { label: 'CATÁLOGO', href: '#catalogo', hasArrow: true },
   { label: 'NUESTROS PRODUCTOS', href: '#categorias', hasArrow: true },
   { label: 'MARCAS EN STOCK', href: '#marcas', hasArrow: false },
   { label: 'UBICACIÓN Y HORARIOS', href: '#ubicacion', hasArrow: false }

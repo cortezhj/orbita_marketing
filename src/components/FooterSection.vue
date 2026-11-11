@@ -102,11 +102,6 @@ const currentYear = new Date().getFullYear()
               </a>
             </li>
             <li>
-              <a href="#catalogo" class="text-neutral-300 transition hover:text-[#f6892c]">
-                Catálogo PDF Descargable
-              </a>
-            </li>
-            <li>
               <a
                 href="/politica-de-privacidad"
                 class="font-black text-[#f6892c] transition hover:underline"

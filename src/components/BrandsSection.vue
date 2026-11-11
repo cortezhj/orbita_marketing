@@ -25,7 +25,7 @@ const brandLogos = [
   <section id="marcas" class="scroll-mt-24 border-b border-neutral-200 bg-white py-14 text-[#121417] sm:py-18">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Industrial Section Title -->
-      <div class="border-b-2 border-[#121417] pb-6">
+      <div class="border-b-1 border-[#121417] pb-6">
         <span class="inline-block bg-[#f6892c] px-3 py-1 text-xs font-black uppercase tracking-widest text-white">
           RESPALDO Y GARANTÍA ORIGINAL
         </span>
