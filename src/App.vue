@@ -52,8 +52,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- min-h-dvh and bottom padding prevent Meta In-App Browser bottom toolbar from covering content -->
-  <div class="min-h-dvh bg-white pb-20 text-[#121417] sm:pb-0">
+  <div class="min-h-dvh bg-white text-[#121417]">
     <!-- 1. Header (Logo, dirección corta, teléfono y WhatsApp) -->
     <NavbarHeader />
 

@@ -116,8 +116,8 @@ const currentYear = new Date().getFullYear()
     </div>
 
     <!-- Bottom Legal Bar -->
-    <div class="border-t border-white/10 bg-[#0D0F12] py-4 text-xs text-neutral-400">
-      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 sm:flex-row sm:px-6 lg:px-8">
+    <div class="border-t border-white/10 bg-[#0D0F12] pt-4 pb-16 text-xs text-neutral-400 sm:py-5">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 sm:flex-row sm:pl-6 sm:pr-40 lg:pl-8 lg:pr-44 xl:pr-36">
         <p>
           © {{ currentYear }} <strong class="text-white">{{ siteConfig.business.legalName }}</strong> ({{ siteConfig.business.rif }}). Todos los derechos reservados.
         </p>

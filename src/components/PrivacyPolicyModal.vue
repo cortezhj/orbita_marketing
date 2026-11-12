@@ -84,7 +84,7 @@ defineEmits<{
             <a :href="`mailto:${siteConfig.business.complianceEmail}`" class="font-bold text-[#121417] underline">
               {{ siteConfig.business.complianceEmail }}
             </a>
-            o directamente en nuestro local físico ubicado en el {{ siteConfig.business.fullAddress }}
+            o directamente en nuestro local físico ubicado en la {{ siteConfig.business.fullAddress }}
           </p>
         </section>
       </div>
