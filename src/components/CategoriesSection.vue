@@ -31,11 +31,11 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
           cat.theme === 'dark' ? 'text-white' : 'text-[#141619]'
         ]"
       >
-        <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:min-h-[420px] lg:grid-cols-12 lg:gap-14 lg:px-8 lg:py-8 xl:min-h-[450px] xl:gap-18">
+        <div class="mx-auto grid max-w-7xl items-center gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-10 lg:min-h-[420px] lg:grid-cols-12 lg:gap-14 lg:px-8 lg:py-8 xl:min-h-[450px] xl:gap-18">
           <!-- Centered, Larger Product Image Column (Left on Even 0/2, Right on Odd 1/3) -->
           <div
             :class="[
-              'flex h-72 w-full items-center justify-center sm:h-88 lg:col-span-6 lg:h-[390px] xl:h-[420px]',
+              'flex h-56 w-full items-center justify-center sm:h-80 lg:col-span-6 lg:h-[390px] xl:h-[420px]',
               idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'
             ]"
           >
@@ -44,14 +44,14 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
               :alt="cat.title"
               loading="lazy"
               decoding="async"
-              class="h-64 w-auto max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03] sm:h-76 lg:h-[340px] xl:h-[365px]"
+              class="h-52 w-auto max-w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03] sm:h-72 lg:h-[340px] xl:h-[365px]"
             />
           </div>
 
           <!-- Content Column (Right on Even 0/2, Left on Odd 1/3) -->
           <div
             :class="[
-              'flex flex-col justify-center px-2 sm:px-6 lg:col-span-6 lg:py-10',
+              'flex flex-col justify-center px-1 text-center sm:px-6 sm:text-left lg:col-span-6 lg:py-10',
               idx % 2 === 0
                 ? 'lg:order-2 lg:pl-6 lg:pr-8'
                 : 'lg:order-1 lg:pl-8 lg:pr-6'
@@ -80,7 +80,7 @@ import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
 
             <!-- Concise Product Line Description -->
             <p
-              class="mt-3.5 max-w-lg text-xs leading-relaxed sm:text-sm"
+              class="mx-auto mt-3.5 max-w-lg text-xs leading-relaxed sm:mx-0 sm:text-sm"
               :class="cat.theme === 'dark' ? 'text-neutral-300/90' : 'text-neutral-700'"
             >
               {{ cat.description }}

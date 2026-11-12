@@ -37,29 +37,29 @@ onUnmounted(() => {
     <!-- Row 1: Larger Logo Image (Left) + Location (Local + Schedule) & Phone (Phone + RIF) (Right) -->
     <div class="border-b border-white/15">
       <div
-        class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-all duration-300 sm:px-6 lg:px-8"
-        :class="isScrolled ? 'py-2' : 'py-3 sm:py-3.5'"
+        class="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 transition-all duration-300 sm:gap-4 sm:px-6 lg:px-8"
+        :class="isScrolled ? 'py-2' : 'py-2.5 sm:py-3.5'"
       >
         <!-- Left: Larger Logo Image -->
         <a
           href="/"
-          class="group flex items-center focus:outline-none"
+          class="group flex shrink-0 items-center focus:outline-none"
           @click.prevent="scrollToSection('', '/')"
         >
           <img
             :src="siteConfig.business.logoUrl"
             :alt="siteConfig.business.legalName"
             class="w-auto object-contain transition-all duration-200 group-hover:scale-[1.02]"
-            :class="isScrolled ? 'h-11 sm:h-13' : 'h-13 sm:h-16 md:h-18'"
+            :class="isScrolled ? 'h-9 sm:h-12 md:h-13' : 'h-10 sm:h-15 md:h-18'"
           />
         </a>
 
         <!-- Right: Location (Local + Horario) + Phone (+ RIF J500390335) -->
-        <div class="flex items-center gap-6 lg:gap-10">
+        <div class="flex items-center gap-3 sm:gap-6 lg:gap-10">
           <!-- Location Pin Item: C.C. Ciudad Crepuscular / Local + Horario -->
           <a
             href="/ubicacion"
-            class="hidden items-start gap-2.5 text-left transition hover:opacity-90 md:flex"
+            class="hidden items-start gap-2.5 text-left transition hover:opacity-90 lg:flex"
             @click.prevent="scrollToSection('ubicacion', '/ubicacion')"
           >
             <svg class="mt-0.5 h-5 w-5 shrink-0 text-[#f6892c]" fill="currentColor" viewBox="0 0 24 24">
@@ -76,20 +76,20 @@ onUnmounted(() => {
           </a>
 
           <!-- Phone & RIF J500390335 Underneath -->
-          <div class="flex items-start gap-2.5">
+          <div class="flex items-start gap-2">
             <svg class="mt-0.5 hidden h-5 w-5 shrink-0 text-[#f6892c] sm:block" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
             </svg>
-            <div class="text-right sm:text-left">
+            <div class="whitespace-nowrap text-right sm:text-left">
               <a
                 :href="headerWhatsappUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="block text-sm font-extrabold tracking-wide text-white transition hover:text-[#f6892c] sm:text-base"
+                class="block text-xs font-extrabold tracking-wide text-white transition hover:text-[#f6892c] sm:text-base"
               >
                 {{ siteConfig.business.phoneDisplay }}
               </a>
-              <span class="block text-[11px] font-bold tracking-wider text-[#f6892c]">
+              <span class="block text-[10px] font-bold tracking-wider text-[#f6892c] sm:text-[11px]">
                 RIF: {{ siteConfig.business.rif }}
               </span>
             </div>

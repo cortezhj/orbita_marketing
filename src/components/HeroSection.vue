@@ -90,8 +90,8 @@ onUnmounted(() => {
 
 <template>
   <!-- Generous Hero Height Restored (pt-28 / lg:pt-38 and pb-20 / lg:pb-28) -->
-  <section class="relative overflow-hidden bg-[#0a0a0a] pt-28 text-white sm:pt-34 lg:pt-38">
-    <!-- Background Image from src/assets/background.avif with Dark Black Overlay -->
+  <section class="relative overflow-hidden bg-[#0a0a0a] pt-22 text-white sm:pt-32 lg:pt-38">
+    <!-- Background Image from src/assets/hero/hero-background.avif with Dark Black Overlay -->
     <div class="pointer-events-none absolute inset-0">
       <img
         :src="heroBackgroundUrl"
@@ -111,10 +111,10 @@ onUnmounted(() => {
     </div>
 
     <!-- Main Hero Container with Restored Vertical Breathing Room & Balanced Proportions -->
-    <div class="relative mx-auto max-w-6xl px-4 pt-8 pb-20 sm:px-6 sm:pt-10 sm:pb-24 lg:px-8 lg:pt-12 lg:pb-28">
-      <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+    <div class="relative mx-auto max-w-6xl px-4 pt-6 pb-16 sm:px-6 sm:pt-10 sm:pb-24 lg:px-8 lg:pt-12 lg:pb-28">
+      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
         <!-- Left Column: Static Headline & Description about Órbita Marketing -->
-        <div class="lg:col-span-5 lg:pr-4">
+        <div class="text-center sm:text-left lg:col-span-5 lg:pr-4">
           <h1 class="font-black tracking-tight text-[#f6892c] drop-shadow-[0_3px_14px_rgba(0,0,0,0.65)]">
             <span class="block text-2xl uppercase sm:text-3xl lg:text-[2.15rem] lg:leading-[1.15]">
               REVESTIMIENTOS, FERRETERÍA Y MÁS
@@ -124,12 +124,12 @@ onUnmounted(() => {
             </span>
           </h1>
 
-          <p class="mt-5 max-w-md text-xs leading-relaxed text-neutral-300/90 sm:text-sm">
+          <p class="mx-auto mt-4 max-w-md text-xs leading-relaxed text-neutral-300/90 sm:mx-0 sm:mt-5 sm:text-sm">
             En <strong class="font-bold text-white">Órbita Marketing</strong> somos especialistas en Wall Panel WPC, revestimientos decorativos, lavaplatos y duchas modernas, además de contar con ferretería, herramientas, electricidad, pinturas y materiales de construcción al alcance de tu mano.
           </p>
 
           <!-- Clean, Proportioned Brand-Orange Button -->
-          <div class="mt-8">
+          <div class="mt-6 sm:mt-8">
             <a
               :href="currentWhatsappUrl"
               target="_blank"
@@ -152,7 +152,7 @@ onUnmounted(() => {
 
         <!-- Right Column: Proportioned Orbital Arc + Specialist Portrait Showcase -->
         <div class="relative lg:col-span-7 lg:pl-6">
-          <div class="relative ml-auto flex min-h-[320px] w-full max-w-xl items-center justify-end sm:min-h-[360px] lg:min-h-[380px]">
+          <div class="relative mx-auto flex min-h-[300px] w-full max-w-xl flex-col items-center justify-center sm:min-h-[360px] sm:flex-row sm:justify-end lg:ml-auto lg:min-h-[380px]">
             <!-- Desktop Curved Orbital Arc Positioned Closely Along the Specialist Image -->
             <div class="pointer-events-none absolute inset-y-0 right-[45%] z-20 hidden w-52 sm:block md:right-[44%] lg:right-[43%] lg:w-56">
               <svg
@@ -214,7 +214,7 @@ onUnmounted(() => {
             </div>
 
             <!-- Mobile Category Selector Pills -->
-            <div class="mb-3 flex flex-wrap gap-1.5 sm:hidden">
+            <div class="mb-4 flex flex-wrap justify-center gap-1.5 sm:hidden">
               <button
                 v-for="(slide, idx) in slides"
                 :key="slide.shortLabel"
@@ -244,7 +244,7 @@ onUnmounted(() => {
                 height="470"
                 fetchpriority="high"
                 decoding="async"
-                class="h-68 w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.75)] transition-all duration-500 sm:h-76 lg:h-[330px] xl:h-[345px]"
+                class="h-60 w-full object-contain drop-shadow-[0_14px_28px_rgba(0,0,0,0.75)] transition-all duration-500 sm:h-76 lg:h-[330px] xl:h-[345px]"
                 style="
                   -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
                   mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
