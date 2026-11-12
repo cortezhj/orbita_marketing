@@ -1,14 +1,5 @@
 <script setup lang="ts">
 import { siteConfig } from '../config/siteConfig'
-import iconFacebook from '../assets/socials/icon-facebook.webp'
-import iconInstagram from '../assets/socials/icon-instagram.png'
-import iconTiktok from '../assets/socials/icon-tiktok.png'
-
-const socialLinks = [
-  { name: 'Facebook', href: siteConfig.business.socials.facebook, icon: iconFacebook },
-  { name: 'Instagram', href: siteConfig.business.socials.instagram, icon: iconInstagram },
-  { name: 'TikTok', href: siteConfig.business.socials.tiktok, icon: iconTiktok }
-]
 </script>
 
 <template>
@@ -64,7 +55,7 @@ const socialLinks = [
           <div class="mt-8 flex flex-wrap items-center gap-4">
             <div class="flex items-center gap-3">
               <a
-                v-for="social in socialLinks"
+                v-for="social in siteConfig.socialLinks"
                 :key="social.name"
                 :href="social.href"
                 target="_blank"

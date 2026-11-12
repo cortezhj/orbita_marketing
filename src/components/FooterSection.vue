@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
-import iconFacebook from '../assets/socials/icon-facebook.webp'
-import iconInstagram from '../assets/socials/icon-instagram.png'
-import iconTiktok from '../assets/socials/icon-tiktok.png'
+import { buildWhatsAppUrl, navigateToSection, siteConfig } from '../config/siteConfig'
 
 defineEmits<{
   (e: 'openPrivacy'): void
@@ -10,28 +7,6 @@ defineEmits<{
 
 const footerWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.header)
 const currentYear = new Date().getFullYear()
-
-const socialLinks = [
-  { name: 'Facebook', href: siteConfig.business.socials.facebook, icon: iconFacebook },
-  { name: 'Instagram', href: siteConfig.business.socials.instagram, icon: iconInstagram },
-  { name: 'TikTok', href: siteConfig.business.socials.tiktok, icon: iconTiktok }
-]
-
-function scrollToSection(sectionId?: string, path = '/') {
-  if (window.location.pathname !== path || window.location.hash) {
-    window.history.pushState({}, '', path)
-  }
-
-  if (!sectionId) {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    return
-  }
-
-  const target = document.getElementById(sectionId)
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-}
 </script>
 
 <template>
@@ -41,7 +16,7 @@ function scrollToSection(sectionId?: string, path = '/') {
       <div class="grid grid-cols-1 gap-10 md:grid-cols-12 lg:gap-12">
         <!-- Col 1: Logo, Brief Identity & Social Icons (5 cols) -->
         <div class="md:col-span-5">
-          <a href="/" class="inline-block" @click.prevent="scrollToSection()">
+          <a href="/" class="inline-block" @click.prevent="navigateToSection('', '/')">
             <img
               :src="siteConfig.business.logoUrl"
               :alt="siteConfig.business.legalName"
@@ -61,7 +36,7 @@ function scrollToSection(sectionId?: string, path = '/') {
           <!-- Social Media Icons -->
           <div class="mt-5 flex items-center gap-3">
             <a
-              v-for="social in socialLinks"
+              v-for="social in siteConfig.socialLinks"
               :key="social.name"
               :href="social.href"
               target="_blank"
@@ -89,40 +64,13 @@ function scrollToSection(sectionId?: string, path = '/') {
             Navegación
           </h3>
           <ul class="mt-4 space-y-2.5 text-xs sm:text-sm">
-            <li>
+            <li v-for="item in siteConfig.navLinks" :key="item.path">
               <a
-                href="/"
+                :href="item.path"
                 class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection('', '/')"
+                @click.prevent="navigateToSection(item.sectionId, item.path)"
               >
-                Inicio
-              </a>
-            </li>
-            <li>
-              <a
-                href="/marcas"
-                class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection('marcas', '/marcas')"
-              >
-                Marcas que Distribuimos
-              </a>
-            </li>
-            <li>
-              <a
-                href="/productos"
-                class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection('categorias', '/productos')"
-              >
-                Nuestros Productos
-              </a>
-            </li>
-            <li>
-              <a
-                href="/ubicacion"
-                class="cursor-pointer text-neutral-300 transition hover:text-[#f6892c]"
-                @click.prevent="scrollToSection('ubicacion', '/ubicacion')"
-              >
-                Ubicación y Horarios
+                {{ item.footerLabel }}
               </a>
             </li>
           </ul>

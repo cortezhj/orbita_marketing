@@ -9,9 +9,7 @@ import { buildWhatsAppUrl } from '../config/siteConfig'
 
 interface HeroSlide {
   shortLabel: string
-  headlineTop: string
-  headlineBottom: string
-  description: string
+  alt: string
   image: string
   whatsappMessage: string
   nodeX: number
@@ -21,10 +19,7 @@ interface HeroSlide {
 const slides: HeroSlide[] = [
   {
     shortLabel: 'REVESTIMIENTOS',
-    headlineTop: 'REVESTIMIENTOS Y WALL PANEL',
-    headlineBottom: 'decoración, lavaplatos y duchas',
-    description:
-      'Transforma tus espacios con Wall Panel WPC, láminas decorativas tipo mármol, lavaplatos multifuncionales y duchas modernas en el C.C. Ciudad Crepuscular (Local PB-06).',
+    alt: 'Revestimientos y Wall Panel WPC en Órbita Marketing',
     image: heroRevestimientos,
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Revestimientos, Wall Panel, Lavaplatos o Duchas en el C.C. Ciudad Crepuscular.',
@@ -33,10 +28,7 @@ const slides: HeroSlide[] = [
   },
   {
     shortLabel: 'HERRAMIENTAS',
-    headlineTop: 'HERRAMIENTAS Y FERRETERÍA',
-    headlineBottom: 'para cualquier proyecto',
-    description:
-      'Equípate con taladros, esmeriles, herramientas manuales y eléctricas, cemento, bloques y fijaciones para construcción y remodelación en Barquisimeto.',
+    alt: 'Herramientas y Ferretería en Órbita Marketing',
     image: heroHerramientas,
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Herramientas y artículos de Ferretería en el C.C. Ciudad Crepuscular.',
@@ -45,10 +37,7 @@ const slides: HeroSlide[] = [
   },
   {
     shortLabel: 'ELECTRICIDAD',
-    headlineTop: 'ELECTRICIDAD E ILUMINACIÓN',
-    headlineBottom: 'para cualquier instalación',
-    description:
-      'Cables eléctricos, breakers termomagnéticos, tomacorrientes, interruptores modernos, paneles y reflectores LED con entrega inmediata en nuestro local PB-06.',
+    alt: 'Electricidad e Iluminación en Órbita Marketing',
     image: heroElectricidad,
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y necesito cotizar materiales de Electricidad e Iluminación en el C.C. Ciudad Crepuscular.',
@@ -57,10 +46,7 @@ const slides: HeroSlide[] = [
   },
   {
     shortLabel: 'PINTURAS',
-    headlineTop: 'PINTURAS Y ACABADOS',
-    headlineBottom: 'para renovar tus espacios',
-    description:
-      'Pinturas en caucho, esmaltes, impermeabilizantes Sika, siliconas, adhesivos para Wall Panel, cemento, pego, rodillos y brochas en el C.C. Ciudad Crepuscular.',
+    alt: 'Pinturas y Acabados en Órbita Marketing',
     image: heroPinturas,
     whatsappMessage:
       'Hola Órbita Marketing, vi su página y quiero cotizar Pinturas, Adhesivos y Acabados en el C.C. Ciudad Crepuscular.',
@@ -253,7 +239,7 @@ onUnmounted(() => {
               <img
                 :key="currentSlide.image"
                 :src="currentSlide.image"
-                :alt="currentSlide.headlineTop"
+                :alt="currentSlide.alt"
                 width="490"
                 height="470"
                 fetchpriority="high"

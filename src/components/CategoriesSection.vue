@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
-
-const bandBgColors = ['#e5e5e3', '#24272c', '#e7e7e7', '#1b1e23']
 </script>
 
 <template>
@@ -26,7 +24,7 @@ const bandBgColors = ['#e5e5e3', '#24272c', '#e7e7e7', '#1b1e23']
         :key="cat.id"
         :style="{
           zIndex: siteConfig.categories.length - idx,
-          backgroundColor: bandBgColors[idx] || (cat.theme === 'dark' ? '#1b1e23' : '#e7e7e7')
+          backgroundColor: cat.bgColor
         }"
         :class="[
           'group relative w-full overflow-hidden shadow-[0_16px_36px_rgba(0,0,0,0.2)]',

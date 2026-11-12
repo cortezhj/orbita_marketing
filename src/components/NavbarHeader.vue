@@ -1,34 +1,14 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { buildWhatsAppUrl, siteConfig } from '../config/siteConfig'
+import { buildWhatsAppUrl, navigateToSection, siteConfig } from '../config/siteConfig'
 
 const mobileMenuOpen = ref(false)
 const isScrolled = ref(false)
 const headerWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.header)
 
-const navLinks = [
-  { label: 'INICIO', path: '/', sectionId: '', hasArrow: false },
-  { label: 'NUESTROS PRODUCTOS', path: '/productos', sectionId: 'categorias', hasArrow: true },
-  { label: 'MARCAS EN STOCK', path: '/marcas', sectionId: 'marcas', hasArrow: false },
-  { label: 'UBICACIÓN Y HORARIOS', path: '/ubicacion', sectionId: 'ubicacion', hasArrow: false }
-]
-
 function scrollToSection(sectionId?: string, path = '/') {
   mobileMenuOpen.value = false
-
-  if (window.location.pathname !== path || window.location.hash) {
-    window.history.pushState({}, '', path)
-  }
-
-  if (!sectionId) {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    return
-  }
-
-  const target = document.getElementById(sectionId)
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+  navigateToSection(sectionId, path)
 }
 
 function handleScroll() {
@@ -141,7 +121,7 @@ onUnmounted(() => {
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">
         <nav class="flex items-center gap-8" aria-label="Navegación principal">
           <a
-            v-for="item in navLinks"
+            v-for="item in siteConfig.navLinks"
             :key="item.label"
             :href="item.path"
             class="inline-flex cursor-pointer items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-neutral-200 transition hover:text-[#f6892c]"
@@ -170,7 +150,7 @@ onUnmounted(() => {
     >
       <div class="flex flex-col gap-2.5">
         <a
-          v-for="item in navLinks"
+          v-for="item in siteConfig.navLinks"
           :key="item.label"
           :href="item.path"
           class="flex cursor-pointer items-center justify-between border-l-2 border-transparent px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-white hover:border-[#f6892c] hover:bg-white/5 hover:text-[#f6892c]"

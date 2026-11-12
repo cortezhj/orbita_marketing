@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
 import BrandsSection from './components/BrandsSection.vue'
 import CategoriesSection from './components/CategoriesSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import HeroSection from './components/HeroSection.vue'
 import LocationSection from './components/LocationSection.vue'
 import NavbarHeader from './components/NavbarHeader.vue'
-import PrivacyPolicyModal from './components/PrivacyPolicyModal.vue'
 import { buildWhatsAppUrl, siteConfig } from './config/siteConfig'
+
+const PrivacyPolicyModal = defineAsyncComponent(() => import('./components/PrivacyPolicyModal.vue'))
 
 const showPrivacyPolicy = ref(false)
 const floatingWhatsappUrl = buildWhatsAppUrl(siteConfig.defaultWhatsappMessages.heroPrimary)
@@ -24,19 +25,14 @@ function closePrivacyPolicy() {
   }
 }
 
-const routeSectionMap: Record<string, string> = {
-  '/productos': 'categorias',
-  '/marcas': 'marcas',
-  '/ubicacion': 'ubicacion'
-}
-
-function handleRouteNavigation(pathname: string) {
+function handleRouteNavigation() {
+  const pathname = window.location.pathname
   showPrivacyPolicy.value = pathname === '/politica-de-privacidad'
 
-  const sectionId = routeSectionMap[pathname]
-  if (sectionId) {
+  const matchedRoute = siteConfig.navLinks.find((item) => item.path === pathname && item.sectionId)
+  if (matchedRoute) {
     setTimeout(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      document.getElementById(matchedRoute.sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, 50)
   } else if (pathname === '/') {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -45,12 +41,13 @@ function handleRouteNavigation(pathname: string) {
 
 onMounted(() => {
   if (window.location.pathname !== '/') {
-    handleRouteNavigation(window.location.pathname)
+    handleRouteNavigation()
   }
+  window.addEventListener('popstate', handleRouteNavigation)
+})
 
-  window.addEventListener('popstate', () => {
-    handleRouteNavigation(window.location.pathname)
-  })
+onUnmounted(() => {
+  window.removeEventListener('popstate', handleRouteNavigation)
 })
 </script>
 
