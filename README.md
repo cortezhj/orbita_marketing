@@ -1,34 +1,25 @@
-# FerreCentro Órbita — Landing Page de Alto Rendimiento
+# Órbita Marketing, C.A. — Landing Page Oficial
 
-Landing Page de alta conversión construida con **Vue 3 + TypeScript + Vite + Tailwind CSS v4** para una ferretería física ubicada dentro de un Centro Comercial. Diseñada específicamente para validar la existencia comercial del negocio (cumplimiento con Meta Ads / Business Suite), exhibir disponibilidad real de marcas reconocidas y canalizar clientes directamente al local físico o a WhatsApp.
+Landing Page corporativa de alto rendimiento desarrollada con **Vue 3 + TypeScript + Vite + Tailwind CSS v4** para **Órbita Marketing, C.A.** (`RIF: J500390335`), ubicada en el **Centro Comercial Ciudad Crepuscular, Planta Baja, Local PB-06, Avenida 20 entre calles 40 y 41, Barquisimeto, Edo. Lara**.
 
-## Estructura de Secciones
+## Secciones del Proyecto
 
-```text
-├── Header (Logo, horario de atención, botón directo a WhatsApp)
-├── Hero Section (Propuesta de valor: "Herramientas, plomería y electricidad en [Centro Comercial]")
-├── Marcas que distribuyen (Logotipos e insignias de marcas reconocidas en stock)
-├── Categorías de productos (Cards visuales con botón de consulta predeterminado a WhatsApp)
-├── Catálogo descargable (PDF optimizado descargable y enlace dinámico)
-├── Ubicación y cómo llegar (Mapa interactivo, horarios Lun-Dom, referencias y fotos del local comercial)
-└── Footer (Datos legales, Razón Social, RIF/ID fiscal, redes sociales y /politica-de-privacidad)
-```
+- **Header (`src/components/NavbarHeader.vue`)**: Logo oficial, ubicación abreviada, horario, teléfono/WhatsApp, RIF y navegación con rutas limpias (`/`, `/productos`, `/marcas`, `/ubicacion`).
+- **Hero (`src/components/HeroSection.vue`)**: Propuesta de valor y carrusel orbital interactivo de las 4 líneas principales (*Revestimientos*, *Herramientas*, *Electricidad*, *Pinturas*).
+- **Marcas (`src/components/BrandsSection.vue`)**: Carrusel continuo de marcas distribuidas en tienda (*Stanley*, *Tolsen*, *Bellota*, *Emtop*, *Uyustools*, *Manpica*, *Quimicolor*, *3M*).
+- **Nuestros Productos (`src/components/CategoriesSection.vue`)**: Bandas horizontales alternadas con cotización directa vía WhatsApp.
+- **Ubicación y Horarios (`src/components/LocationSection.vue`)**: Mapa interactivo de Google Maps del C.C. Ciudad Crepuscular, datos de contacto, redes sociales oficiales y botón **Cómo Llegar**.
+- **Footer y Política de Privacidad (`src/components/FooterSection.vue`, `src/components/PrivacyPolicyModal.vue`)**: Datos fiscales, enlaces rápidos y cumplimiento legal en `/politica-de-privacidad`.
 
-## Personalización Rápida
-
-Todos los datos comerciales (nombre de la ferretería, Centro Comercial, número de local, teléfono/WhatsApp, mensajes predeterminados por categoría, marcas, horarios y datos fiscales RIF) están centralizados en:
-
-- `src/config/siteConfig.ts`
-
-## Comandos de Desarrollo
+## Comandos
 
 ```bash
 # Instalar dependencias
 npm install
 
-# Iniciar servidor de desarrollo
+# Servidor de desarrollo
 npm run dev
 
-# Compilar para producción (TypeScript + Vite)
+# Compilación para producción
 npm run build
 ```
