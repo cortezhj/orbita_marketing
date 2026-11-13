@@ -6,7 +6,6 @@ import FooterSection from './components/FooterSection.vue'
 import HeroSection from './components/HeroSection.vue'
 import LocationSection from './components/LocationSection.vue'
 import NavbarHeader from './components/NavbarHeader.vue'
-import PaymentShippingSection from './components/PaymentShippingSection.vue'
 import { buildWhatsAppUrl, initMetaPixel, siteConfig, trackMetaWhatsAppClick } from './config/siteConfig'
 
 const PrivacyPolicyModal = defineAsyncComponent(() => import('./components/PrivacyPolicyModal.vue'))
@@ -78,10 +77,7 @@ onUnmounted(() => {
       <!-- 4. Nuestros Productos -->
       <CategoriesSection />
 
-      <!-- 5. Métodos de Pago, Cashea, Delivery y Envíos Nacionales -->
-      <PaymentShippingSection />
-
-      <!-- 6. Ubicación y cómo llegar (Mapa interactivo y horarios) -->
+      <!-- 5. Ubicación y cómo llegar (Mapa interactivo y horarios) -->
       <LocationSection />
     </main>
 
