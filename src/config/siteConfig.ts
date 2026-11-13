@@ -50,6 +50,7 @@ export const siteConfig = {
     whatsappNumber: '584123682831',
     email: 'ventas@orbitamarketingve.com',
     complianceEmail: 'ventas@orbitamarketingve.com',
+    metaPixelId: (import.meta.env.VITE_META_PIXEL_ID as string) || '',
     googleMapsDirectionsUrl:
       'https://www.google.com/maps/dir/?api=1&destination=Centro+Comercial+Ciudad+Crepuscular,+Avenida+20,+Barquisimeto,+Lara,+Venezuela',
     googleMapsEmbedUrl:
@@ -148,4 +149,58 @@ export function navigateToSection(sectionId?: string, path = '/'): void {
   }
 
   document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void
+    _fbq?: unknown
+  }
+}
+
+export function initMetaPixel(): void {
+  const pixelId = siteConfig.business.metaPixelId.trim()
+  if (!pixelId || typeof window === 'undefined' || window.fbq) return
+
+  const n: ((...args: unknown[]) => void) & {
+    callMethod?: (...args: unknown[]) => void
+    queue: unknown[][]
+    push: (...args: unknown[]) => void
+    loaded: boolean
+    version: string
+  } = Object.assign(
+    function (...args: unknown[]) {
+      if (n.callMethod) {
+        n.callMethod(...args)
+      } else {
+        n.queue.push(args)
+      }
+    },
+    {
+      queue: [] as unknown[][],
+      push: (...args: unknown[]) => n.queue.push(args),
+      loaded: true,
+      version: '2.0'
+    }
+  )
+
+  window.fbq = n
+  window._fbq = n
+
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://connect.facebook.net/en_US/fbevents.js'
+  document.head.appendChild(script)
+
+  window.fbq('init', pixelId)
+  window.fbq('track', 'PageView')
+}
+
+export function trackMetaWhatsAppClick(source = 'WhatsApp CTA'): void {
+  if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+    window.fbq('track', 'Contact', {
+      content_name: source,
+      content_category: 'WhatsApp'
+    })
+  }
 }

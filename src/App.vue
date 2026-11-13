@@ -6,7 +6,8 @@ import FooterSection from './components/FooterSection.vue'
 import HeroSection from './components/HeroSection.vue'
 import LocationSection from './components/LocationSection.vue'
 import NavbarHeader from './components/NavbarHeader.vue'
-import { buildWhatsAppUrl, siteConfig } from './config/siteConfig'
+import PaymentShippingSection from './components/PaymentShippingSection.vue'
+import { buildWhatsAppUrl, initMetaPixel, siteConfig, trackMetaWhatsAppClick } from './config/siteConfig'
 
 const PrivacyPolicyModal = defineAsyncComponent(() => import('./components/PrivacyPolicyModal.vue'))
 
@@ -39,15 +40,25 @@ function handleRouteNavigation() {
   }
 }
 
+function handleDocumentClick(event: MouseEvent) {
+  const target = (event.target as HTMLElement | null)?.closest?.('a[href*="wa.me"]') as HTMLAnchorElement | null
+  if (target) {
+    trackMetaWhatsAppClick(target.textContent?.trim() || 'WhatsApp')
+  }
+}
+
 onMounted(() => {
+  initMetaPixel()
   if (window.location.pathname !== '/') {
     handleRouteNavigation()
   }
   window.addEventListener('popstate', handleRouteNavigation)
+  document.addEventListener('click', handleDocumentClick)
 })
 
 onUnmounted(() => {
   window.removeEventListener('popstate', handleRouteNavigation)
+  document.removeEventListener('click', handleDocumentClick)
 })
 </script>
 
@@ -67,7 +78,10 @@ onUnmounted(() => {
       <!-- 4. Nuestros Productos -->
       <CategoriesSection />
 
-      <!-- 5. Ubicación y cómo llegar (Mapa interactivo y horarios) -->
+      <!-- 5. Métodos de Pago, Cashea, Delivery y Envíos Nacionales -->
+      <PaymentShippingSection />
+
+      <!-- 6. Ubicación y cómo llegar (Mapa interactivo y horarios) -->
       <LocationSection />
     </main>
 

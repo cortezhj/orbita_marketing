@@ -56,7 +56,7 @@ defineEmits<{
         <section>
           <h3 class="font-black uppercase text-[#121417]">2. Datos que Recopilamos</h3>
           <p class="mt-1">
-            Nuestra página web funciona como portal informativo y de validación comercial. Solo tratamos los datos que el usuario decide compartir voluntariamente al iniciar una conversación a través de nuestro canal oficial de WhatsApp Business (nombre de perfil, número telefónico y requerimientos de cotización de productos ferreteros).
+            Nuestra página web funciona como portal informativo y de validación comercial. Solo tratamos los datos que el usuario decide compartir voluntariamente al iniciar una conversación a través de nuestro canal oficial de WhatsApp Business (nombre de perfil, número telefónico y requerimientos de cotización de revestimientos, artefactos, herramientas o materiales).
           </p>
         </section>
 
@@ -64,9 +64,8 @@ defineEmits<{
           <h3 class="font-black uppercase text-[#121417]">3. Finalidad del Tratamiento</h3>
           <ul class="mt-1 list-disc space-y-1 pl-5">
             <li>Confirmar disponibilidad real de inventario y precios en nuestro local del {{ siteConfig.business.mallName }}.</li>
-            <li>Reservar pedidos para retiro en mostrador ({{ siteConfig.business.localNumber }}).</li>
-            <li>Enviar nuestro catálogo técnico en formato PDF cuando el cliente lo solicite.</li>
-            <li>Brindar soporte postventa y tramitar garantías de fábrica.</li>
+            <li>Reservar pedidos para retiro en tienda ({{ siteConfig.business.localNumber }}) o coordinar despachos.</li>
+            <li>Brindar asesoría técnica, soporte postventa y tramitar garantías de fábrica.</li>
           </ul>
         </section>
 
@@ -92,10 +91,10 @@ defineEmits<{
       <div class="mt-8 flex justify-end border-t border-neutral-200 pt-5">
         <button
           type="button"
-          class="rounded-lg bg-[#f6892c] px-6 py-3 text-xs font-black uppercase tracking-wider text-white hover:bg-[#e07519]"
+          class="rounded-md bg-[#f6892c] px-6 py-3 text-xs font-black uppercase tracking-wider text-white transition hover:bg-[#e07519]"
           @click="$emit('close')"
         >
-          Volver a la Ferretería
+          Volver al Inicio
         </button>
       </div>
     </div>
